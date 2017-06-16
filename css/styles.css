@@ -11,6 +11,11 @@
   width: 100px;
 }
 
+.hourly-sunny {
+  height: 30px;
+  width: 30px;
+}
+
 .flex-container {
   display: flex;
   justify-content: space-around;
@@ -26,4 +31,16 @@
 
 .flex-sub {
 
+}
+
+table {
+  width: 100%;
+}
+
+tr {
+  background-color: #B2DFDB;
+}
+
+.no-table {
+  background-color: #FFCDD2;
 }

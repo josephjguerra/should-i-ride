@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Should I ride?</title>
   <!-- Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-green.min.css" />
+  <link rel="stylesheet" href="css/styles.css">
   <!-- Material Design icon font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
@@ -24,8 +26,8 @@
       </div>
       <!-- Tabs -->
       <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-        <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Hourly</a>
-        <a href="#fixed-tab-2" class="mdl-layout__tab">Day</a>
+        <a href="#fixed-tab-1" class="mdl-layout__tab">Hourly</a>
+        <a href="#fixed-tab-2" class="mdl-layout__tab is-active">Day</a>
         <a href="#fixed-tab-3" class="mdl-layout__tab">3 Day</a>
         <a href="#fixed-tab-4" class="mdl-layout__tab">10 Day</a>
       </div>
@@ -34,11 +36,50 @@
       <span class="mdl-layout-title">Preferences</span>
     </div>
     <main class="mdl-layout__content">
-      <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+      <section class="mdl-layout__tab-panel" id="fixed-tab-1">
         <div class="page-content">hourly weather here</div>
       </section>
-      <section class="mdl-layout__tab-panel" id="fixed-tab-2">
-        <div class="page-content">day weather here</div>
+      <section class="mdl-layout__tab-panel is-active" id="fixed-tab-2">
+        <div class="page-content">
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col day mdl-shadow--2dp mdl-typography--display-2">Yes Ride!</div>
+          </div>
+          <div class="mdl-grid flex-container">
+            <img src="//icons.wxug.com/i/c/v4/clear.svg" alt="Sunyy" class="sunny">
+          </div>
+          <div class="mdl-grid flex-container">
+            <div class="flex-item">
+              <div class="flex-sub">H: 75 &#176;F</div>
+              <div class="flex-sub">L: 50 &#176;F</div>
+            </div>
+            <div class="flex-item">
+              <div class="flex-sub">10%</div>
+              <div class="flex-sub">precip</div>
+            </div>
+            <div class="flex-item">
+              <div class="flex-sub">12 mph</div>
+              <div class="flex-sub">20 gust</div>
+            </div>
+          </div>
+          <div class="mdl-grid flex-container">
+            <div class="flex-item">
+              <div class="flex-sub">Sunrise</div>
+              <div class="flex-sub">6:18 am</div>
+            </div>
+            <div class="flex-item">
+              <div class="flex-sub">Sunset</div>
+              <div class="flex-sub">8:29 pm</div>
+            </div>
+          </div>
+          <div class="mdl-grid flex-container">
+            <div>observed at 10:31am</div>
+          </div>
+          <div class="mdl-grid flex-container">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+              Refresh
+            </button>
+          </div>
+        </div>
       </section>
       <section class="mdl-layout__tab-panel" id="fixed-tab-3">
         <div class="page-content">3 day weather here</div>

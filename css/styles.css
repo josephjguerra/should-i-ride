@@ -1,0 +1,29 @@
+.day {
+  height: 160px;
+  line-height: 160px;
+  color: #ffffff;
+  background: #009688;
+  text-align: center;
+}
+
+.sunny {
+  height: 100px;
+  width: 100px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  /*border: 1px dashed gray;*/
+}
+
+.flex-item {
+  flex: 0 1 auto;
+  flex-direction: column;
+  text-align: center;
+  /*border: 1px dashed red;*/
+}
+
+.flex-sub {
+
+}

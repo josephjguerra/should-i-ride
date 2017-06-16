@@ -1,9 +1,11 @@
 .day {
   height: 160px;
   line-height: 160px;
-  color: #ffffff;
-  background: #009688;
   text-align: center;
+}
+
+.mdl-layout__content {
+  background-color: #B2DFDB;
 }
 
 .sunny {
@@ -41,6 +43,10 @@ tr {
   background-color: #B2DFDB;
 }
 
-.no-table {
+.no-ride-table {
   background-color: #FFCDD2;
+}
+
+#fixed-tab-3 tbody tr {
+  height: 100px;
 }

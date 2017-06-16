@@ -34,6 +34,39 @@
     </header>
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">Preferences</span>
+      <div>
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" value="50" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+            <label class="mdl-textfield__label" for="sample4">Min Temp...</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" value="95" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+            <label class="mdl-textfield__label" for="sample4">Max Temp...</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" value="25" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+            <label class="mdl-textfield__label" for="sample4">Highest Precip %...</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" value="15" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+            <label class="mdl-textfield__label" for="sample4">Max winds...</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect pref-toggle" for="switch-1">
+            <input type="checkbox" id="switch-1" class="mdl-switch__input">
+            <span class="mdl-switch__label">Ride in the rain?</span>
+          </label>
+          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect pref-toggle" for="switch-2">
+            <input type="checkbox" id="switch-2" class="mdl-switch__input" checked>
+            <span class="mdl-switch__label">Ride at night?</span>
+          </label>
+        </form>
+      </div>
+
     </div>
     <main class="mdl-layout__content">
       <section class="mdl-layout__tab-panel" id="fixed-tab-1">

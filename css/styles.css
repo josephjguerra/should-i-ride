@@ -1,9 +1,11 @@
 .day {
   height: 160px;
   line-height: 160px;
-  color: #ffffff;
-  background: #B2DFDB;
   text-align: center;
+}
+
+.mdl-layout__content {
+  background-color: #B2DFDB;
 }
 
 .sunny {

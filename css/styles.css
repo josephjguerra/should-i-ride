@@ -50,3 +50,11 @@ tr {
 #fixed-tab-3 tbody tr {
   height: 100px;
 }
+
+form {
+  padding: 10px;
+}
+
+.pref-toggle {
+  margin-bottom: 20px;
+}

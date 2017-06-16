@@ -2,7 +2,7 @@
   height: 160px;
   line-height: 160px;
   color: #ffffff;
-  background: #009688;
+  background: #B2DFDB;
   text-align: center;
 }
 
@@ -43,4 +43,8 @@ tr {
 
 .no-ride-table {
   background-color: #FFCDD2;
+}
+
+#fixed-tab-3 tbody tr {
+  height: 100px;
 }

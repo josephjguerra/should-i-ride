@@ -29,7 +29,6 @@
       <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
         <a href="#today-tab" class="mdl-layout__tab is-active">Today</a>
         <a href="#hourly-tab" class="mdl-layout__tab">Hourly</a>
-        <a href="#three-day-tab" class="mdl-layout__tab">3 Day</a>
         <a href="#ten-day-tab" class="mdl-layout__tab">10 Day</a>
       </div>
     </header>
@@ -293,53 +292,6 @@
           </div>
         </div>
       </section>
-      <section class="mdl-layout__tab-panel" id="three-day-tab">
-        <div class="page-content">
-          <table class="mdl-data-table mdl-js-data-table">
-            <thead>
-              <tr>
-                <th class="mdl-data-table__cell--non-numeric">Day</th>
-                <th class="mdl-data-table__cell--non-numeric">Temp</th>
-                <th class="mdl-data-table__cell--non-numeric">Precip</th>
-                <th class="mdl-data-table__cell--non-numeric">Wind</th>
-                <th class="mdl-data-table__cell--non-numeric">Conditions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">Today</td>
-                <td class="mdl-data-table__cell--non-numeric">80 &#176;F</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px">10%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px">6mph</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-              </tr>
-              <tr class="no-ride-table">
-                <td class="mdl-data-table__cell--non-numeric">Tomorrow</td>
-                <td class="mdl-data-table__cell--non-numeric">80 &#176;F</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px">50%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px">12mph</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/conditions/day/chancerain.svg" alt="Sunny" class="hourly-sunny"></td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">Friday</td>
-                <td class="mdl-data-table__cell--non-numeric">80 &#176;F</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px">0%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px">6mph</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-              </tr>
-              </tr>
-            </tbody>
-          </table>
-          <div class="mdl-grid flex-container">
-            <div>observed at 7:55am</div>
-          </div>
-          <div class="mdl-grid flex-container">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-              <i class="material-icons">refresh</i> Refresh
-            </button>
-          </div>
-        </div>
-      </section>
       <section class="mdl-layout__tab-panel" id="ten-day-tab">
         <div class="page-content">
           <table class="mdl-data-table mdl-js-data-table">
@@ -354,14 +306,14 @@
             </thead>
             <tbody>
               <tr>
-                <td class="mdl-data-table__cell--non-numeric">Mon 6/12</td>
+                <td class="mdl-data-table__cell--non-numeric">Today</td>
                 <td class="mdl-data-table__cell--non-numeric">75 &#176;F</td>
                 <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px">10%</td>
                 <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px">5mph</td>
                 <td class="mdl-data-table__cell--non-numeric"><img src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
               </tr>
               <tr>
-                <td class="mdl-data-table__cell--non-numeric">Tue 6/13</td>
+                <td class="mdl-data-table__cell--non-numeric">Tomorrow</td>
                 <td class="mdl-data-table__cell--non-numeric">75 &#176;F</td>
                 <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px">10%</td>
                 <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px">5mph</td>

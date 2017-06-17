@@ -10,8 +10,8 @@ var observedHighTemp   = 90;
 var observedLowTemp    = 70;
 var observedConditions = "Sunny";
 
-var sunset  = "6:09 am";
-var sunrise = "8:20 pm";
+var sunrise = "6:09 am";
+var sunset = "8:20 pm";
 
 var observedWindSpeed     = 5;
 var observedGust          = 10;

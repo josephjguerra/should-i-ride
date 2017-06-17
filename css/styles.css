@@ -1,3 +1,8 @@
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
 .day {
   height: 160px;
   line-height: 160px;
@@ -13,29 +18,75 @@
   width: 100px;
 }
 
+.three-sunny {
+  height: 60px;
+  width: 60px;
+}
+
 .hourly-sunny {
   height: 30px;
   width: 30px;
 }
 
-.flex-container {
-  display: flex;
-  justify-content: space-around;
-  /*border: 1px dashed gray;*/
-  flex-wrap: nowrap;
+.go-no-go {
+  width: 100%;
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 20px;
+  font-size: 2em;
 }
 
-.flex-item {
+#today-tab .flex-container {
+  display: flex;
+  justify-content: space-around;
+  /*border: 1px dashed black;*/
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#today-tab .flex-item {
   flex: 0 1 auto;
   flex-direction: column;
   text-align: center;
-  /*border: 1px dashed red;*/
+  /*border: 1px dashed blue;*/
   width: 100%;
+  border-radius: 4px;
+  margin: 2px;
+  /*box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.18);*/
 }
 
-.flex-sub {
+.today-nine .flex-sub {
+  font-size: 12px;
+}
+
+.today-top .flex-item {
 
 }
+
+.today-three .flex-item {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.today-nine .flex-item {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#hourly-tab .flex-container,
+#three-day-tab .flex-container,
+#ten-day-tab .flex-container {
+  display: flex;
+  justify-content: space-around;
+  /*border: 1px dashed black;*/
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 
 table {
   width: 100%;
@@ -49,7 +100,7 @@ tr {
   background-color: #FFCDD2;
 }
 
-#fixed-tab-3 tbody tr {
+#three-day-tab tbody tr {
   height: 100px;
 }
 
@@ -64,4 +115,11 @@ form {
 .day-current-temp {
   font-size: 2rem;
   padding: 1.2rem;
+}
+
+.card {
+  /*border: 1px solid black;*/
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.18);
+  margin: 10px;
 }

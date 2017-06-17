@@ -26,7 +26,7 @@
 #today-tab .flex-container {
   display: flex;
   justify-content: space-around;
-  border: 1px dashed black;
+  /*border: 1px dashed black;*/
   flex-wrap: nowrap;
   align-items: flex-end;
   padding-top: 15px;
@@ -37,7 +37,7 @@
   flex: 0 1 auto;
   flex-direction: column;
   text-align: center;
-  border: 1px dashed blue;
+  /*border: 1px dashed blue;*/
   width: 100%;
 
 }
@@ -58,6 +58,18 @@
 .today-nine .flex-item {
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+#hourly-tab .flex-container,
+#three-day-tab .flex-container,
+#ten-day-tab .flex-container {
+  display: flex;
+  justify-content: space-around;
+  /*border: 1px dashed black;*/
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 

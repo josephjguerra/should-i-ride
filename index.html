@@ -6,6 +6,7 @@
   <title>Should I ride?</title>
   <!-- Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-green.min.css" />
   <link rel="stylesheet" href="css/styles.css">
   <!-- Material Design icon font -->
@@ -267,26 +268,26 @@
           </div>
           <div class="mdl-grid flex-container">
             <div class="flex-item">
-              <div class="flex-sub">H: 75 &#176;F</div>
-              <div class="flex-sub">L: 50 &#176;F</div>
+              <div class="flex-sub">H: <span id="day-high">xx</span> &#176;F</div>
+              <div class="flex-sub">L: <span id="day-low">xx</span> &#176;F</div>
             </div>
             <div class="flex-item">
               <div class="flex-sub">10%</div>
               <div class="flex-sub">precip</div>
             </div>
             <div class="flex-item">
-              <div class="flex-sub">12 mph</div>
-              <div class="flex-sub">20 gust</div>
+              <div class="flex-sub"><span id="wind-speed"></span> mph from <span id="wind-direction"></span></div>
+              <div class="flex-sub"><span id="wind-gust"></span> gust</div>
             </div>
           </div>
           <div class="mdl-grid flex-container">
             <div class="flex-item">
               <div class="flex-sub">Sunrise</div>
-              <div class="flex-sub">6:18 am</div>
+              <div class="flex-sub"><span id="sunrise"></span></div>
             </div>
             <div class="flex-item">
               <div class="flex-sub">Sunset</div>
-              <div class="flex-sub">8:29 pm</div>
+              <div class="flex-sub"><span id="sunset"></span></div>
             </div>
           </div>
           <div class="mdl-grid flex-container">
@@ -443,5 +444,7 @@
       </section>
     </main>
   </div>
+
+<script src="js/app.js"></script>
 </body>
 </html>

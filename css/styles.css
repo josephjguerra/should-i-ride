@@ -60,3 +60,8 @@ form {
 .pref-toggle {
   margin-bottom: 20px;
 }
+
+.day-current-temp {
+  font-size: 2rem;
+  padding: 1.2rem;
+}

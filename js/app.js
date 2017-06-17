@@ -17,6 +17,7 @@ var observedWindSpeed     = 5;
 var observedGust          = 10;
 var observedWindDirection = "SW";
 
+document.getElementById("day-current-temp").textContent  = observedTemp;
 document.getElementById("day-high").textContent = observedHighTemp;
 document.getElementById("day-low").textContent  = observedLowTemp;
 

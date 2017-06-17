@@ -27,9 +27,8 @@
       </div>
       <!-- Tabs -->
       <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-        <a href="#fixed-tab-0" class="mdl-layout__tab"><i class="material-icons">home</i></a>
+        <a href="#fixed-tab-0" class="mdl-layout__tab is-active">Today</a>
         <a href="#fixed-tab-1" class="mdl-layout__tab">Hourly</a>
-        <a href="#fixed-tab-2" class="mdl-layout__tab is-active">Day</a>
         <a href="#fixed-tab-3" class="mdl-layout__tab">3 Day</a>
         <a href="#fixed-tab-4" class="mdl-layout__tab">10 Day</a>
       </div>
@@ -71,13 +70,26 @@
 
     </div>
     <main class="mdl-layout__content">
-      <section class="mdl-layout__tab-panel" id="fixed-tab-0">
+      <section class="mdl-layout__tab-panel is-active" id="fixed-tab-0">
         <div class="page-content">
           <div class="mdl-grid flex-container">
             <div class="flex-item">
               <div class="flex-sub">Today</div>
+              <div class="flex-sub">June 17, 7:55am</div>
+              <div class="flex-sub"><img src="//icons.wxug.com/i/c/v4/clear.svg" width="100px" alt="Sunny" class="hourly"></div>
+            </div>
+            <div class="flex-item">
               <div class="flex-sub">Yes Ride!</div>
-              <div class="flex-sub"><img src="//icons.wxug.com/i/c/v4/clear.svg" width="200px" alt="Sunny" class="hourly"></div>
+              <div class="flex-sub day-current-temp"><span id="day-current-temp">xx</span> &#176;F</div>
+              <div class="flex-sub"><img src="img/precip.svg" alt="precip" width="15px"> <span id="precip"></span> 10%</div>
+              <div class="flex-sub"><img src="img/high.svg" alt="high-temp" width="25px"> <span id="day-high">xx</span> &#176;F</div>
+              <div class="flex-sub"><img src="img/low.svg" alt="low-temp" width="25px"> <span id="day-low">xx</span> &#176;F</div>
+            </div>
+            <div class="flex-item">
+              <div class="flex-sub"><img src="img/wind.svg" alt="wind-speed" width="20px"> <span id="wind-speed"></span> mph from <span id="wind-direction"></span></div>
+              <div class="flex-sub"><img src="img/gust.svg" alt="wind-gust" width="20px"> <span id="wind-gust"></span> gust</div>
+              <div class="flex-sub"><img src="img/astrology/sunrise.svg" alt="sunrise" width="25px"> <span id="sunrise">xx</span></div>
+              <div class="flex-sub"><img src="img/astrology/sunset.svg" alt="sunset" width="25px"> <span id="sunset">xx</span></div>
             </div>
           </div>
           <div class="mdl-grid flex-container">
@@ -248,50 +260,6 @@
               </tr>
             </tbody>
           </table>
-          <div class="mdl-grid flex-container">
-            <div>observed at 10:31am</div>
-          </div>
-          <div class="mdl-grid flex-container">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-              Refresh
-            </button>
-          </div>
-        </div>
-      </section>
-      <section class="mdl-layout__tab-panel is-active" id="fixed-tab-2">
-        <div class="page-content">
-          <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--12-col day mdl-typography--display-2">Yes Ride!</div>
-          </div>
-          <div class="mdl-grid flex-container">
-            <img src="//icons.wxug.com/i/c/v4/clear.svg" alt="Sunny" class="sunny">
-          </div>
-          <div class="mdl-grid flex-container">
-            <div class="flex-item">
-              <div class="flex-sub">H: <span id="day-high">xx</span> &#176;F</div>
-              <div class="flex-sub">L: <span id="day-low">xx</span> &#176;F</div>
-            </div>
-            <div class="flex-item">
-              <div class="flex-sub">10%</div>
-              <div class="flex-sub">precip</div>
-            </div>
-            <div class="flex-item">
-              <div class="flex-sub"><span id="wind-speed"></span> mph from <span id="wind-direction"></span></div>
-              <div class="flex-sub"><span id="wind-gust"></span> gust</div>
-            </div>
-          </div>
-          <div class="mdl-grid flex-container">
-            <div class="flex-item">
-              <img src="img/astrology/sunrise.svg" alt="sunrise" width="30px">
-              <div class="flex-sub">Sunrise</div>
-              <div class="flex-sub"><span id="sunrise"></span></div>
-            </div>
-            <div class="flex-item">
-              <img src="img/astrology/sunset.svg" alt="sunset" width="30px">
-              <div class="flex-sub">Sunset</div>
-              <div class="flex-sub"><span id="sunset"></span></div>
-            </div>
-          </div>
           <div class="mdl-grid flex-container">
             <div>observed at 10:31am</div>
           </div>

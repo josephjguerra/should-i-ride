@@ -15,7 +15,7 @@ var sunset = "8:20 pm";
 
 var observedWindSpeed     = 5;
 var observedGust          = 10;
-var observedWindDirection = "SW";
+// var observedWindDirection = "SW";
 
 document.getElementById("day-current-temp").textContent  = observedTemp;
 document.getElementById("day-high").textContent = observedHighTemp;
@@ -25,5 +25,5 @@ document.getElementById("sunrise").textContent = sunrise;
 document.getElementById("sunset").textContent  = sunset;
 
 document.getElementById("wind-speed").textContent      = observedWindSpeed;
-document.getElementById("wind-direction").textContent  = observedWindDirection;
+// document.getElementById("wind-direction").textContent  = observedWindDirection;
 document.getElementById("wind-gust").textContent       = observedGust;

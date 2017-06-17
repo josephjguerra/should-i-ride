@@ -13,29 +13,53 @@
   width: 100px;
 }
 
+.three-sunny {
+  height: 60px;
+  width: 60px;
+}
+
 .hourly-sunny {
   height: 30px;
   width: 30px;
 }
 
-.flex-container {
+#today-tab .flex-container {
   display: flex;
   justify-content: space-around;
-  /*border: 1px dashed gray;*/
+  border: 1px dashed black;
   flex-wrap: nowrap;
+  align-items: flex-end;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-.flex-item {
+#today-tab .flex-item {
   flex: 0 1 auto;
   flex-direction: column;
   text-align: center;
-  /*border: 1px dashed red;*/
+  border: 1px dashed blue;
   width: 100%;
-}
-
-.flex-sub {
 
 }
+
+#today-tab .flex-sub {
+
+}
+
+.today-top .flex-item {
+
+}
+
+.today-three .flex-item {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.today-nine .flex-item {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 
 table {
   width: 100%;

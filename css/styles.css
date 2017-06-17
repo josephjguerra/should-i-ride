@@ -22,6 +22,7 @@
   display: flex;
   justify-content: space-around;
   /*border: 1px dashed gray;*/
+  flex-wrap: nowrap;
 }
 
 .flex-item {
@@ -29,6 +30,7 @@
   flex-direction: column;
   text-align: center;
   /*border: 1px dashed red;*/
+  width: 100%;
 }
 
 .flex-sub {
@@ -57,4 +59,9 @@ form {
 
 .pref-toggle {
   margin-bottom: 20px;
+}
+
+.day-current-temp {
+  font-size: 2rem;
+  padding: 1.2rem;
 }

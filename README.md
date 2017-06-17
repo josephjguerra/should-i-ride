@@ -39,6 +39,7 @@ http://api.wunderground.com/api/WUNDERGROUNDAPIKEY/geolookup/conditions/q/ZIPCOD
 http://api.wunderground.com/api/WUNDERGROUNDAPIKEY/geolookup/forecast/q/ZIPCODE.json
 http://api.wunderground.com/api/WUNDERGROUNDAPIKEY/geolookup/forecast10day/q/ZIPCODE.json
 http://api.wunderground.com/api/WUNDERGROUNDAPIKEY/geolookup/hourly/q/ZIPCODE.json
+http://api.wunderground.com/api/WUNDERGROUNDAPIKEY/geolookup/astronomy/q/ZIPCODE.json
 ~~~~
 
 ### Get a Weather Underground API Key here

@@ -64,6 +64,17 @@
       "pws": {
         "station": [
           {
+            "neighborhood": "Fort Mill",
+            "city": "Grey Rock",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCGREYR2",
+            "lat": 35.043736,
+            "lon": -80.986481,
+            "distance_km": 0,
+            "distance_mi": 0
+          },
+          {
             "neighborhood": "Southern Trace",
             "city": "Charlotte",
             "state": "NC",
@@ -207,6 +218,17 @@
             "distance_mi": 5
           },
           {
+            "neighborhood": "Airport Road",
+            "city": "Rock Hill",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCROCKH20",
+            "lat": 34.988224,
+            "lon": -81.060188,
+            "distance_km": 9,
+            "distance_mi": 5
+          },
+          {
             "neighborhood": "Clover",
             "city": "Clover",
             "state": "SC",
@@ -240,17 +262,6 @@
             "distance_mi": 6
           },
           {
-            "neighborhood": "Waterside at the Catawba",
-            "city": "Fort Mill",
-            "state": "SC",
-            "country": "US",
-            "id": "KSCFORTM29",
-            "lat": 34.968933,
-            "lon": -80.93512,
-            "distance_km": 10,
-            "distance_mi": 6
-          },
-          {
             "neighborhood": "Lenox Pointe Drive",
             "city": "Charlotte",
             "state": "NC",
@@ -273,13 +284,13 @@
             "distance_mi": 6
           },
           {
-            "neighborhood": "Tullamore",
-            "city": "Clover",
+            "neighborhood": "Silver Run",
+            "city": "Fort Mill",
             "state": "SC",
             "country": "US",
-            "id": "KSCCLOVE11",
-            "lat": 35.095879,
-            "lon": -81.099991,
+            "id": "KSCFORTM14",
+            "lat": 35.022594,
+            "lon": -80.871758,
             "distance_km": 11,
             "distance_mi": 6
           },
@@ -372,17 +383,6 @@
             "distance_mi": 7
           },
           {
-            "neighborhood": "Old Springs Road",
-            "city": "Fort Mill",
-            "state": "SC",
-            "country": "US",
-            "id": "KSCFORTM19",
-            "lat": 34.976555,
-            "lon": -80.890755,
-            "distance_km": 12,
-            "distance_mi": 7
-          },
-          {
             "neighborhood": "Massey Neighborhood Weather Station",
             "city": "Fort Mill",
             "state": "SC",
@@ -414,17 +414,6 @@
             "lon": -81.005478,
             "distance_km": 12,
             "distance_mi": 7
-          },
-          {
-            "neighborhood": "Fort Mill",
-            "city": "Grey Rock",
-            "state": "SC",
-            "country": "US",
-            "id": "KSCGREYR2",
-            "lat": 35.043736,
-            "lon": -80.986481,
-            "distance_km": 0,
-            "distance_mi": 0
           }
         ]
       }
@@ -433,8 +422,8 @@
   "hourly_forecast": [
     {
       "FCTTIME": {
-        "hour": "15",
-        "hour_padded": "15",
+        "hour": "11",
+        "hour_padded": "11",
         "min": "00",
         "min_unpadded": "0",
         "sec": "0",
@@ -442,59 +431,299 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "15",
-        "mday_padded": "15",
-        "yday": "165",
+        "mday": "18",
+        "mday_padded": "18",
+        "yday": "168",
         "isdst": "1",
-        "epoch": "1497553200",
-        "pretty": "3:00 PM EDT on June 15, 2017",
-        "civil": "3:00 PM",
+        "epoch": "1497798000",
+        "pretty": "11:00 AM EDT on June 18, 2017",
+        "civil": "11:00 AM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Thursday",
-        "weekday_name_night": "Thursday Night",
-        "weekday_name_abbrev": "Thu",
-        "weekday_name_unlang": "Thursday",
-        "weekday_name_night_unlang": "Thursday Night",
+        "weekday_name": "Sunday",
+        "weekday_name_night": "Sunday Night",
+        "weekday_name_abbrev": "Sun",
+        "weekday_name_unlang": "Sunday",
+        "weekday_name_night_unlang": "Sunday Night",
+        "ampm": "AM",
+        "tz": "",
+        "age": "",
+        "UTCDATE": ""
+      },
+      "temp": {
+        "english": "81",
+        "metric": "27"
+      },
+      "dewpoint": {
+        "english": "70",
+        "metric": "21"
+      },
+      "condition": "Partly Cloudy",
+      "icon": "partlycloudy",
+      "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+      "fctcode": "2",
+      "sky": "40",
+      "wspd": {
+        "english": "8",
+        "metric": "13"
+      },
+      "wdir": {
+        "dir": "SW",
+        "degrees": "220"
+      },
+      "wx": "Partly Cloudy",
+      "uvi": "7",
+      "humidity": "70",
+      "windchill": {
+        "english": "-9999",
+        "metric": "-9999"
+      },
+      "heatindex": {
+        "english": "84",
+        "metric": "29"
+      },
+      "feelslike": {
+        "english": "84",
+        "metric": "29"
+      },
+      "qpf": {
+        "english": "0.0",
+        "metric": "0"
+      },
+      "snow": {
+        "english": "0.0",
+        "metric": "0"
+      },
+      "pop": "0",
+      "mslp": {
+        "english": "29.93",
+        "metric": "1014"
+      }
+    },
+    {
+      "FCTTIME": {
+        "hour": "12",
+        "hour_padded": "12",
+        "min": "00",
+        "min_unpadded": "0",
+        "sec": "0",
+        "year": "2017",
+        "mon": "6",
+        "mon_padded": "06",
+        "mon_abbrev": "Jun",
+        "mday": "18",
+        "mday_padded": "18",
+        "yday": "168",
+        "isdst": "1",
+        "epoch": "1497801600",
+        "pretty": "12:00 PM EDT on June 18, 2017",
+        "civil": "12:00 PM",
+        "month_name": "June",
+        "month_name_abbrev": "Jun",
+        "weekday_name": "Sunday",
+        "weekday_name_night": "Sunday Night",
+        "weekday_name_abbrev": "Sun",
+        "weekday_name_unlang": "Sunday",
+        "weekday_name_night_unlang": "Sunday Night",
         "ampm": "PM",
         "tz": "",
         "age": "",
         "UTCDATE": ""
       },
       "temp": {
-        "english": "91",
-        "metric": "33"
+        "english": "83",
+        "metric": "28"
       },
       "dewpoint": {
-        "english": "67",
-        "metric": "19"
+        "english": "69",
+        "metric": "21"
       },
       "condition": "Partly Cloudy",
       "icon": "partlycloudy",
       "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
       "fctcode": "2",
-      "sky": "46",
+      "sky": "59",
       "wspd": {
-        "english": "5",
-        "metric": "8"
+        "english": "9",
+        "metric": "14"
       },
       "wdir": {
-        "dir": "SSW",
-        "degrees": "200"
+        "dir": "SW",
+        "degrees": "218"
       },
       "wx": "Partly Cloudy",
       "uvi": "8",
-      "humidity": "46",
+      "humidity": "62",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
       },
       "heatindex": {
-        "english": "94",
+        "english": "86",
+        "metric": "30"
+      },
+      "feelslike": {
+        "english": "86",
+        "metric": "30"
+      },
+      "qpf": {
+        "english": "0.0",
+        "metric": "0"
+      },
+      "snow": {
+        "english": "0.0",
+        "metric": "0"
+      },
+      "pop": "15",
+      "mslp": {
+        "english": "29.93",
+        "metric": "1014"
+      }
+    },
+    {
+      "FCTTIME": {
+        "hour": "13",
+        "hour_padded": "13",
+        "min": "00",
+        "min_unpadded": "0",
+        "sec": "0",
+        "year": "2017",
+        "mon": "6",
+        "mon_padded": "06",
+        "mon_abbrev": "Jun",
+        "mday": "18",
+        "mday_padded": "18",
+        "yday": "168",
+        "isdst": "1",
+        "epoch": "1497805200",
+        "pretty": "1:00 PM EDT on June 18, 2017",
+        "civil": "1:00 PM",
+        "month_name": "June",
+        "month_name_abbrev": "Jun",
+        "weekday_name": "Sunday",
+        "weekday_name_night": "Sunday Night",
+        "weekday_name_abbrev": "Sun",
+        "weekday_name_unlang": "Sunday",
+        "weekday_name_night_unlang": "Sunday Night",
+        "ampm": "PM",
+        "tz": "",
+        "age": "",
+        "UTCDATE": ""
+      },
+      "temp": {
+        "english": "86",
+        "metric": "30"
+      },
+      "dewpoint": {
+        "english": "69",
+        "metric": "21"
+      },
+      "condition": "Partly Cloudy",
+      "icon": "partlycloudy",
+      "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+      "fctcode": "2",
+      "sky": "59",
+      "wspd": {
+        "english": "10",
+        "metric": "16"
+      },
+      "wdir": {
+        "dir": "SSW",
+        "degrees": "212"
+      },
+      "wx": "Partly Cloudy",
+      "uvi": "8",
+      "humidity": "57",
+      "windchill": {
+        "english": "-9999",
+        "metric": "-9999"
+      },
+      "heatindex": {
+        "english": "90",
+        "metric": "32"
+      },
+      "feelslike": {
+        "english": "90",
+        "metric": "32"
+      },
+      "qpf": {
+        "english": "0.0",
+        "metric": "0"
+      },
+      "snow": {
+        "english": "0.0",
+        "metric": "0"
+      },
+      "pop": "15",
+      "mslp": {
+        "english": "29.92",
+        "metric": "1013"
+      }
+    },
+    {
+      "FCTTIME": {
+        "hour": "14",
+        "hour_padded": "14",
+        "min": "00",
+        "min_unpadded": "0",
+        "sec": "0",
+        "year": "2017",
+        "mon": "6",
+        "mon_padded": "06",
+        "mon_abbrev": "Jun",
+        "mday": "18",
+        "mday_padded": "18",
+        "yday": "168",
+        "isdst": "1",
+        "epoch": "1497808800",
+        "pretty": "2:00 PM EDT on June 18, 2017",
+        "civil": "2:00 PM",
+        "month_name": "June",
+        "month_name_abbrev": "Jun",
+        "weekday_name": "Sunday",
+        "weekday_name_night": "Sunday Night",
+        "weekday_name_abbrev": "Sun",
+        "weekday_name_unlang": "Sunday",
+        "weekday_name_night_unlang": "Sunday Night",
+        "ampm": "PM",
+        "tz": "",
+        "age": "",
+        "UTCDATE": ""
+      },
+      "temp": {
+        "english": "88",
+        "metric": "31"
+      },
+      "dewpoint": {
+        "english": "69",
+        "metric": "21"
+      },
+      "condition": "Partly Cloudy",
+      "icon": "partlycloudy",
+      "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+      "fctcode": "2",
+      "sky": "45",
+      "wspd": {
+        "english": "11",
+        "metric": "18"
+      },
+      "wdir": {
+        "dir": "SSW",
+        "degrees": "208"
+      },
+      "wx": "Partly Cloudy",
+      "uvi": "10",
+      "humidity": "53",
+      "windchill": {
+        "english": "-9999",
+        "metric": "-9999"
+      },
+      "heatindex": {
+        "english": "93",
         "metric": "34"
       },
       "feelslike": {
-        "english": "94",
+        "english": "93",
         "metric": "34"
       },
       "qpf": {
@@ -507,7 +736,87 @@
       },
       "pop": "15",
       "mslp": {
-        "english": "29.89",
+        "english": "29.9",
+        "metric": "1013"
+      }
+    },
+    {
+      "FCTTIME": {
+        "hour": "15",
+        "hour_padded": "15",
+        "min": "00",
+        "min_unpadded": "0",
+        "sec": "0",
+        "year": "2017",
+        "mon": "6",
+        "mon_padded": "06",
+        "mon_abbrev": "Jun",
+        "mday": "18",
+        "mday_padded": "18",
+        "yday": "168",
+        "isdst": "1",
+        "epoch": "1497812400",
+        "pretty": "3:00 PM EDT on June 18, 2017",
+        "civil": "3:00 PM",
+        "month_name": "June",
+        "month_name_abbrev": "Jun",
+        "weekday_name": "Sunday",
+        "weekday_name_night": "Sunday Night",
+        "weekday_name_abbrev": "Sun",
+        "weekday_name_unlang": "Sunday",
+        "weekday_name_night_unlang": "Sunday Night",
+        "ampm": "PM",
+        "tz": "",
+        "age": "",
+        "UTCDATE": ""
+      },
+      "temp": {
+        "english": "89",
+        "metric": "32"
+      },
+      "dewpoint": {
+        "english": "68",
+        "metric": "20"
+      },
+      "condition": "Partly Cloudy",
+      "icon": "partlycloudy",
+      "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+      "fctcode": "2",
+      "sky": "43",
+      "wspd": {
+        "english": "11",
+        "metric": "18"
+      },
+      "wdir": {
+        "dir": "SSW",
+        "degrees": "202"
+      },
+      "wx": "Partly Cloudy",
+      "uvi": "9",
+      "humidity": "50",
+      "windchill": {
+        "english": "-9999",
+        "metric": "-9999"
+      },
+      "heatindex": {
+        "english": "93",
+        "metric": "34"
+      },
+      "feelslike": {
+        "english": "93",
+        "metric": "34"
+      },
+      "qpf": {
+        "english": "0.0",
+        "metric": "0"
+      },
+      "snow": {
+        "english": "0.0",
+        "metric": "0"
+      },
+      "pop": "15",
+      "mslp": {
+        "english": "29.88",
         "metric": "1012"
       }
     },
@@ -522,100 +831,20 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "15",
-        "mday_padded": "15",
-        "yday": "165",
+        "mday": "18",
+        "mday_padded": "18",
+        "yday": "168",
         "isdst": "1",
-        "epoch": "1497556800",
-        "pretty": "4:00 PM EDT on June 15, 2017",
+        "epoch": "1497816000",
+        "pretty": "4:00 PM EDT on June 18, 2017",
         "civil": "4:00 PM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Thursday",
-        "weekday_name_night": "Thursday Night",
-        "weekday_name_abbrev": "Thu",
-        "weekday_name_unlang": "Thursday",
-        "weekday_name_night_unlang": "Thursday Night",
-        "ampm": "PM",
-        "tz": "",
-        "age": "",
-        "UTCDATE": ""
-      },
-      "temp": {
-        "english": "91",
-        "metric": "33"
-      },
-      "dewpoint": {
-        "english": "67",
-        "metric": "19"
-      },
-      "condition": "Partly Cloudy",
-      "icon": "partlycloudy",
-      "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
-      "fctcode": "2",
-      "sky": "48",
-      "wspd": {
-        "english": "6",
-        "metric": "10"
-      },
-      "wdir": {
-        "dir": "SSW",
-        "degrees": "212"
-      },
-      "wx": "Partly Cloudy",
-      "uvi": "6",
-      "humidity": "46",
-      "windchill": {
-        "english": "-9999",
-        "metric": "-9999"
-      },
-      "heatindex": {
-        "english": "94",
-        "metric": "34"
-      },
-      "feelslike": {
-        "english": "94",
-        "metric": "34"
-      },
-      "qpf": {
-        "english": "0.0",
-        "metric": "0"
-      },
-      "snow": {
-        "english": "0.0",
-        "metric": "0"
-      },
-      "pop": "15",
-      "mslp": {
-        "english": "29.87",
-        "metric": "1012"
-      }
-    },
-    {
-      "FCTTIME": {
-        "hour": "17",
-        "hour_padded": "17",
-        "min": "00",
-        "min_unpadded": "0",
-        "sec": "0",
-        "year": "2017",
-        "mon": "6",
-        "mon_padded": "06",
-        "mon_abbrev": "Jun",
-        "mday": "15",
-        "mday_padded": "15",
-        "yday": "165",
-        "isdst": "1",
-        "epoch": "1497560400",
-        "pretty": "5:00 PM EDT on June 15, 2017",
-        "civil": "5:00 PM",
-        "month_name": "June",
-        "month_name_abbrev": "Jun",
-        "weekday_name": "Thursday",
-        "weekday_name_night": "Thursday Night",
-        "weekday_name_abbrev": "Thu",
-        "weekday_name_unlang": "Thursday",
-        "weekday_name_night_unlang": "Thursday Night",
+        "weekday_name": "Sunday",
+        "weekday_name_night": "Sunday Night",
+        "weekday_name_abbrev": "Sun",
+        "weekday_name_unlang": "Sunday",
+        "weekday_name_night_unlang": "Sunday Night",
         "ampm": "PM",
         "tz": "",
         "age": "",
@@ -626,36 +855,36 @@
         "metric": "32"
       },
       "dewpoint": {
-        "english": "67",
-        "metric": "19"
+        "english": "68",
+        "metric": "20"
       },
       "condition": "Partly Cloudy",
       "icon": "partlycloudy",
       "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
       "fctcode": "2",
-      "sky": "49",
+      "sky": "46",
       "wspd": {
-        "english": "6",
-        "metric": "10"
+        "english": "12",
+        "metric": "19"
       },
       "wdir": {
-        "dir": "SW",
-        "degrees": "225"
+        "dir": "SSW",
+        "degrees": "200"
       },
       "wx": "Partly Cloudy",
-      "uvi": "4",
-      "humidity": "49",
+      "uvi": "6",
+      "humidity": "51",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
       },
       "heatindex": {
-        "english": "92",
-        "metric": "33"
+        "english": "93",
+        "metric": "34"
       },
       "feelslike": {
-        "english": "92",
-        "metric": "33"
+        "english": "93",
+        "metric": "34"
       },
       "qpf": {
         "english": "0.0",
@@ -673,6 +902,86 @@
     },
     {
       "FCTTIME": {
+        "hour": "17",
+        "hour_padded": "17",
+        "min": "00",
+        "min_unpadded": "0",
+        "sec": "0",
+        "year": "2017",
+        "mon": "6",
+        "mon_padded": "06",
+        "mon_abbrev": "Jun",
+        "mday": "18",
+        "mday_padded": "18",
+        "yday": "168",
+        "isdst": "1",
+        "epoch": "1497819600",
+        "pretty": "5:00 PM EDT on June 18, 2017",
+        "civil": "5:00 PM",
+        "month_name": "June",
+        "month_name_abbrev": "Jun",
+        "weekday_name": "Sunday",
+        "weekday_name_night": "Sunday Night",
+        "weekday_name_abbrev": "Sun",
+        "weekday_name_unlang": "Sunday",
+        "weekday_name_night_unlang": "Sunday Night",
+        "ampm": "PM",
+        "tz": "",
+        "age": "",
+        "UTCDATE": ""
+      },
+      "temp": {
+        "english": "87",
+        "metric": "31"
+      },
+      "dewpoint": {
+        "english": "68",
+        "metric": "20"
+      },
+      "condition": "Partly Cloudy",
+      "icon": "partlycloudy",
+      "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+      "fctcode": "2",
+      "sky": "50",
+      "wspd": {
+        "english": "11",
+        "metric": "18"
+      },
+      "wdir": {
+        "dir": "SSW",
+        "degrees": "200"
+      },
+      "wx": "Partly Cloudy",
+      "uvi": "4",
+      "humidity": "53",
+      "windchill": {
+        "english": "-9999",
+        "metric": "-9999"
+      },
+      "heatindex": {
+        "english": "91",
+        "metric": "33"
+      },
+      "feelslike": {
+        "english": "91",
+        "metric": "33"
+      },
+      "qpf": {
+        "english": "0.0",
+        "metric": "0"
+      },
+      "snow": {
+        "english": "0.0",
+        "metric": "0"
+      },
+      "pop": "16",
+      "mslp": {
+        "english": "29.84",
+        "metric": "1011"
+      }
+    },
+    {
+      "FCTTIME": {
         "hour": "18",
         "hour_padded": "18",
         "min": "00",
@@ -682,20 +991,20 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "15",
-        "mday_padded": "15",
-        "yday": "165",
+        "mday": "18",
+        "mday_padded": "18",
+        "yday": "168",
         "isdst": "1",
-        "epoch": "1497564000",
-        "pretty": "6:00 PM EDT on June 15, 2017",
+        "epoch": "1497823200",
+        "pretty": "6:00 PM EDT on June 18, 2017",
         "civil": "6:00 PM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Thursday",
-        "weekday_name_night": "Thursday Night",
-        "weekday_name_abbrev": "Thu",
-        "weekday_name_unlang": "Thursday",
-        "weekday_name_night_unlang": "Thursday Night",
+        "weekday_name": "Sunday",
+        "weekday_name_night": "Sunday Night",
+        "weekday_name_abbrev": "Sun",
+        "weekday_name_unlang": "Sunday",
+        "weekday_name_night_unlang": "Sunday Night",
         "ampm": "PM",
         "tz": "",
         "age": "",
@@ -709,22 +1018,22 @@
         "english": "69",
         "metric": "21"
       },
-      "condition": "Partly Cloudy",
-      "icon": "partlycloudy",
-      "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
-      "fctcode": "2",
-      "sky": "48",
+      "condition": "Chance of a Thunderstorm",
+      "icon": "chancetstorms",
+      "icon_url": "http://icons.wxug.com/i/c/k/chancetstorms.gif",
+      "fctcode": "14",
+      "sky": "35",
       "wspd": {
-        "english": "6",
-        "metric": "10"
+        "english": "12",
+        "metric": "19"
       },
       "wdir": {
-        "dir": "SW",
-        "degrees": "233"
+        "dir": "SSW",
+        "degrees": "197"
       },
-      "wx": "Partly Cloudy",
+      "wx": "Isolated Thunderstorms",
       "uvi": "2",
-      "humidity": "55",
+      "humidity": "56",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
@@ -738,16 +1047,16 @@
         "metric": "34"
       },
       "qpf": {
-        "english": "0.0",
+        "english": "0.01",
         "metric": "0"
       },
       "snow": {
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "15",
+      "pop": "31",
       "mslp": {
-        "english": "29.85",
+        "english": "29.84",
         "metric": "1011"
       }
     },
@@ -762,49 +1071,49 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "15",
-        "mday_padded": "15",
-        "yday": "165",
+        "mday": "18",
+        "mday_padded": "18",
+        "yday": "168",
         "isdst": "1",
-        "epoch": "1497567600",
-        "pretty": "7:00 PM EDT on June 15, 2017",
+        "epoch": "1497826800",
+        "pretty": "7:00 PM EDT on June 18, 2017",
         "civil": "7:00 PM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Thursday",
-        "weekday_name_night": "Thursday Night",
-        "weekday_name_abbrev": "Thu",
-        "weekday_name_unlang": "Thursday",
-        "weekday_name_night_unlang": "Thursday Night",
+        "weekday_name": "Sunday",
+        "weekday_name_night": "Sunday Night",
+        "weekday_name_abbrev": "Sun",
+        "weekday_name_unlang": "Sunday",
+        "weekday_name_night_unlang": "Sunday Night",
         "ampm": "PM",
         "tz": "",
         "age": "",
         "UTCDATE": ""
       },
       "temp": {
-        "english": "85",
+        "english": "84",
         "metric": "29"
       },
       "dewpoint": {
         "english": "69",
         "metric": "21"
       },
-      "condition": "Partly Cloudy",
-      "icon": "partlycloudy",
-      "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
-      "fctcode": "2",
-      "sky": "48",
+      "condition": "Chance of a Thunderstorm",
+      "icon": "chancetstorms",
+      "icon_url": "http://icons.wxug.com/i/c/k/chancetstorms.gif",
+      "fctcode": "14",
+      "sky": "50",
       "wspd": {
-        "english": "6",
-        "metric": "10"
+        "english": "11",
+        "metric": "18"
       },
       "wdir": {
-        "dir": "W",
-        "degrees": "261"
+        "dir": "S",
+        "degrees": "192"
       },
-      "wx": "Partly Cloudy",
+      "wx": "Scattered Thunderstorms",
       "uvi": "1",
-      "humidity": "59",
+      "humidity": "60",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
@@ -818,14 +1127,14 @@
         "metric": "31"
       },
       "qpf": {
-        "english": "0.0",
-        "metric": "0"
+        "english": "0.02",
+        "metric": "1"
       },
       "snow": {
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "15",
+      "pop": "41",
       "mslp": {
         "english": "29.85",
         "metric": "1011"
@@ -842,20 +1151,20 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "15",
-        "mday_padded": "15",
-        "yday": "165",
+        "mday": "18",
+        "mday_padded": "18",
+        "yday": "168",
         "isdst": "1",
-        "epoch": "1497571200",
-        "pretty": "8:00 PM EDT on June 15, 2017",
+        "epoch": "1497830400",
+        "pretty": "8:00 PM EDT on June 18, 2017",
         "civil": "8:00 PM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Thursday",
-        "weekday_name_night": "Thursday Night",
-        "weekday_name_abbrev": "Thu",
-        "weekday_name_unlang": "Thursday",
-        "weekday_name_night_unlang": "Thursday Night",
+        "weekday_name": "Sunday",
+        "weekday_name_night": "Sunday Night",
+        "weekday_name_abbrev": "Sun",
+        "weekday_name_unlang": "Sunday",
+        "weekday_name_night_unlang": "Sunday Night",
         "ampm": "PM",
         "tz": "",
         "age": "",
@@ -866,25 +1175,25 @@
         "metric": "28"
       },
       "dewpoint": {
-        "english": "70",
+        "english": "69",
         "metric": "21"
       },
       "condition": "Partly Cloudy",
       "icon": "partlycloudy",
       "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
       "fctcode": "2",
-      "sky": "53",
+      "sky": "49",
       "wspd": {
-        "english": "4",
-        "metric": "6"
+        "english": "8",
+        "metric": "13"
       },
       "wdir": {
-        "dir": "SW",
-        "degrees": "231"
+        "dir": "S",
+        "degrees": "190"
       },
       "wx": "Partly Cloudy",
       "uvi": "0",
-      "humidity": "67",
+      "humidity": "64",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
@@ -905,9 +1214,9 @@
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "21",
+      "pop": "16",
       "mslp": {
-        "english": "29.85",
+        "english": "29.86",
         "metric": "1011"
       }
     },
@@ -922,20 +1231,20 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "15",
-        "mday_padded": "15",
-        "yday": "165",
+        "mday": "18",
+        "mday_padded": "18",
+        "yday": "168",
         "isdst": "1",
-        "epoch": "1497574800",
-        "pretty": "9:00 PM EDT on June 15, 2017",
+        "epoch": "1497834000",
+        "pretty": "9:00 PM EDT on June 18, 2017",
         "civil": "9:00 PM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Thursday",
-        "weekday_name_night": "Thursday Night",
-        "weekday_name_abbrev": "Thu",
-        "weekday_name_unlang": "Thursday",
-        "weekday_name_night_unlang": "Thursday Night",
+        "weekday_name": "Sunday",
+        "weekday_name_night": "Sunday Night",
+        "weekday_name_abbrev": "Sun",
+        "weekday_name_unlang": "Sunday",
+        "weekday_name_night_unlang": "Sunday Night",
         "ampm": "PM",
         "tz": "",
         "age": "",
@@ -946,25 +1255,25 @@
         "metric": "26"
       },
       "dewpoint": {
-        "english": "70",
+        "english": "69",
         "metric": "21"
       },
-      "condition": "Chance of a Thunderstorm",
-      "icon": "chancetstorms",
-      "icon_url": "http://icons.wxug.com/i/c/k/nt_chancetstorms.gif",
-      "fctcode": "14",
-      "sky": "40",
+      "condition": "Mostly Cloudy",
+      "icon": "mostlycloudy",
+      "icon_url": "http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif",
+      "fctcode": "3",
+      "sky": "64",
       "wspd": {
-        "english": "3",
-        "metric": "5"
+        "english": "7",
+        "metric": "11"
       },
       "wdir": {
-        "dir": "SSW",
-        "degrees": "207"
+        "dir": "S",
+        "degrees": "187"
       },
-      "wx": "Isolated Thunderstorms",
+      "wx": "Mostly Cloudy",
       "uvi": "0",
-      "humidity": "73",
+      "humidity": "71",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
@@ -978,16 +1287,16 @@
         "metric": "26"
       },
       "qpf": {
-        "english": "0.02",
-        "metric": "1"
+        "english": "0.0",
+        "metric": "0"
       },
       "snow": {
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "32",
+      "pop": "15",
       "mslp": {
-        "english": "29.87",
+        "english": "29.88",
         "metric": "1012"
       }
     },
@@ -1002,20 +1311,20 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "15",
-        "mday_padded": "15",
-        "yday": "165",
+        "mday": "18",
+        "mday_padded": "18",
+        "yday": "168",
         "isdst": "1",
-        "epoch": "1497578400",
-        "pretty": "10:00 PM EDT on June 15, 2017",
+        "epoch": "1497837600",
+        "pretty": "10:00 PM EDT on June 18, 2017",
         "civil": "10:00 PM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Thursday",
-        "weekday_name_night": "Thursday Night",
-        "weekday_name_abbrev": "Thu",
-        "weekday_name_unlang": "Thursday",
-        "weekday_name_night_unlang": "Thursday Night",
+        "weekday_name": "Sunday",
+        "weekday_name_night": "Sunday Night",
+        "weekday_name_abbrev": "Sun",
+        "weekday_name_unlang": "Sunday",
+        "weekday_name_night_unlang": "Sunday Night",
         "ampm": "PM",
         "tz": "",
         "age": "",
@@ -1026,25 +1335,25 @@
         "metric": "25"
       },
       "dewpoint": {
-        "english": "70",
+        "english": "69",
         "metric": "21"
       },
-      "condition": "Chance of a Thunderstorm",
-      "icon": "chancetstorms",
-      "icon_url": "http://icons.wxug.com/i/c/k/nt_chancetstorms.gif",
-      "fctcode": "14",
-      "sky": "50",
+      "condition": "Mostly Cloudy",
+      "icon": "mostlycloudy",
+      "icon_url": "http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif",
+      "fctcode": "3",
+      "sky": "66",
       "wspd": {
-        "english": "3",
-        "metric": "5"
+        "english": "7",
+        "metric": "11"
       },
       "wdir": {
-        "dir": "SW",
-        "degrees": "225"
+        "dir": "S",
+        "degrees": "180"
       },
-      "wx": "Scattered Thunderstorms",
+      "wx": "Mostly Cloudy",
       "uvi": "0",
-      "humidity": "79",
+      "humidity": "78",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
@@ -1058,17 +1367,17 @@
         "metric": "25"
       },
       "qpf": {
-        "english": "0.03",
-        "metric": "1"
+        "english": "0.0",
+        "metric": "0"
       },
       "snow": {
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "38",
+      "pop": "15",
       "mslp": {
-        "english": "29.88",
-        "metric": "1012"
+        "english": "29.91",
+        "metric": "1013"
       }
     },
     {
@@ -1082,21 +1391,101 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "15",
-        "mday_padded": "15",
-        "yday": "165",
+        "mday": "18",
+        "mday_padded": "18",
+        "yday": "168",
         "isdst": "1",
-        "epoch": "1497582000",
-        "pretty": "11:00 PM EDT on June 15, 2017",
+        "epoch": "1497841200",
+        "pretty": "11:00 PM EDT on June 18, 2017",
         "civil": "11:00 PM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Thursday",
-        "weekday_name_night": "Thursday Night",
-        "weekday_name_abbrev": "Thu",
-        "weekday_name_unlang": "Thursday",
-        "weekday_name_night_unlang": "Thursday Night",
+        "weekday_name": "Sunday",
+        "weekday_name_night": "Sunday Night",
+        "weekday_name_abbrev": "Sun",
+        "weekday_name_unlang": "Sunday",
+        "weekday_name_night_unlang": "Sunday Night",
         "ampm": "PM",
+        "tz": "",
+        "age": "",
+        "UTCDATE": ""
+      },
+      "temp": {
+        "english": "76",
+        "metric": "24"
+      },
+      "dewpoint": {
+        "english": "69",
+        "metric": "21"
+      },
+      "condition": "Partly Cloudy",
+      "icon": "partlycloudy",
+      "icon_url": "http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
+      "fctcode": "2",
+      "sky": "49",
+      "wspd": {
+        "english": "8",
+        "metric": "13"
+      },
+      "wdir": {
+        "dir": "S",
+        "degrees": "184"
+      },
+      "wx": "Partly Cloudy",
+      "uvi": "0",
+      "humidity": "79",
+      "windchill": {
+        "english": "-9999",
+        "metric": "-9999"
+      },
+      "heatindex": {
+        "english": "-9999",
+        "metric": "-9999"
+      },
+      "feelslike": {
+        "english": "76",
+        "metric": "24"
+      },
+      "qpf": {
+        "english": "0.0",
+        "metric": "0"
+      },
+      "snow": {
+        "english": "0.0",
+        "metric": "0"
+      },
+      "pop": "15",
+      "mslp": {
+        "english": "29.92",
+        "metric": "1013"
+      }
+    },
+    {
+      "FCTTIME": {
+        "hour": "0",
+        "hour_padded": "00",
+        "min": "00",
+        "min_unpadded": "0",
+        "sec": "0",
+        "year": "2017",
+        "mon": "6",
+        "mon_padded": "06",
+        "mon_abbrev": "Jun",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
+        "isdst": "1",
+        "epoch": "1497844800",
+        "pretty": "12:00 AM EDT on June 19, 2017",
+        "civil": "12:00 AM",
+        "month_name": "June",
+        "month_name_abbrev": "Jun",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
+        "ampm": "AM",
         "tz": "",
         "age": "",
         "UTCDATE": ""
@@ -1106,21 +1495,21 @@
         "metric": "24"
       },
       "dewpoint": {
-        "english": "70",
+        "english": "69",
         "metric": "21"
       },
       "condition": "Partly Cloudy",
       "icon": "partlycloudy",
       "icon_url": "http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
       "fctcode": "2",
-      "sky": "51",
+      "sky": "48",
       "wspd": {
-        "english": "3",
-        "metric": "5"
+        "english": "8",
+        "metric": "13"
       },
       "wdir": {
-        "dir": "SSW",
-        "degrees": "208"
+        "dir": "S",
+        "degrees": "186"
       },
       "wx": "Partly Cloudy",
       "uvi": "0",
@@ -1145,90 +1534,10 @@
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "24",
+      "pop": "15",
       "mslp": {
-        "english": "29.89",
-        "metric": "1012"
-      }
-    },
-    {
-      "FCTTIME": {
-        "hour": "0",
-        "hour_padded": "00",
-        "min": "00",
-        "min_unpadded": "0",
-        "sec": "0",
-        "year": "2017",
-        "mon": "6",
-        "mon_padded": "06",
-        "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
-        "isdst": "1",
-        "epoch": "1497585600",
-        "pretty": "12:00 AM EDT on June 16, 2017",
-        "civil": "12:00 AM",
-        "month_name": "June",
-        "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
-        "ampm": "AM",
-        "tz": "",
-        "age": "",
-        "UTCDATE": ""
-      },
-      "temp": {
-        "english": "74",
-        "metric": "23"
-      },
-      "dewpoint": {
-        "english": "71",
-        "metric": "22"
-      },
-      "condition": "Partly Cloudy",
-      "icon": "partlycloudy",
-      "icon_url": "http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
-      "fctcode": "2",
-      "sky": "52",
-      "wspd": {
-        "english": "2",
-        "metric": "3"
-      },
-      "wdir": {
-        "dir": "SW",
-        "degrees": "218"
-      },
-      "wx": "Partly Cloudy",
-      "uvi": "0",
-      "humidity": "89",
-      "windchill": {
-        "english": "-9999",
-        "metric": "-9999"
-      },
-      "heatindex": {
-        "english": "-9999",
-        "metric": "-9999"
-      },
-      "feelslike": {
-        "english": "74",
-        "metric": "23"
-      },
-      "qpf": {
-        "english": "0.0",
-        "metric": "0"
-      },
-      "snow": {
-        "english": "0.0",
-        "metric": "0"
-      },
-      "pop": "23",
-      "mslp": {
-        "english": "29.9",
-        "metric": "1013"
+        "english": "29.93",
+        "metric": "1014"
       }
     },
     {
@@ -1242,49 +1551,49 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497589200",
-        "pretty": "1:00 AM EDT on June 16, 2017",
+        "epoch": "1497848400",
+        "pretty": "1:00 AM EDT on June 19, 2017",
         "civil": "1:00 AM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "AM",
         "tz": "",
         "age": "",
         "UTCDATE": ""
       },
       "temp": {
-        "english": "74",
-        "metric": "23"
+        "english": "75",
+        "metric": "24"
       },
       "dewpoint": {
-        "english": "71",
-        "metric": "22"
+        "english": "70",
+        "metric": "21"
       },
       "condition": "Partly Cloudy",
       "icon": "partlycloudy",
       "icon_url": "http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
       "fctcode": "2",
-      "sky": "50",
+      "sky": "54",
       "wspd": {
-        "english": "3",
-        "metric": "5"
+        "english": "8",
+        "metric": "13"
       },
       "wdir": {
         "dir": "SSW",
-        "degrees": "208"
+        "degrees": "194"
       },
       "wx": "Partly Cloudy",
       "uvi": "0",
-      "humidity": "91",
+      "humidity": "86",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
@@ -1294,8 +1603,8 @@
         "metric": "-9999"
       },
       "feelslike": {
-        "english": "74",
-        "metric": "23"
+        "english": "75",
+        "metric": "24"
       },
       "qpf": {
         "english": "0.0",
@@ -1307,8 +1616,8 @@
       },
       "pop": "15",
       "mslp": {
-        "english": "29.89",
-        "metric": "1012"
+        "english": "29.93",
+        "metric": "1014"
       }
     },
     {
@@ -1322,49 +1631,49 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497592800",
-        "pretty": "2:00 AM EDT on June 16, 2017",
+        "epoch": "1497852000",
+        "pretty": "2:00 AM EDT on June 19, 2017",
         "civil": "2:00 AM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "AM",
         "tz": "",
         "age": "",
         "UTCDATE": ""
       },
       "temp": {
-        "english": "73",
+        "english": "74",
         "metric": "23"
       },
       "dewpoint": {
-        "english": "71",
-        "metric": "22"
+        "english": "70",
+        "metric": "21"
       },
       "condition": "Partly Cloudy",
       "icon": "partlycloudy",
       "icon_url": "http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
       "fctcode": "2",
-      "sky": "57",
+      "sky": "58",
       "wspd": {
-        "english": "4",
-        "metric": "6"
+        "english": "8",
+        "metric": "13"
       },
       "wdir": {
-        "dir": "SW",
-        "degrees": "215"
+        "dir": "SSW",
+        "degrees": "201"
       },
       "wx": "Partly Cloudy",
       "uvi": "0",
-      "humidity": "94",
+      "humidity": "88",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
@@ -1374,7 +1683,7 @@
         "metric": "-9999"
       },
       "feelslike": {
-        "english": "73",
+        "english": "74",
         "metric": "23"
       },
       "qpf": {
@@ -1387,8 +1696,8 @@
       },
       "pop": "15",
       "mslp": {
-        "english": "29.88",
-        "metric": "1012"
+        "english": "29.94",
+        "metric": "1014"
       }
     },
     {
@@ -1402,20 +1711,20 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497596400",
-        "pretty": "3:00 AM EDT on June 16, 2017",
+        "epoch": "1497855600",
+        "pretty": "3:00 AM EDT on June 19, 2017",
         "civil": "3:00 AM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "AM",
         "tz": "",
         "age": "",
@@ -1433,10 +1742,10 @@
       "icon": "mostlycloudy",
       "icon_url": "http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif",
       "fctcode": "3",
-      "sky": "60",
+      "sky": "67",
       "wspd": {
-        "english": "3",
-        "metric": "5"
+        "english": "8",
+        "metric": "13"
       },
       "wdir": {
         "dir": "SSW",
@@ -1444,7 +1753,7 @@
       },
       "wx": "Mostly Cloudy",
       "uvi": "0",
-      "humidity": "92",
+      "humidity": "90",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
@@ -1467,8 +1776,8 @@
       },
       "pop": "15",
       "mslp": {
-        "english": "29.86",
-        "metric": "1011"
+        "english": "29.93",
+        "metric": "1014"
       }
     },
     {
@@ -1482,28 +1791,28 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497600000",
-        "pretty": "4:00 AM EDT on June 16, 2017",
+        "epoch": "1497859200",
+        "pretty": "4:00 AM EDT on June 19, 2017",
         "civil": "4:00 AM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "AM",
         "tz": "",
         "age": "",
         "UTCDATE": ""
       },
       "temp": {
-        "english": "72",
-        "metric": "22"
+        "english": "73",
+        "metric": "23"
       },
       "dewpoint": {
         "english": "70",
@@ -1513,18 +1822,18 @@
       "icon": "partlycloudy",
       "icon_url": "http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
       "fctcode": "2",
-      "sky": "40",
+      "sky": "58",
       "wspd": {
-        "english": "2",
-        "metric": "3"
+        "english": "7",
+        "metric": "11"
       },
       "wdir": {
-        "dir": "S",
-        "degrees": "189"
+        "dir": "SSW",
+        "degrees": "202"
       },
       "wx": "Partly Cloudy",
       "uvi": "0",
-      "humidity": "91",
+      "humidity": "90",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
@@ -1534,8 +1843,8 @@
         "metric": "-9999"
       },
       "feelslike": {
-        "english": "72",
-        "metric": "22"
+        "english": "73",
+        "metric": "23"
       },
       "qpf": {
         "english": "0.0",
@@ -1545,10 +1854,10 @@
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "8",
+      "pop": "15",
       "mslp": {
-        "english": "29.86",
-        "metric": "1011"
+        "english": "29.93",
+        "metric": "1014"
       }
     },
     {
@@ -1562,20 +1871,20 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497603600",
-        "pretty": "5:00 AM EDT on June 16, 2017",
+        "epoch": "1497862800",
+        "pretty": "5:00 AM EDT on June 19, 2017",
         "civil": "5:00 AM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "AM",
         "tz": "",
         "age": "",
@@ -1586,25 +1895,25 @@
         "metric": "22"
       },
       "dewpoint": {
-        "english": "69",
+        "english": "70",
         "metric": "21"
       },
-      "condition": "Partly Cloudy",
-      "icon": "partlycloudy",
-      "icon_url": "http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
-      "fctcode": "2",
-      "sky": "33",
+      "condition": "Mostly Cloudy",
+      "icon": "mostlycloudy",
+      "icon_url": "http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif",
+      "fctcode": "3",
+      "sky": "61",
       "wspd": {
-        "english": "2",
-        "metric": "3"
+        "english": "7",
+        "metric": "11"
       },
       "wdir": {
         "dir": "SSW",
-        "degrees": "201"
+        "degrees": "200"
       },
-      "wx": "Partly Cloudy",
+      "wx": "Mostly Cloudy",
       "uvi": "0",
-      "humidity": "90",
+      "humidity": "91",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
@@ -1625,10 +1934,10 @@
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "8",
+      "pop": "15",
       "mslp": {
-        "english": "29.86",
-        "metric": "1011"
+        "english": "29.92",
+        "metric": "1013"
       }
     },
     {
@@ -1642,49 +1951,49 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497607200",
-        "pretty": "6:00 AM EDT on June 16, 2017",
+        "epoch": "1497866400",
+        "pretty": "6:00 AM EDT on June 19, 2017",
         "civil": "6:00 AM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "AM",
         "tz": "",
         "age": "",
         "UTCDATE": ""
       },
       "temp": {
-        "english": "71",
+        "english": "72",
         "metric": "22"
       },
       "dewpoint": {
-        "english": "68",
-        "metric": "20"
+        "english": "70",
+        "metric": "21"
       },
-      "condition": "Partly Cloudy",
-      "icon": "partlycloudy",
-      "icon_url": "http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
-      "fctcode": "2",
-      "sky": "31",
+      "condition": "Mostly Cloudy",
+      "icon": "mostlycloudy",
+      "icon_url": "http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif",
+      "fctcode": "3",
+      "sky": "64",
       "wspd": {
-        "english": "2",
-        "metric": "3"
+        "english": "6",
+        "metric": "10"
       },
       "wdir": {
-        "dir": "SW",
-        "degrees": "231"
+        "dir": "SSW",
+        "degrees": "203"
       },
-      "wx": "Partly Cloudy",
+      "wx": "Mostly Cloudy",
       "uvi": "0",
-      "humidity": "91",
+      "humidity": "92",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
@@ -1694,7 +2003,7 @@
         "metric": "-9999"
       },
       "feelslike": {
-        "english": "71",
+        "english": "72",
         "metric": "22"
       },
       "qpf": {
@@ -1705,10 +2014,10 @@
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "9",
+      "pop": "15",
       "mslp": {
-        "english": "29.87",
-        "metric": "1012"
+        "english": "29.93",
+        "metric": "1014"
       }
     },
     {
@@ -1722,20 +2031,20 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497610800",
-        "pretty": "7:00 AM EDT on June 16, 2017",
+        "epoch": "1497870000",
+        "pretty": "7:00 AM EDT on June 19, 2017",
         "civil": "7:00 AM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "AM",
         "tz": "",
         "age": "",
@@ -1746,25 +2055,25 @@
         "metric": "22"
       },
       "dewpoint": {
-        "english": "69",
+        "english": "70",
         "metric": "21"
       },
       "condition": "Partly Cloudy",
       "icon": "partlycloudy",
       "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
       "fctcode": "2",
-      "sky": "31",
+      "sky": "51",
       "wspd": {
-        "english": "2",
-        "metric": "3"
+        "english": "7",
+        "metric": "11"
       },
       "wdir": {
-        "dir": "SW",
-        "degrees": "230"
+        "dir": "SSW",
+        "degrees": "202"
       },
       "wx": "Partly Cloudy",
       "uvi": "0",
-      "humidity": "91",
+      "humidity": "94",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
@@ -1787,8 +2096,8 @@
       },
       "pop": "8",
       "mslp": {
-        "english": "29.88",
-        "metric": "1012"
+        "english": "29.93",
+        "metric": "1014"
       }
     },
     {
@@ -1802,49 +2111,49 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497614400",
-        "pretty": "8:00 AM EDT on June 16, 2017",
+        "epoch": "1497873600",
+        "pretty": "8:00 AM EDT on June 19, 2017",
         "civil": "8:00 AM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "AM",
         "tz": "",
         "age": "",
         "UTCDATE": ""
       },
       "temp": {
-        "english": "74",
-        "metric": "23"
+        "english": "75",
+        "metric": "24"
       },
       "dewpoint": {
-        "english": "70",
-        "metric": "21"
+        "english": "71",
+        "metric": "22"
       },
       "condition": "Partly Cloudy",
       "icon": "partlycloudy",
       "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
       "fctcode": "2",
-      "sky": "32",
+      "sky": "57",
       "wspd": {
-        "english": "3",
-        "metric": "5"
+        "english": "8",
+        "metric": "13"
       },
       "wdir": {
-        "dir": "SW",
-        "degrees": "235"
+        "dir": "SSW",
+        "degrees": "210"
       },
       "wx": "Partly Cloudy",
       "uvi": "1",
-      "humidity": "86",
+      "humidity": "89",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
@@ -1854,8 +2163,8 @@
         "metric": "-9999"
       },
       "feelslike": {
-        "english": "74",
-        "metric": "23"
+        "english": "75",
+        "metric": "24"
       },
       "qpf": {
         "english": "0.0",
@@ -1865,10 +2174,10 @@
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "16",
+      "pop": "7",
       "mslp": {
-        "english": "29.89",
-        "metric": "1012"
+        "english": "29.95",
+        "metric": "1014"
       }
     },
     {
@@ -1882,49 +2191,49 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497618000",
-        "pretty": "9:00 AM EDT on June 16, 2017",
+        "epoch": "1497877200",
+        "pretty": "9:00 AM EDT on June 19, 2017",
         "civil": "9:00 AM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "AM",
         "tz": "",
         "age": "",
         "UTCDATE": ""
       },
       "temp": {
-        "english": "76",
-        "metric": "24"
+        "english": "77",
+        "metric": "25"
       },
       "dewpoint": {
-        "english": "70",
-        "metric": "21"
+        "english": "71",
+        "metric": "22"
       },
-      "condition": "Clear",
-      "icon": "clear",
-      "icon_url": "http://icons.wxug.com/i/c/k/clear.gif",
-      "fctcode": "1",
-      "sky": "25",
+      "condition": "Partly Cloudy",
+      "icon": "partlycloudy",
+      "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+      "fctcode": "2",
+      "sky": "34",
       "wspd": {
-        "english": "3",
-        "metric": "5"
+        "english": "8",
+        "metric": "13"
       },
       "wdir": {
-        "dir": "SW",
-        "degrees": "231"
+        "dir": "SSW",
+        "degrees": "212"
       },
-      "wx": "Mostly Sunny",
+      "wx": "Partly Cloudy",
       "uvi": "2",
-      "humidity": "80",
+      "humidity": "83",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
@@ -1934,8 +2243,8 @@
         "metric": "-9999"
       },
       "feelslike": {
-        "english": "76",
-        "metric": "24"
+        "english": "77",
+        "metric": "25"
       },
       "qpf": {
         "english": "0.0",
@@ -1945,10 +2254,10 @@
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "14",
+      "pop": "6",
       "mslp": {
-        "english": "29.9",
-        "metric": "1013"
+        "english": "29.95",
+        "metric": "1014"
       }
     },
     {
@@ -1962,49 +2271,49 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497621600",
-        "pretty": "10:00 AM EDT on June 16, 2017",
+        "epoch": "1497880800",
+        "pretty": "10:00 AM EDT on June 19, 2017",
         "civil": "10:00 AM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "AM",
         "tz": "",
         "age": "",
         "UTCDATE": ""
       },
       "temp": {
-        "english": "79",
+        "english": "78",
         "metric": "26"
       },
       "dewpoint": {
-        "english": "70",
-        "metric": "21"
+        "english": "72",
+        "metric": "22"
       },
-      "condition": "Clear",
-      "icon": "clear",
-      "icon_url": "http://icons.wxug.com/i/c/k/clear.gif",
-      "fctcode": "1",
-      "sky": "21",
+      "condition": "Partly Cloudy",
+      "icon": "partlycloudy",
+      "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+      "fctcode": "2",
+      "sky": "43",
       "wspd": {
-        "english": "3",
-        "metric": "5"
+        "english": "9",
+        "metric": "14"
       },
       "wdir": {
-        "dir": "WSW",
-        "degrees": "244"
+        "dir": "SSW",
+        "degrees": "213"
       },
-      "wx": "Mostly Sunny",
+      "wx": "Partly Cloudy",
       "uvi": "4",
-      "humidity": "74",
+      "humidity": "80",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
@@ -2014,7 +2323,7 @@
         "metric": "-9999"
       },
       "feelslike": {
-        "english": "79",
+        "english": "78",
         "metric": "26"
       },
       "qpf": {
@@ -2025,10 +2334,10 @@
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "13",
+      "pop": "4",
       "mslp": {
-        "english": "29.9",
-        "metric": "1013"
+        "english": "29.95",
+        "metric": "1014"
       }
     },
     {
@@ -2042,60 +2351,60 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497625200",
-        "pretty": "11:00 AM EDT on June 16, 2017",
+        "epoch": "1497884400",
+        "pretty": "11:00 AM EDT on June 19, 2017",
         "civil": "11:00 AM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "AM",
         "tz": "",
         "age": "",
         "UTCDATE": ""
       },
       "temp": {
-        "english": "83",
-        "metric": "28"
+        "english": "81",
+        "metric": "27"
       },
       "dewpoint": {
-        "english": "71",
+        "english": "72",
         "metric": "22"
       },
       "condition": "Partly Cloudy",
       "icon": "partlycloudy",
       "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
       "fctcode": "2",
-      "sky": "41",
+      "sky": "40",
       "wspd": {
-        "english": "3",
-        "metric": "5"
+        "english": "9",
+        "metric": "14"
       },
       "wdir": {
         "dir": "SW",
-        "degrees": "227"
+        "degrees": "220"
       },
       "wx": "Partly Cloudy",
       "uvi": "7",
-      "humidity": "67",
+      "humidity": "73",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
       },
       "heatindex": {
-        "english": "87",
-        "metric": "31"
+        "english": "85",
+        "metric": "29"
       },
       "feelslike": {
-        "english": "87",
-        "metric": "31"
+        "english": "85",
+        "metric": "29"
       },
       "qpf": {
         "english": "0.0",
@@ -2105,10 +2414,10 @@
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "15",
+      "pop": "2",
       "mslp": {
-        "english": "29.89",
-        "metric": "1012"
+        "english": "29.95",
+        "metric": "1014"
       }
     },
     {
@@ -2122,73 +2431,73 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497628800",
-        "pretty": "12:00 PM EDT on June 16, 2017",
+        "epoch": "1497888000",
+        "pretty": "12:00 PM EDT on June 19, 2017",
         "civil": "12:00 PM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "PM",
         "tz": "",
         "age": "",
         "UTCDATE": ""
       },
       "temp": {
-        "english": "85",
+        "english": "84",
         "metric": "29"
       },
       "dewpoint": {
-        "english": "70",
-        "metric": "21"
+        "english": "71",
+        "metric": "22"
       },
-      "condition": "Chance of a Thunderstorm",
-      "icon": "chancetstorms",
-      "icon_url": "http://icons.wxug.com/i/c/k/chancetstorms.gif",
-      "fctcode": "14",
-      "sky": "50",
+      "condition": "Partly Cloudy",
+      "icon": "partlycloudy",
+      "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+      "fctcode": "2",
+      "sky": "52",
       "wspd": {
-        "english": "4",
-        "metric": "6"
+        "english": "10",
+        "metric": "16"
       },
       "wdir": {
         "dir": "SW",
-        "degrees": "225"
+        "degrees": "221"
       },
-      "wx": "Scattered Thunderstorms",
-      "uvi": "9",
-      "humidity": "60",
+      "wx": "Partly Cloudy",
+      "uvi": "8",
+      "humidity": "66",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
       },
       "heatindex": {
-        "english": "88",
-        "metric": "31"
+        "english": "90",
+        "metric": "32"
       },
       "feelslike": {
-        "english": "88",
-        "metric": "31"
+        "english": "90",
+        "metric": "32"
       },
       "qpf": {
-        "english": "0.02",
-        "metric": "1"
+        "english": "0.0",
+        "metric": "0"
       },
       "snow": {
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "46",
+      "pop": "15",
       "mslp": {
-        "english": "29.88",
-        "metric": "1012"
+        "english": "29.94",
+        "metric": "1014"
       }
     },
     {
@@ -2202,73 +2511,73 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497632400",
-        "pretty": "1:00 PM EDT on June 16, 2017",
+        "epoch": "1497891600",
+        "pretty": "1:00 PM EDT on June 19, 2017",
         "civil": "1:00 PM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "PM",
         "tz": "",
         "age": "",
         "UTCDATE": ""
       },
       "temp": {
-        "english": "87",
-        "metric": "31"
+        "english": "86",
+        "metric": "30"
       },
       "dewpoint": {
-        "english": "70",
-        "metric": "21"
+        "english": "71",
+        "metric": "22"
       },
-      "condition": "Chance of a Thunderstorm",
-      "icon": "chancetstorms",
-      "icon_url": "http://icons.wxug.com/i/c/k/chancetstorms.gif",
-      "fctcode": "14",
+      "condition": "Partly Cloudy",
+      "icon": "partlycloudy",
+      "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+      "fctcode": "2",
       "sky": "50",
       "wspd": {
-        "english": "5",
-        "metric": "8"
+        "english": "12",
+        "metric": "19"
       },
       "wdir": {
         "dir": "SW",
-        "degrees": "229"
+        "degrees": "218"
       },
-      "wx": "Scattered Thunderstorms",
+      "wx": "Partly Cloudy",
       "uvi": "10",
-      "humidity": "57",
+      "humidity": "62",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
       },
       "heatindex": {
-        "english": "93",
-        "metric": "34"
+        "english": "92",
+        "metric": "33"
       },
       "feelslike": {
-        "english": "93",
-        "metric": "34"
+        "english": "92",
+        "metric": "33"
       },
       "qpf": {
-        "english": "0.04",
-        "metric": "1"
+        "english": "0.0",
+        "metric": "0"
       },
       "snow": {
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "51",
+      "pop": "15",
       "mslp": {
-        "english": "29.86",
-        "metric": "1011"
+        "english": "29.92",
+        "metric": "1013"
       }
     },
     {
@@ -2282,73 +2591,73 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497636000",
-        "pretty": "2:00 PM EDT on June 16, 2017",
+        "epoch": "1497895200",
+        "pretty": "2:00 PM EDT on June 19, 2017",
         "civil": "2:00 PM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "PM",
         "tz": "",
         "age": "",
         "UTCDATE": ""
       },
       "temp": {
-        "english": "87",
-        "metric": "31"
+        "english": "86",
+        "metric": "30"
       },
       "dewpoint": {
-        "english": "70",
-        "metric": "21"
+        "english": "71",
+        "metric": "22"
       },
-      "condition": "Chance of a Thunderstorm",
-      "icon": "chancetstorms",
-      "icon_url": "http://icons.wxug.com/i/c/k/chancetstorms.gif",
-      "fctcode": "14",
-      "sky": "50",
+      "condition": "Partly Cloudy",
+      "icon": "partlycloudy",
+      "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+      "fctcode": "2",
+      "sky": "55",
       "wspd": {
-        "english": "5",
-        "metric": "8"
+        "english": "12",
+        "metric": "19"
       },
       "wdir": {
         "dir": "SW",
-        "degrees": "236"
+        "degrees": "216"
       },
-      "wx": "Scattered Thunderstorms",
-      "uvi": "10",
-      "humidity": "56",
+      "wx": "Partly Cloudy",
+      "uvi": "9",
+      "humidity": "61",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
       },
       "heatindex": {
-        "english": "93",
-        "metric": "34"
+        "english": "92",
+        "metric": "33"
       },
       "feelslike": {
-        "english": "93",
-        "metric": "34"
+        "english": "92",
+        "metric": "33"
       },
       "qpf": {
-        "english": "0.02",
-        "metric": "1"
+        "english": "0.0",
+        "metric": "0"
       },
       "snow": {
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "39",
+      "pop": "15",
       "mslp": {
-        "english": "29.85",
-        "metric": "1011"
+        "english": "29.9",
+        "metric": "1013"
       }
     },
     {
@@ -2362,59 +2671,59 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497639600",
-        "pretty": "3:00 PM EDT on June 16, 2017",
+        "epoch": "1497898800",
+        "pretty": "3:00 PM EDT on June 19, 2017",
         "civil": "3:00 PM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "PM",
         "tz": "",
         "age": "",
         "UTCDATE": ""
       },
       "temp": {
-        "english": "88",
+        "english": "87",
         "metric": "31"
       },
       "dewpoint": {
-        "english": "69",
-        "metric": "21"
+        "english": "71",
+        "metric": "22"
       },
       "condition": "Chance of a Thunderstorm",
       "icon": "chancetstorms",
       "icon_url": "http://icons.wxug.com/i/c/k/chancetstorms.gif",
       "fctcode": "14",
-      "sky": "64",
+      "sky": "50",
       "wspd": {
-        "english": "5",
-        "metric": "8"
+        "english": "11",
+        "metric": "18"
       },
       "wdir": {
         "dir": "SSW",
-        "degrees": "210"
+        "degrees": "214"
       },
-      "wx": "Isolated Thunderstorms",
-      "uvi": "7",
-      "humidity": "53",
+      "wx": "Scattered Thunderstorms",
+      "uvi": "9",
+      "humidity": "58",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
       },
       "heatindex": {
-        "english": "93",
+        "english": "94",
         "metric": "34"
       },
       "feelslike": {
-        "english": "93",
+        "english": "94",
         "metric": "34"
       },
       "qpf": {
@@ -2425,10 +2734,10 @@
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "32",
+      "pop": "47",
       "mslp": {
-        "english": "29.83",
-        "metric": "1010"
+        "english": "29.89",
+        "metric": "1012"
       }
     },
     {
@@ -2442,73 +2751,73 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497643200",
-        "pretty": "4:00 PM EDT on June 16, 2017",
+        "epoch": "1497902400",
+        "pretty": "4:00 PM EDT on June 19, 2017",
         "civil": "4:00 PM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "PM",
         "tz": "",
         "age": "",
         "UTCDATE": ""
       },
       "temp": {
-        "english": "88",
-        "metric": "31"
+        "english": "86",
+        "metric": "30"
       },
       "dewpoint": {
-        "english": "69",
-        "metric": "21"
+        "english": "72",
+        "metric": "22"
       },
       "condition": "Chance of a Thunderstorm",
       "icon": "chancetstorms",
       "icon_url": "http://icons.wxug.com/i/c/k/chancetstorms.gif",
       "fctcode": "14",
-      "sky": "72",
+      "sky": "50",
       "wspd": {
-        "english": "6",
-        "metric": "10"
+        "english": "12",
+        "metric": "19"
       },
       "wdir": {
-        "dir": "SSW",
-        "degrees": "201"
+        "dir": "SW",
+        "degrees": "218"
       },
       "wx": "Scattered Thunderstorms",
-      "uvi": "5",
-      "humidity": "53",
+      "uvi": "6",
+      "humidity": "62",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
       },
       "heatindex": {
-        "english": "93",
-        "metric": "34"
+        "english": "92",
+        "metric": "33"
       },
       "feelslike": {
-        "english": "93",
-        "metric": "34"
+        "english": "92",
+        "metric": "33"
       },
       "qpf": {
-        "english": "0.03",
+        "english": "0.02",
         "metric": "1"
       },
       "snow": {
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "58",
+      "pop": "41",
       "mslp": {
-        "english": "29.82",
-        "metric": "1010"
+        "english": "29.88",
+        "metric": "1012"
       }
     },
     {
@@ -2522,20 +2831,20 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497646800",
-        "pretty": "5:00 PM EDT on June 16, 2017",
+        "epoch": "1497906000",
+        "pretty": "5:00 PM EDT on June 19, 2017",
         "civil": "5:00 PM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "PM",
         "tz": "",
         "age": "",
@@ -2546,49 +2855,49 @@
         "metric": "31"
       },
       "dewpoint": {
-        "english": "70",
-        "metric": "21"
+        "english": "71",
+        "metric": "22"
       },
       "condition": "Chance of a Thunderstorm",
       "icon": "chancetstorms",
       "icon_url": "http://icons.wxug.com/i/c/k/chancetstorms.gif",
       "fctcode": "14",
-      "sky": "57",
+      "sky": "35",
       "wspd": {
-        "english": "6",
-        "metric": "10"
+        "english": "11",
+        "metric": "18"
       },
       "wdir": {
         "dir": "SW",
-        "degrees": "217"
+        "degrees": "223"
       },
-      "wx": "Scattered Thunderstorms",
+      "wx": "Isolated Thunderstorms",
       "uvi": "4",
-      "humidity": "57",
+      "humidity": "61",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
       },
       "heatindex": {
-        "english": "93",
+        "english": "94",
         "metric": "34"
       },
       "feelslike": {
-        "english": "93",
+        "english": "94",
         "metric": "34"
       },
       "qpf": {
-        "english": "0.04",
-        "metric": "1"
+        "english": "0.01",
+        "metric": "0"
       },
       "snow": {
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "52",
+      "pop": "32",
       "mslp": {
-        "english": "29.81",
-        "metric": "1009"
+        "english": "29.88",
+        "metric": "1012"
       }
     },
     {
@@ -2602,20 +2911,20 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497650400",
-        "pretty": "6:00 PM EDT on June 16, 2017",
+        "epoch": "1497909600",
+        "pretty": "6:00 PM EDT on June 19, 2017",
         "civil": "6:00 PM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "PM",
         "tz": "",
         "age": "",
@@ -2626,49 +2935,49 @@
         "metric": "29"
       },
       "dewpoint": {
-        "english": "69",
-        "metric": "21"
+        "english": "71",
+        "metric": "22"
       },
-      "condition": "Chance of a Thunderstorm",
-      "icon": "chancetstorms",
-      "icon_url": "http://icons.wxug.com/i/c/k/chancetstorms.gif",
-      "fctcode": "14",
-      "sky": "71",
+      "condition": "Mostly Cloudy",
+      "icon": "mostlycloudy",
+      "icon_url": "http://icons.wxug.com/i/c/k/mostlycloudy.gif",
+      "fctcode": "3",
+      "sky": "62",
       "wspd": {
-        "english": "5",
-        "metric": "8"
+        "english": "11",
+        "metric": "18"
       },
       "wdir": {
         "dir": "SW",
         "degrees": "220"
       },
-      "wx": "Scattered Thunderstorms",
-      "uvi": "1",
-      "humidity": "60",
+      "wx": "Mostly Cloudy",
+      "uvi": "2",
+      "humidity": "62",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
       },
       "heatindex": {
-        "english": "88",
-        "metric": "31"
+        "english": "90",
+        "metric": "32"
       },
       "feelslike": {
-        "english": "88",
-        "metric": "31"
+        "english": "90",
+        "metric": "32"
       },
       "qpf": {
-        "english": "0.04",
-        "metric": "1"
+        "english": "0.0",
+        "metric": "0"
       },
       "snow": {
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "58",
+      "pop": "24",
       "mslp": {
-        "english": "29.81",
-        "metric": "1009"
+        "english": "29.88",
+        "metric": "1012"
       }
     },
     {
@@ -2682,73 +2991,73 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497654000",
-        "pretty": "7:00 PM EDT on June 16, 2017",
+        "epoch": "1497913200",
+        "pretty": "7:00 PM EDT on June 19, 2017",
         "civil": "7:00 PM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "PM",
         "tz": "",
         "age": "",
         "UTCDATE": ""
       },
       "temp": {
-        "english": "81",
-        "metric": "27"
+        "english": "83",
+        "metric": "28"
       },
       "dewpoint": {
-        "english": "69",
+        "english": "70",
         "metric": "21"
       },
       "condition": "Chance of a Thunderstorm",
       "icon": "chancetstorms",
       "icon_url": "http://icons.wxug.com/i/c/k/chancetstorms.gif",
       "fctcode": "14",
-      "sky": "80",
+      "sky": "50",
       "wspd": {
-        "english": "5",
-        "metric": "8"
+        "english": "10",
+        "metric": "16"
       },
       "wdir": {
         "dir": "SSW",
-        "degrees": "192"
+        "degrees": "201"
       },
       "wx": "Scattered Thunderstorms",
-      "uvi": "0",
-      "humidity": "68",
+      "uvi": "1",
+      "humidity": "65",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
       },
       "heatindex": {
-        "english": "84",
-        "metric": "29"
+        "english": "86",
+        "metric": "30"
       },
       "feelslike": {
-        "english": "84",
-        "metric": "29"
+        "english": "86",
+        "metric": "30"
       },
       "qpf": {
-        "english": "0.03",
+        "english": "0.04",
         "metric": "1"
       },
       "snow": {
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "58",
+      "pop": "51",
       "mslp": {
-        "english": "29.83",
-        "metric": "1010"
+        "english": "29.88",
+        "metric": "1012"
       }
     },
     {
@@ -2762,20 +3071,20 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497657600",
-        "pretty": "8:00 PM EDT on June 16, 2017",
+        "epoch": "1497916800",
+        "pretty": "8:00 PM EDT on June 19, 2017",
         "civil": "8:00 PM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "PM",
         "tz": "",
         "age": "",
@@ -2793,18 +3102,18 @@
       "icon": "chancetstorms",
       "icon_url": "http://icons.wxug.com/i/c/k/chancetstorms.gif",
       "fctcode": "14",
-      "sky": "61",
+      "sky": "50",
       "wspd": {
-        "english": "3",
-        "metric": "5"
+        "english": "10",
+        "metric": "16"
       },
       "wdir": {
-        "dir": "S",
-        "degrees": "172"
+        "dir": "SSW",
+        "degrees": "203"
       },
       "wx": "Scattered Thunderstorms",
       "uvi": "0",
-      "humidity": "76",
+      "humidity": "75",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
@@ -2818,17 +3127,17 @@
         "metric": "26"
       },
       "qpf": {
-        "english": "0.03",
+        "english": "0.04",
         "metric": "1"
       },
       "snow": {
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "56",
+      "pop": "52",
       "mslp": {
-        "english": "29.84",
-        "metric": "1011"
+        "english": "29.9",
+        "metric": "1013"
       }
     },
     {
@@ -2842,20 +3151,20 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497661200",
-        "pretty": "9:00 PM EDT on June 16, 2017",
+        "epoch": "1497920400",
+        "pretty": "9:00 PM EDT on June 19, 2017",
         "civil": "9:00 PM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "PM",
         "tz": "",
         "age": "",
@@ -2866,25 +3175,25 @@
         "metric": "24"
       },
       "dewpoint": {
-        "english": "71",
-        "metric": "22"
+        "english": "70",
+        "metric": "21"
       },
       "condition": "Chance of a Thunderstorm",
       "icon": "chancetstorms",
       "icon_url": "http://icons.wxug.com/i/c/k/nt_chancetstorms.gif",
       "fctcode": "14",
-      "sky": "69",
+      "sky": "59",
       "wspd": {
-        "english": "3",
-        "metric": "5"
+        "english": "8",
+        "metric": "13"
       },
       "wdir": {
-        "dir": "SE",
-        "degrees": "138"
+        "dir": "SSW",
+        "degrees": "203"
       },
-      "wx": "Scattered Thunderstorms",
+      "wx": "Isolated Thunderstorms",
       "uvi": "0",
-      "humidity": "85",
+      "humidity": "82",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
@@ -2898,17 +3207,17 @@
         "metric": "24"
       },
       "qpf": {
-        "english": "0.03",
-        "metric": "1"
+        "english": "0.01",
+        "metric": "0"
       },
       "snow": {
         "english": "0.0",
         "metric": "0"
       },
-      "pop": "55",
+      "pop": "33",
       "mslp": {
-        "english": "29.86",
-        "metric": "1011"
+        "english": "29.92",
+        "metric": "1013"
       }
     },
     {
@@ -2922,188 +3231,28 @@
         "mon": "6",
         "mon_padded": "06",
         "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
+        "mday": "19",
+        "mday_padded": "19",
+        "yday": "169",
         "isdst": "1",
-        "epoch": "1497664800",
-        "pretty": "10:00 PM EDT on June 16, 2017",
+        "epoch": "1497924000",
+        "pretty": "10:00 PM EDT on June 19, 2017",
         "civil": "10:00 PM",
         "month_name": "June",
         "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
+        "weekday_name": "Monday",
+        "weekday_name_night": "Monday Night",
+        "weekday_name_abbrev": "Mon",
+        "weekday_name_unlang": "Monday",
+        "weekday_name_night_unlang": "Monday Night",
         "ampm": "PM",
         "tz": "",
         "age": "",
         "UTCDATE": ""
       },
       "temp": {
-        "english": "74",
-        "metric": "23"
-      },
-      "dewpoint": {
-        "english": "71",
-        "metric": "22"
-      },
-      "condition": "Chance of a Thunderstorm",
-      "icon": "chancetstorms",
-      "icon_url": "http://icons.wxug.com/i/c/k/nt_chancetstorms.gif",
-      "fctcode": "14",
-      "sky": "74",
-      "wspd": {
-        "english": "3",
-        "metric": "5"
-      },
-      "wdir": {
-        "dir": "SE",
-        "degrees": "138"
-      },
-      "wx": "Scattered Thunderstorms",
-      "uvi": "0",
-      "humidity": "89",
-      "windchill": {
-        "english": "-9999",
-        "metric": "-9999"
-      },
-      "heatindex": {
-        "english": "-9999",
-        "metric": "-9999"
-      },
-      "feelslike": {
-        "english": "74",
-        "metric": "23"
-      },
-      "qpf": {
-        "english": "0.06",
-        "metric": "2"
-      },
-      "snow": {
-        "english": "0.0",
-        "metric": "0"
-      },
-      "pop": "58",
-      "mslp": {
-        "english": "29.88",
-        "metric": "1012"
-      }
-    },
-    {
-      "FCTTIME": {
-        "hour": "23",
-        "hour_padded": "23",
-        "min": "00",
-        "min_unpadded": "0",
-        "sec": "0",
-        "year": "2017",
-        "mon": "6",
-        "mon_padded": "06",
-        "mon_abbrev": "Jun",
-        "mday": "16",
-        "mday_padded": "16",
-        "yday": "166",
-        "isdst": "1",
-        "epoch": "1497668400",
-        "pretty": "11:00 PM EDT on June 16, 2017",
-        "civil": "11:00 PM",
-        "month_name": "June",
-        "month_name_abbrev": "Jun",
-        "weekday_name": "Friday",
-        "weekday_name_night": "Friday Night",
-        "weekday_name_abbrev": "Fri",
-        "weekday_name_unlang": "Friday",
-        "weekday_name_night_unlang": "Friday Night",
-        "ampm": "PM",
-        "tz": "",
-        "age": "",
-        "UTCDATE": ""
-      },
-      "temp": {
-        "english": "74",
-        "metric": "23"
-      },
-      "dewpoint": {
-        "english": "70",
-        "metric": "21"
-      },
-      "condition": "Mostly Cloudy",
-      "icon": "mostlycloudy",
-      "icon_url": "http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif",
-      "fctcode": "3",
-      "sky": "75",
-      "wspd": {
-        "english": "3",
-        "metric": "5"
-      },
-      "wdir": {
-        "dir": "SSE",
-        "degrees": "156"
-      },
-      "wx": "Mostly Cloudy",
-      "uvi": "0",
-      "humidity": "89",
-      "windchill": {
-        "english": "-9999",
-        "metric": "-9999"
-      },
-      "heatindex": {
-        "english": "-9999",
-        "metric": "-9999"
-      },
-      "feelslike": {
-        "english": "74",
-        "metric": "23"
-      },
-      "qpf": {
-        "english": "0.0",
-        "metric": "0"
-      },
-      "snow": {
-        "english": "0.0",
-        "metric": "0"
-      },
-      "pop": "24",
-      "mslp": {
-        "english": "29.89",
-        "metric": "1012"
-      }
-    },
-    {
-      "FCTTIME": {
-        "hour": "0",
-        "hour_padded": "00",
-        "min": "00",
-        "min_unpadded": "0",
-        "sec": "0",
-        "year": "2017",
-        "mon": "6",
-        "mon_padded": "06",
-        "mon_abbrev": "Jun",
-        "mday": "17",
-        "mday_padded": "17",
-        "yday": "167",
-        "isdst": "1",
-        "epoch": "1497672000",
-        "pretty": "12:00 AM EDT on June 17, 2017",
-        "civil": "12:00 AM",
-        "month_name": "June",
-        "month_name_abbrev": "Jun",
-        "weekday_name": "Saturday",
-        "weekday_name_night": "Saturday Night",
-        "weekday_name_abbrev": "Sat",
-        "weekday_name_unlang": "Saturday",
-        "weekday_name_night_unlang": "Saturday Night",
-        "ampm": "AM",
-        "tz": "",
-        "age": "",
-        "UTCDATE": ""
-      },
-      "temp": {
-        "english": "73",
-        "metric": "23"
+        "english": "76",
+        "metric": "24"
       },
       "dewpoint": {
         "english": "70",
@@ -3115,16 +3264,16 @@
       "fctcode": "3",
       "sky": "73",
       "wspd": {
-        "english": "3",
-        "metric": "5"
+        "english": "7",
+        "metric": "11"
       },
       "wdir": {
-        "dir": "SSE",
-        "degrees": "162"
+        "dir": "SSW",
+        "degrees": "205"
       },
       "wx": "Mostly Cloudy",
       "uvi": "0",
-      "humidity": "89",
+      "humidity": "84",
       "windchill": {
         "english": "-9999",
         "metric": "-9999"
@@ -3134,88 +3283,8 @@
         "metric": "-9999"
       },
       "feelslike": {
-        "english": "73",
-        "metric": "23"
-      },
-      "qpf": {
-        "english": "0.0",
-        "metric": "0"
-      },
-      "snow": {
-        "english": "0.0",
-        "metric": "0"
-      },
-      "pop": "15",
-      "mslp": {
-        "english": "29.89",
-        "metric": "1012"
-      }
-    },
-    {
-      "FCTTIME": {
-        "hour": "1",
-        "hour_padded": "01",
-        "min": "00",
-        "min_unpadded": "0",
-        "sec": "0",
-        "year": "2017",
-        "mon": "6",
-        "mon_padded": "06",
-        "mon_abbrev": "Jun",
-        "mday": "17",
-        "mday_padded": "17",
-        "yday": "167",
-        "isdst": "1",
-        "epoch": "1497675600",
-        "pretty": "1:00 AM EDT on June 17, 2017",
-        "civil": "1:00 AM",
-        "month_name": "June",
-        "month_name_abbrev": "Jun",
-        "weekday_name": "Saturday",
-        "weekday_name_night": "Saturday Night",
-        "weekday_name_abbrev": "Sat",
-        "weekday_name_unlang": "Saturday",
-        "weekday_name_night_unlang": "Saturday Night",
-        "ampm": "AM",
-        "tz": "",
-        "age": "",
-        "UTCDATE": ""
-      },
-      "temp": {
-        "english": "73",
-        "metric": "23"
-      },
-      "dewpoint": {
-        "english": "69",
-        "metric": "21"
-      },
-      "condition": "Mostly Cloudy",
-      "icon": "mostlycloudy",
-      "icon_url": "http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif",
-      "fctcode": "3",
-      "sky": "77",
-      "wspd": {
-        "english": "3",
-        "metric": "5"
-      },
-      "wdir": {
-        "dir": "S",
-        "degrees": "171"
-      },
-      "wx": "Mostly Cloudy",
-      "uvi": "0",
-      "humidity": "90",
-      "windchill": {
-        "english": "-9999",
-        "metric": "-9999"
-      },
-      "heatindex": {
-        "english": "-9999",
-        "metric": "-9999"
-      },
-      "feelslike": {
-        "english": "73",
-        "metric": "23"
+        "english": "76",
+        "metric": "24"
       },
       "qpf": {
         "english": "0.0",
@@ -3227,88 +3296,8 @@
       },
       "pop": "24",
       "mslp": {
-        "english": "29.89",
-        "metric": "1012"
-      }
-    },
-    {
-      "FCTTIME": {
-        "hour": "2",
-        "hour_padded": "02",
-        "min": "00",
-        "min_unpadded": "0",
-        "sec": "0",
-        "year": "2017",
-        "mon": "6",
-        "mon_padded": "06",
-        "mon_abbrev": "Jun",
-        "mday": "17",
-        "mday_padded": "17",
-        "yday": "167",
-        "isdst": "1",
-        "epoch": "1497679200",
-        "pretty": "2:00 AM EDT on June 17, 2017",
-        "civil": "2:00 AM",
-        "month_name": "June",
-        "month_name_abbrev": "Jun",
-        "weekday_name": "Saturday",
-        "weekday_name_night": "Saturday Night",
-        "weekday_name_abbrev": "Sat",
-        "weekday_name_unlang": "Saturday",
-        "weekday_name_night_unlang": "Saturday Night",
-        "ampm": "AM",
-        "tz": "",
-        "age": "",
-        "UTCDATE": ""
-      },
-      "temp": {
-        "english": "72",
-        "metric": "22"
-      },
-      "dewpoint": {
-        "english": "70",
-        "metric": "21"
-      },
-      "condition": "Chance of a Thunderstorm",
-      "icon": "chancetstorms",
-      "icon_url": "http://icons.wxug.com/i/c/k/nt_chancetstorms.gif",
-      "fctcode": "14",
-      "sky": "71",
-      "wspd": {
-        "english": "3",
-        "metric": "5"
-      },
-      "wdir": {
-        "dir": "SSE",
-        "degrees": "169"
-      },
-      "wx": "Scattered Thunderstorms",
-      "uvi": "0",
-      "humidity": "90",
-      "windchill": {
-        "english": "-9999",
-        "metric": "-9999"
-      },
-      "heatindex": {
-        "english": "-9999",
-        "metric": "-9999"
-      },
-      "feelslike": {
-        "english": "72",
-        "metric": "22"
-      },
-      "qpf": {
-        "english": "0.01",
-        "metric": "0"
-      },
-      "snow": {
-        "english": "0.0",
-        "metric": "0"
-      },
-      "pop": "39",
-      "mslp": {
-        "english": "29.88",
-        "metric": "1012"
+        "english": "29.94",
+        "metric": "1014"
       }
     }
   ]

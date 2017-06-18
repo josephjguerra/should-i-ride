@@ -218,6 +218,17 @@
             "distance_mi": 5
           },
           {
+            "neighborhood": "Airport Road",
+            "city": "Rock Hill",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCROCKH20",
+            "lat": 34.988224,
+            "lon": -81.060188,
+            "distance_km": 9,
+            "distance_mi": 5
+          },
+          {
             "neighborhood": "Clover",
             "city": "Clover",
             "state": "SC",
@@ -251,17 +262,6 @@
             "distance_mi": 6
           },
           {
-            "neighborhood": "Waterside at the Catawba",
-            "city": "Fort Mill",
-            "state": "SC",
-            "country": "US",
-            "id": "KSCFORTM29",
-            "lat": 34.968933,
-            "lon": -80.93512,
-            "distance_km": 10,
-            "distance_mi": 6
-          },
-          {
             "neighborhood": "Lenox Pointe Drive",
             "city": "Charlotte",
             "state": "NC",
@@ -291,17 +291,6 @@
             "id": "KSCFORTM14",
             "lat": 35.022594,
             "lon": -80.871758,
-            "distance_km": 11,
-            "distance_mi": 6
-          },
-          {
-            "neighborhood": "Tullamore",
-            "city": "Clover",
-            "state": "SC",
-            "country": "US",
-            "id": "KSCCLOVE11",
-            "lat": 35.095879,
-            "lon": -81.099991,
             "distance_km": 11,
             "distance_mi": 6
           },
@@ -394,17 +383,6 @@
             "distance_mi": 7
           },
           {
-            "neighborhood": "Old Springs Road",
-            "city": "Fort Mill",
-            "state": "SC",
-            "country": "US",
-            "id": "KSCFORTM19",
-            "lat": 34.976555,
-            "lon": -80.890755,
-            "distance_km": 12,
-            "distance_mi": 7
-          },
-          {
             "neighborhood": "Massey Neighborhood Weather Station",
             "city": "Fort Mill",
             "state": "SC",
@@ -425,19 +403,30 @@
             "lon": -80.856514,
             "distance_km": 12,
             "distance_mi": 7
+          },
+          {
+            "neighborhood": "Dixie - Berryhill",
+            "city": "Charlotte",
+            "state": "NC",
+            "country": "US",
+            "id": "KNCCHARL130",
+            "lat": 35.163704,
+            "lon": -81.005478,
+            "distance_km": 12,
+            "distance_mi": 7
           }
         ]
       }
     }
   },
   "moon_phase": {
-    "percentIlluminated": "54",
-    "ageOfMoon": "22",
-    "phaseofMoon": "Waning Gibbous",
+    "percentIlluminated": "38",
+    "ageOfMoon": "23",
+    "phaseofMoon": "Last Quarter",
     "hemisphere": "North",
     "current_time": {
-      "hour": "22",
-      "minute": "29"
+      "hour": "10",
+      "minute": "00"
     },
     "sunrise": {
       "hour": "6",
@@ -448,12 +437,12 @@
       "minute": "40"
     },
     "moonrise": {
-      "hour": "0",
-      "minute": "58"
+      "hour": "2",
+      "minute": "09"
     },
     "moonset": {
-      "hour": "12",
-      "minute": "33"
+      "hour": "14",
+      "minute": "37"
     }
   },
   "sun_phase": {

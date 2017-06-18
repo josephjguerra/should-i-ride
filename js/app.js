@@ -5,6 +5,11 @@ var maxWinds    = 15;
 var rideInRain  = true;
 var rideAtNight = false;
 
+var currentCondition   = "Sunny";
+var morningCondition   = "Sunny";
+var afternoonCondition = "Partly Cloudy";
+var eveningCondition   = "Chance of Rain";
+
 var observedTemp       = 80;
 var observedHighTemp   = 90;
 var observedLowTemp    = 70;
@@ -31,6 +36,23 @@ document.getElementById("sunset").textContent  = sunset;
 
 document.getElementById("wind-speed").textContent = observedWindSpeed;
 document.getElementById("wind-gust").textContent  = observedGust;
+
+function setIconBasedOnCondition(condition, id) {
+  if (condition == "Sunny") {
+    document.getElementById(id).src = "img/conditions/day/clear.svg";
+  } else if (condition == "Partly Cloudy") {
+    document.getElementById(id).src = "img/conditions/day/partlycloudy.svg";
+  } else if (condition == "Mostly Cloudy") {
+    document.getElementById(id).src = "img/conditions/day/mostlycloudy.svg";
+  } else if (condition == "Chance of Rain") {
+    document.getElementById(id).src = "img/conditions/day/chancerain.svg";
+  }
+}
+
+setIconBasedOnCondition(currentCondition,   "current-condition-icon");
+setIconBasedOnCondition(morningCondition,   "morning-condition-icon");
+setIconBasedOnCondition(afternoonCondition, "afternoon-condition-icon");
+setIconBasedOnCondition(eveningCondition,   "evening-condition-icon");
 
 function yesDecision() {
   document.getElementById("decision").textContent = "Yes";

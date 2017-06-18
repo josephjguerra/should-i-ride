@@ -71,7 +71,7 @@
     <main class="mdl-layout__content">
       <section class="mdl-layout__tab-panel is-active" id="today-tab">
         <div class="page-content">
-          <div class="card">
+          <div class="card" id="current-conditions-card">
             <div class="mdl-grid flex-container today-top">
               <div class="go-no-go"><span id="decision"></span> <img id="decision-image" src="img/emotions/thumbup.svg" alt="thumbup" width="30px"></div>
             </div>
@@ -94,7 +94,7 @@
                 <div class="flex-sub"><img src="img/low.svg" alt="low-temp" width="20px"> <span id="day-low"></span>&#176;F</div>
               </div>
               <div class="flex-item">
-                <div class="flex-sub"><img src="img/precip.svg" alt="precip" width="15px"> <span id="chance-of-precip"></span></div>
+                <div class="flex-sub"><img src="img/precip.svg" alt="precip" width="15px"> <span id="chance-of-precip"></span>%</div>
                 <div class="flex-sub">chance precip</div>
               </div>
               <div class="flex-item">
@@ -105,15 +105,15 @@
           </div>
           <!-- <div class="card"> -->
             <div class="mdl-grid flex-container today-three">
-              <div class="flex-item card">
+              <div class="flex-item card" id="morning-card">
                 <div class="flex-sub">Morning</div>
                 <div class="flex-sub"><img id="morning-condition-icon" src="img/conditions/day/clear.svg" alt="Sunny" class="three-sunny"></div>
               </div>
-              <div class="flex-item card">
+              <div class="flex-item card" id="afternoon-card">
                 <div class="flex-sub">Afternoon</div>
                 <div class="flex-sub"><img id="afternoon-condition-icon" src="img/conditions/day/clear.svg" alt="Sunny" class="three-sunny"></div>
               </div>
-              <div class="flex-item card no-ride-table">
+              <div class="flex-item card" id="evening-card">
                 <div class="flex-sub">Evening</div>
                 <div class="flex-sub"><img id="evening-condition-icon" src="img/conditions/day/chancerain.svg" alt="Sunny" class="three-sunny"></div>
               </div>
@@ -163,13 +163,13 @@
                 <div class="flex-sub">75&#176;F</div>
                 <div class="flex-sub"><img src="img/precip.svg" width="10px">10%</div>
               </div>
-              <div class="flex-item card no-ride-table">
+              <div class="flex-item card">
                 <div class="flex-sub">10pm</div>
                 <div class="flex-sub"><img src="img/conditions/day/chancerain.svg" alt="Sunny" class="hourly-sunny"></div>
                 <div class="flex-sub">75&#176;F</div>
                 <div class="flex-sub"><img src="img/precip.svg" width="10px">10%</div>
               </div>
-              <div class="flex-item card no-ride-table">
+              <div class="flex-item card">
                 <div class="flex-sub">12am</div>
                 <div class="flex-sub"><img src="img/conditions/day/chancerain.svg" alt="Sunny" class="hourly-sunny"></div>
                 <div class="flex-sub">75&#176;F</div>

@@ -29,7 +29,6 @@
       <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
         <a href="#today-tab" class="mdl-layout__tab is-active">Today</a>
         <a href="#hourly-tab" class="mdl-layout__tab">Hourly</a>
-        <a href="#three-day-tab" class="mdl-layout__tab">3 Day</a>
         <a href="#ten-day-tab" class="mdl-layout__tab">10 Day</a>
       </div>
     </header>
@@ -73,100 +72,111 @@
       <section class="mdl-layout__tab-panel is-active" id="today-tab">
         <div class="page-content">
           <div class="card">
-            <div class="go-no-go">Yes, ride <img src="img/emotions/thumbup.svg" alt="thumbup" width="25px"></div>
+            <div class="mdl-grid flex-container today-top">
+              <div class="go-no-go"><span id="decision"></span> <img id="decision-image" src="img/emotions/thumbup.svg" alt="thumbup" width="30px"></div>
+            </div>
             <div class="mdl-grid flex-container today-top">
               <div class="flex-item">
                 <!-- <div class="flex-sub">June 17, 7:55am</div> -->
-                <div class="flex-sub day-current-temp"><span id="day-current-temp">xx</span>&#176;F</div>
-                <div class="flex-sub"><img src="img/high.svg" alt="high-temp" width="25px"> <span id="day-high">xx</span>&#176;F</div>
-                <div class="flex-sub"><img src="img/low.svg" alt="low-temp" width="25px"> <span id="day-low">xx</span>&#176;F</div>
+                <div class="flex-sub day-current-temp"><span id="day-current-temp"></span>&#176;F</div>
               </div>
               <div class="flex-item">
-                <div class="flex-sub"><img src="img/conditions/day/clear.svg" width="100px" alt="Sunny" class="hourly"></div>
-                <div class="flex-sub"><img src="img/precip.svg" alt="precip" width="15px"> <span id="precip"></span> 10%</div>
+                <div class="flex-sub"><img id="current-condition-icon" src="img/conditions/day/clear.svg" width="100px" alt="Sunny" class="hourly"></div>
               </div>
               <div class="flex-item">
-                <div class="flex-sub"><img src="img/wind.svg" alt="wind-speed" width="14px"> <span id="wind-speed"></span> mph from <span id="wind-direction"></span></div>
+                <div class="flex-sub"><img src="img/wind.svg" alt="wind-speed" width="14px"> <span id="wind-speed"></span> mph</div>
                 <div class="flex-sub"><img src="img/gust.svg" alt="wind-gust" width="14px"> <span id="wind-gust"></span> gust</div>
-                <div class="flex-sub"><img src="img/astrology/sunrise.svg" alt="sunrise" width="25px"> <span id="sunrise">xx</span></div>
-                <div class="flex-sub"><img src="img/astrology/sunset.svg" alt="sunset" width="25px"> <span id="sunset">xx</span></div>
+              </div>
+            </div>
+            <div class="mdl-grid flex-container today-top">
+              <div class="flex-item">
+                <div class="flex-sub"><img src="img/high.svg" alt="high-temp" width="20px"> <span id="day-high"></span>&#176;F</div>
+                <div class="flex-sub"><img src="img/low.svg" alt="low-temp" width="20px"> <span id="day-low"></span>&#176;F</div>
+              </div>
+              <div class="flex-item">
+                <div class="flex-sub"><img src="img/precip.svg" alt="precip" width="15px"> <span id="chance-of-precip"></span></div>
+                <div class="flex-sub">chance precip</div>
+              </div>
+              <div class="flex-item">
+                <div class="flex-sub"><img src="img/astrology/sunrise.svg" alt="sunrise" width="22px"> <span id="sunrise"></span></div>
+                <div class="flex-sub"><img src="img/astrology/sunset.svg" alt="sunset" width="22px"> <span id="sunset"></span></div>
               </div>
             </div>
           </div>
-          <div class="card">
+          <!-- <div class="card"> -->
             <div class="mdl-grid flex-container today-three">
-              <div class="flex-item">
+              <div class="flex-item card">
                 <div class="flex-sub">Morning</div>
-                <div class="flex-sub"><img src="img/conditions/day/clear.svg" alt="Sunny" class="three-sunny"></div>
+                <div class="flex-sub"><img id="morning-condition-icon" src="img/conditions/day/clear.svg" alt="Sunny" class="three-sunny"></div>
               </div>
-              <div class="flex-item">
+              <div class="flex-item card">
                 <div class="flex-sub">Afternoon</div>
-                <div class="flex-sub"><img src="img/conditions/day/clear.svg" alt="Sunny" class="three-sunny"></div>
+                <div class="flex-sub"><img id="afternoon-condition-icon" src="img/conditions/day/clear.svg" alt="Sunny" class="three-sunny"></div>
               </div>
-              <div class="flex-item no-ride-table">
+              <div class="flex-item card no-ride-table">
                 <div class="flex-sub">Evening</div>
-                <div class="flex-sub"><img src="img/conditions/day/chancerain.svg" alt="Sunny" class="three-sunny"></div>
+                <div class="flex-sub"><img id="evening-condition-icon" src="img/conditions/day/chancerain.svg" alt="Sunny" class="three-sunny"></div>
               </div>
             </div>
-          </div>
-          <div class="card">
+          <!-- </div> -->
+          <!-- <div class="card"> -->
             <div class="mdl-grid flex-container today-nine">
-              <div class="flex-item">
+              <div class="flex-item card">
                 <div class="flex-sub">8am</div>
                 <div class="flex-sub"><img src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></div>
                 <div class="flex-sub">75&#176;F</div>
                 <div class="flex-sub"><img src="img/precip.svg" width="10px">10%</div>
               </div>
-              <div class="flex-item">
+              <div class="flex-item card">
                 <div class="flex-sub">10am</div>
                 <div class="flex-sub"><img src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></div>
                 <div class="flex-sub">75&#176;F</div>
                 <div class="flex-sub"><img src="img/precip.svg" width="10px">10%</div>
               </div>
-              <div class="flex-item">
+              <div class="flex-item card">
                 <div class="flex-sub">12pm</div>
                 <div class="flex-sub"><img src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></div>
                 <div class="flex-sub">75&#176;F</div>
                 <div class="flex-sub"><img src="img/precip.svg" width="10px">10%</div>
               </div>
-              <div class="flex-item">
+              <div class="flex-item card">
                 <div class="flex-sub">2pm</div>
                 <div class="flex-sub"><img src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></div>
                 <div class="flex-sub">75&#176;F</div>
                 <div class="flex-sub"><img src="img/precip.svg" width="10px">10%</div>
               </div>
-              <div class="flex-item">
+              <div class="flex-item card">
                 <div class="flex-sub">4pm</div>
                 <div class="flex-sub"><img src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></div>
                 <div class="flex-sub">75&#176;F</div>
                 <div class="flex-sub"><img src="img/precip.svg" width="10px">10%</div>
               </div>
-              <div class="flex-item">
+              <div class="flex-item card">
                 <div class="flex-sub">6pm</div>
                 <div class="flex-sub"><img src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></div>
                 <div class="flex-sub">75&#176;F</div>
                 <div class="flex-sub"><img src="img/precip.svg" width="10px">10%</div>
               </div>
-              <div class="flex-item">
+              <div class="flex-item card">
                 <div class="flex-sub">8pm</div>
                 <div class="flex-sub"><img src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></div>
                 <div class="flex-sub">75&#176;F</div>
                 <div class="flex-sub"><img src="img/precip.svg" width="10px">10%</div>
               </div>
-              <div class="flex-item no-ride-table">
+              <div class="flex-item card no-ride-table">
                 <div class="flex-sub">10pm</div>
                 <div class="flex-sub"><img src="img/conditions/day/chancerain.svg" alt="Sunny" class="hourly-sunny"></div>
                 <div class="flex-sub">75&#176;F</div>
                 <div class="flex-sub"><img src="img/precip.svg" width="10px">10%</div>
               </div>
-              <div class="flex-item no-ride-table">
+              <div class="flex-item card no-ride-table">
                 <div class="flex-sub">12am</div>
                 <div class="flex-sub"><img src="img/conditions/day/chancerain.svg" alt="Sunny" class="hourly-sunny"></div>
                 <div class="flex-sub">75&#176;F</div>
                 <div class="flex-sub"><img src="img/precip.svg" width="10px">10%</div>
               </div>
             </div>
-          </div>
+          <!-- </div> -->
           <div class="mdl-grid flex-container">
             <div>observed at 7:55am</div>
           </div>
@@ -293,53 +303,6 @@
           </div>
         </div>
       </section>
-      <section class="mdl-layout__tab-panel" id="three-day-tab">
-        <div class="page-content">
-          <table class="mdl-data-table mdl-js-data-table">
-            <thead>
-              <tr>
-                <th class="mdl-data-table__cell--non-numeric">Day</th>
-                <th class="mdl-data-table__cell--non-numeric">Temp</th>
-                <th class="mdl-data-table__cell--non-numeric">Precip</th>
-                <th class="mdl-data-table__cell--non-numeric">Wind</th>
-                <th class="mdl-data-table__cell--non-numeric">Conditions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">Today</td>
-                <td class="mdl-data-table__cell--non-numeric">80 &#176;F</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px">10%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px">6mph</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-              </tr>
-              <tr class="no-ride-table">
-                <td class="mdl-data-table__cell--non-numeric">Tomorrow</td>
-                <td class="mdl-data-table__cell--non-numeric">80 &#176;F</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px">50%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px">12mph</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/conditions/day/chancerain.svg" alt="Sunny" class="hourly-sunny"></td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">Friday</td>
-                <td class="mdl-data-table__cell--non-numeric">80 &#176;F</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px">0%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px">6mph</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-              </tr>
-              </tr>
-            </tbody>
-          </table>
-          <div class="mdl-grid flex-container">
-            <div>observed at 7:55am</div>
-          </div>
-          <div class="mdl-grid flex-container">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-              <i class="material-icons">refresh</i> Refresh
-            </button>
-          </div>
-        </div>
-      </section>
       <section class="mdl-layout__tab-panel" id="ten-day-tab">
         <div class="page-content">
           <table class="mdl-data-table mdl-js-data-table">
@@ -354,14 +317,14 @@
             </thead>
             <tbody>
               <tr>
-                <td class="mdl-data-table__cell--non-numeric">Mon 6/12</td>
+                <td class="mdl-data-table__cell--non-numeric">Today</td>
                 <td class="mdl-data-table__cell--non-numeric">75 &#176;F</td>
                 <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px">10%</td>
                 <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px">5mph</td>
                 <td class="mdl-data-table__cell--non-numeric"><img src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
               </tr>
               <tr>
-                <td class="mdl-data-table__cell--non-numeric">Tue 6/13</td>
+                <td class="mdl-data-table__cell--non-numeric">Tomorrow</td>
                 <td class="mdl-data-table__cell--non-numeric">75 &#176;F</td>
                 <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px">10%</td>
                 <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px">5mph</td>

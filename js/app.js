@@ -37,6 +37,8 @@ getConditionsJSON(wundergroundConditionsURL).then(
   function(data) {
     alert('JSON result: ' + data.current_observation.temp_f); // debug
     document.getElementById("day-current-temp").textContent = data.current_observation.temp_f;
+    document.getElementById("wind-speed").textContent = data.current_observation.wind_mph;
+    document.getElementById("wind-gust").textContent  = data.current_observation.wind_gust_mph;
   },
   function(status) {
     //error detection....

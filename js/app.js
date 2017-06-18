@@ -7,9 +7,13 @@ var devMode = true;
 if (devMode) {
   // use local copies of json
   var wundergroundConditionsURL = 'js/dev/conditions.json'
+  var wundergroundAstronomyURL  = 'js/dev/astronomy.json'
+  console.log("dev mode active");
 } else {
   // use wunderground weather api
   var wundergroundConditionsURL = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/conditions/q/29708.json';
+  var wundergroundAstronomyURL  = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/astronomy/q/29708.json';
+  console.log("dev mode inactive");
 }
 
 var getConditionsJSON = function(url) {
@@ -33,6 +37,37 @@ getConditionsJSON(wundergroundConditionsURL).then(
   function(data) {
     alert('JSON result: ' + data.current_observation.temp_f); // debug
     document.getElementById("day-current-temp").textContent = data.current_observation.temp_f;
+  },
+  function(status) {
+    //error detection....
+    console.log('Something went wrong.');
+    alert('Something went wrong.');
+  }
+);
+
+var getAstronomyJSON = function(url) {
+  return new Promise(function(resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status == 200) {
+        resolve(xhr.response);
+      } else {
+        reject(status);
+      }
+    };
+    xhr.send();
+  });
+};
+
+getAstronomyJSON(wundergroundAstronomyURL).then(
+  function(data) {
+    alert('JSON result: ' + data.sun_phase.sunrise.hour); // debug
+    document.getElementById("sunrise").textContent = data.sun_phase.sunrise.hour + ":" +  data.sun_phase.sunrise.minute + " am";
+    document.getElementById("sunset").textContent  = data.sun_phase.sunset.hour - 12 + ":" +  data.sun_phase.sunset.minute + " pm";
+
   },
   function(status) {
     //error detection....

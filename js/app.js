@@ -1,3 +1,46 @@
+// api key from js/secrets.js
+var wundergroundAPIKey = WUNDERGROUNDAPIKEY;
+
+// dev mode
+var devMode = true;
+
+if (devMode) {
+  // use local copies of json
+  var wundergroundConditionsURL = 'js/dev/conditions.json'
+} else {
+  // use wunderground weather api
+  var wundergroundConditionsURL = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/conditions/q/29708.json';
+}
+
+var getConditionsJSON = function(url) {
+  return new Promise(function(resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status == 200) {
+        resolve(xhr.response);
+      } else {
+        reject(status);
+      }
+    };
+    xhr.send();
+  });
+};
+
+getConditionsJSON(wundergroundConditionsURL).then(
+  function(data) {
+    alert('JSON result: ' + data.current_observation.temp_f); // debug
+    document.getElementById("day-current-temp").textContent = data.current_observation.temp_f;
+  },
+  function(status) {
+    //error detection....
+    console.log('Something went wrong.');
+    alert('Something went wrong.');
+  }
+);
+
 // top card
 var myMaxTemp        = 95;
 var myMinTemp        = 50;
@@ -17,8 +60,8 @@ var currentChancePrecip = 11;
 var observedWindSpeed     = 5;
 var observedGust          = 10;
 
-var sunrise = "6:09 am";
-var sunset = "8:20 pm";
+var sunrise = "6:11am";
+var sunset  = "8:11pm";
 
 // morning afternoon evening cards
 var morningCondition   = "Sunny";
@@ -50,11 +93,6 @@ function setIconBasedOnCondition(condition, id) {
     document.getElementById(id).src = "img/conditions/day/chancerain.svg";
   }
 }
-
-setIconBasedOnCondition(currentCondition,   "current-condition-icon");
-setIconBasedOnCondition(morningCondition,   "morning-condition-icon");
-setIconBasedOnCondition(afternoonCondition, "afternoon-condition-icon");
-setIconBasedOnCondition(eveningCondition,   "evening-condition-icon");
 
 // decision algorithm
 function yesDecision() {

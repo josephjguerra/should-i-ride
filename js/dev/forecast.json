@@ -1,794 +1,812 @@
-
 {
   "response": {
-  "version":"0.1",
-  "termsofService":"http://www.wunderground.com/weather/api/d/terms.html",
-  "features": {
-  "geolookup": 1
-  ,
-  "forecast": 1
+    "version": "0.1",
+    "termsofService": "http://www.wunderground.com/weather/api/d/terms.html",
+    "features": {
+      "geolookup": 1,
+      "forecast": 1
+    }
+  },
+  "location": {
+    "type": "CITY",
+    "country": "US",
+    "country_iso3166": "US",
+    "country_name": "USA",
+    "state": "SC",
+    "city": "Fort Mill",
+    "tz_short": "EDT",
+    "tz_long": "America/New_York",
+    "lat": "35.04999924",
+    "lon": "-80.98999786",
+    "zip": "29708",
+    "magic": "1",
+    "wmo": "99999",
+    "l": "/q/zmw:29708.1.99999",
+    "requesturl": "US/SC/Fort_Mill.html",
+    "wuiurl": "https://www.wunderground.com/US/SC/Fort_Mill.html",
+    "nearby_weather_stations": {
+      "airport": {
+        "station": [
+          {
+            "city": "Rock Hill",
+            "state": "SC",
+            "country": "US",
+            "icao": "KUZA",
+            "lat": "34.99000168",
+            "lon": "-81.05999756"
+          },
+          {
+            "city": "Charlotte",
+            "state": "NC",
+            "country": "US",
+            "icao": "KCLT",
+            "lat": "35.20999908",
+            "lon": "-80.94000244"
+          },
+          {
+            "city": "Gastonia",
+            "state": "NC",
+            "country": "US",
+            "icao": "KAKH",
+            "lat": "35.20000076",
+            "lon": "-81.15000153"
+          },
+          {
+            "city": "Monroe",
+            "state": "NC",
+            "country": "US",
+            "icao": "KEQY",
+            "lat": "35.02000046",
+            "lon": "-80.62000275"
+          }
+        ]
+      },
+      "pws": {
+        "station": [
+          {
+            "neighborhood": "Southern Trace",
+            "city": "Charlotte",
+            "state": "NC",
+            "country": "US",
+            "id": "KNCCHARL309",
+            "lat": 35.06955,
+            "lon": -81.014214,
+            "distance_km": 3,
+            "distance_mi": 1
+          },
+          {
+            "neighborhood": "Hamilton Green",
+            "city": "Charlotte",
+            "state": "NC",
+            "country": "US",
+            "id": "KNCCHARL287",
+            "lat": 35.079784,
+            "lon": -80.985947,
+            "distance_km": 3,
+            "distance_mi": 1
+          },
+          {
+            "neighborhood": "Windjammer, Tega Cay",
+            "city": "Tega Cay",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCTEGAC4",
+            "lat": 35.040989,
+            "lon": -81.035629,
+            "distance_km": 4,
+            "distance_mi": 2
+          },
+          {
+            "neighborhood": "Beacon Knoll",
+            "city": "Fort Mill",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCFORTM15",
+            "lat": 35.08392,
+            "lon": -80.951607,
+            "distance_km": 5,
+            "distance_mi": 3
+          },
+          {
+            "neighborhood": "Walter Elisha Park Area",
+            "city": "Fort Mill",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCFORTM7",
+            "lat": 35.006966,
+            "lon": -80.948715,
+            "distance_km": 6,
+            "distance_mi": 3
+          },
+          {
+            "neighborhood": "Chapel Gate",
+            "city": "Rock Hill",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCROCKH19",
+            "lat": 35.003052,
+            "lon": -81.032227,
+            "distance_km": 6,
+            "distance_mi": 3
+          },
+          {
+            "neighborhood": "Owens Wx Station in Regal Manor",
+            "city": "Fort Mill",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCFORTM39",
+            "lat": 35.054237,
+            "lon": -80.912468,
+            "distance_km": 7,
+            "distance_mi": 4
+          },
+          {
+            "neighborhood": "Riverpointe",
+            "city": "Charlotte",
+            "state": "NC",
+            "country": "US",
+            "id": "KNCCHARL81",
+            "lat": 35.105743,
+            "lon": -81.03363,
+            "distance_km": 7,
+            "distance_mi": 4
+          },
+          {
+            "neighborhood": "Paces River",
+            "city": "Rock Hill",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCROCKH24",
+            "lat": 34.983376,
+            "lon": -80.989059,
+            "distance_km": 7,
+            "distance_mi": 4
+          },
+          {
+            "neighborhood": "Charlotte",
+            "city": "Steele Creek",
+            "state": "NC",
+            "country": "US",
+            "id": "KNCSTEEL2",
+            "lat": 35.118023,
+            "lon": -80.964088,
+            "distance_km": 7,
+            "distance_mi": 4
+          },
+          {
+            "neighborhood": "Fort Mill",
+            "city": "Fort Mill",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCFORTM27",
+            "lat": 35.08358,
+            "lon": -80.908478,
+            "distance_km": 8,
+            "distance_mi": 4
+          },
+          {
+            "neighborhood": "Woody Point",
+            "city": "Charlotte",
+            "state": "NC",
+            "country": "US",
+            "id": "KNCCHARL269",
+            "lat": 35.127399,
+            "lon": -81.024483,
+            "distance_km": 9,
+            "distance_mi": 5
+          },
+          {
+            "neighborhood": "Retreat at Sunset Ridge",
+            "city": "Clover",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCCLOVE10",
+            "lat": 35.082005,
+            "lon": -81.084602,
+            "distance_km": 9,
+            "distance_mi": 5
+          },
+          {
+            "neighborhood": "Clover",
+            "city": "Clover",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCCLOVE8",
+            "lat": 35.097923,
+            "lon": -81.079155,
+            "distance_km": 9,
+            "distance_mi": 5
+          },
+          {
+            "neighborhood": "Arbor Place",
+            "city": "Fort Mill",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCFORTM32",
+            "lat": 35.04121,
+            "lon": -80.88076,
+            "distance_km": 9,
+            "distance_mi": 5
+          },
+          {
+            "neighborhood": "Cardinal Woods",
+            "city": "Pineville",
+            "state": "NC",
+            "country": "US",
+            "id": "KNCPINEV2",
+            "lat": 35.058208,
+            "lon": -80.877785,
+            "distance_km": 10,
+            "distance_mi": 6
+          },
+          {
+            "neighborhood": "Waterside at the Catawba",
+            "city": "Fort Mill",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCFORTM29",
+            "lat": 34.968933,
+            "lon": -80.93512,
+            "distance_km": 10,
+            "distance_mi": 6
+          },
+          {
+            "neighborhood": "Lenox Pointe Drive",
+            "city": "Charlotte",
+            "state": "NC",
+            "country": "US",
+            "id": "KNCCHARL109",
+            "lat": 35.134747,
+            "lon": -80.935944,
+            "distance_km": 10,
+            "distance_mi": 6
+          },
+          {
+            "neighborhood": "State Route 1583",
+            "city": "Rock Hill",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCROCKH16",
+            "lat": 35.021812,
+            "lon": -81.10685,
+            "distance_km": 11,
+            "distance_mi": 6
+          },
+          {
+            "neighborhood": "Tullamore",
+            "city": "Clover",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCCLOVE11",
+            "lat": 35.095879,
+            "lon": -81.099991,
+            "distance_km": 11,
+            "distance_mi": 6
+          },
+          {
+            "neighborhood": "Coves on River Oaks",
+            "city": "Clover",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCCLOVE9",
+            "lat": 35.130676,
+            "lon": -81.065262,
+            "distance_km": 11,
+            "distance_mi": 6
+          },
+          {
+            "neighborhood": "Fort Mill",
+            "city": "Colonial Village",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCCOLON2",
+            "lat": 35.012844,
+            "lon": -80.873352,
+            "distance_km": 11,
+            "distance_mi": 6
+          },
+          {
+            "neighborhood": "Fort Mill",
+            "city": "Fort Mill",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCFORTM28",
+            "lat": 34.983261,
+            "lon": -80.893089,
+            "distance_km": 11,
+            "distance_mi": 6
+          },
+          {
+            "neighborhood": "Ballantyne West",
+            "city": "Charlotte",
+            "state": "NC",
+            "country": "US",
+            "id": "KNCCHARL177",
+            "lat": 35.044876,
+            "lon": -80.860123,
+            "distance_km": 11,
+            "distance_mi": 7
+          },
+          {
+            "neighborhood": "Reflection Pointe",
+            "city": "Belmont",
+            "state": "NC",
+            "country": "US",
+            "id": "KNCBELMO13",
+            "lat": 35.153568,
+            "lon": -81.020943,
+            "distance_km": 11,
+            "distance_mi": 7
+          },
+          {
+            "neighborhood": "Lake Pointe Drive",
+            "city": "Belmont",
+            "state": "NC",
+            "country": "US",
+            "id": "KNCBELMO10",
+            "lat": 35.153599,
+            "lon": -81.021217,
+            "distance_km": 11,
+            "distance_mi": 7
+          },
+          {
+            "neighborhood": "Bridgehampton",
+            "city": "Fort Mill",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCFORTM31",
+            "lat": 35.024239,
+            "lon": -80.861641,
+            "distance_km": 12,
+            "distance_mi": 7
+          },
+          {
+            "neighborhood": "Walnut Creek",
+            "city": "Charlotte",
+            "state": "NC",
+            "country": "US",
+            "id": "KNCCHARL51",
+            "lat": 35.0681,
+            "lon": -80.859436,
+            "distance_km": 12,
+            "distance_mi": 7
+          },
+          {
+            "neighborhood": "Old Springs Road",
+            "city": "Fort Mill",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCFORTM19",
+            "lat": 34.976555,
+            "lon": -80.890755,
+            "distance_km": 12,
+            "distance_mi": 7
+          },
+          {
+            "neighborhood": "Massey Neighborhood Weather Station",
+            "city": "Fort Mill",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCFORTM35",
+            "lat": 34.965702,
+            "lon": -80.900047,
+            "distance_km": 12,
+            "distance_mi": 7
+          },
+          {
+            "neighborhood": "Innisfree",
+            "city": "Charlotte",
+            "state": "NC",
+            "country": "US",
+            "id": "KNCCHARL83",
+            "lat": 35.083694,
+            "lon": -80.856514,
+            "distance_km": 12,
+            "distance_mi": 7
+          },
+          {
+            "neighborhood": "Dixie - Berryhill",
+            "city": "Charlotte",
+            "state": "NC",
+            "country": "US",
+            "id": "KNCCHARL130",
+            "lat": 35.163704,
+            "lon": -81.005478,
+            "distance_km": 12,
+            "distance_mi": 7
+          },
+          {
+            "neighborhood": "Fort Mill",
+            "city": "Grey Rock",
+            "state": "SC",
+            "country": "US",
+            "id": "KSCGREYR2",
+            "lat": 35.043736,
+            "lon": -80.986481,
+            "distance_km": 0,
+            "distance_mi": 0
+          }
+        ]
+      }
+    }
+  },
+  "forecast": {
+    "txt_forecast": {
+      "date": "1:45 PM EDT",
+      "forecastday": [
+        {
+          "period": 0,
+          "icon": "partlycloudy",
+          "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+          "title": "Thursday",
+          "fcttext": "A mix of clouds and sun. A stray shower or thunderstorm is possible. High 92F. Winds SW at 5 to 10 mph.",
+          "fcttext_metric": "Partly cloudy. A stray shower or thunderstorm is possible. High 32C. Winds light and variable.",
+          "pop": "20"
+        },
+        {
+          "period": 1,
+          "icon": "nt_chancetstorms",
+          "icon_url": "http://icons.wxug.com/i/c/k/nt_chancetstorms.gif",
+          "title": "Thursday Night",
+          "fcttext": "Partly to mostly cloudy skies with scattered thunderstorms during the evening. Low around 70F. Winds SW at 5 to 10 mph. Chance of rain 40%.",
+          "fcttext_metric": "Isolated thunderstorms early, then partly cloudy after midnight. Low 21C. Winds light and variable. Chance of rain 30%.",
+          "pop": "40"
+        },
+        {
+          "period": 2,
+          "icon": "chancetstorms",
+          "icon_url": "http://icons.wxug.com/i/c/k/chancetstorms.gif",
+          "title": "Friday",
+          "fcttext": "Partial cloudiness early, with scattered showers and thunderstorms in the afternoon. High around 90F. Winds SW at 5 to 10 mph. Chance of rain 60%.",
+          "fcttext_metric": "Partial cloudiness early, with scattered showers and thunderstorms in the afternoon. High 32C. Winds light and variable. Chance of rain 60%.",
+          "pop": "60"
+        },
+        {
+          "period": 3,
+          "icon": "nt_chancetstorms",
+          "icon_url": "http://icons.wxug.com/i/c/k/nt_chancetstorms.gif",
+          "title": "Friday Night",
+          "fcttext": "Variably cloudy with scattered thunderstorms. Low near 70F. Winds light and variable. Chance of rain 60%.",
+          "fcttext_metric": "Scattered thunderstorms. Low 21C. Winds light and variable. Chance of rain 60%.",
+          "pop": "60"
+        },
+        {
+          "period": 4,
+          "icon": "chancetstorms",
+          "icon_url": "http://icons.wxug.com/i/c/k/chancetstorms.gif",
+          "title": "Saturday",
+          "fcttext": "Scattered thunderstorms. High 87F. Winds S at 5 to 10 mph. Chance of rain 60%.",
+          "fcttext_metric": "Scattered showers and thunderstorms. High near 30C. Winds S at 10 to 15 km/h. Chance of rain 60%.",
+          "pop": "60"
+        },
+        {
+          "period": 5,
+          "icon": "nt_chancetstorms",
+          "icon_url": "http://icons.wxug.com/i/c/k/nt_chancetstorms.gif",
+          "title": "Saturday Night",
+          "fcttext": "Scattered thunderstorms in the evening. Partly cloudy skies overnight. Low around 70F. Winds S at 5 to 10 mph. Chance of rain 60%.",
+          "fcttext_metric": "Partly to mostly cloudy skies with scattered thunderstorms before midnight. Low 21C. Winds light and variable. Chance of rain 60%.",
+          "pop": "60"
+        },
+        {
+          "period": 6,
+          "icon": "chancetstorms",
+          "icon_url": "http://icons.wxug.com/i/c/k/chancetstorms.gif",
+          "title": "Sunday",
+          "fcttext": "Scattered clouds with the possibility of an isolated thunderstorm developing during the afternoon. High 88F. Winds SSW at 5 to 10 mph. Chance of rain 30%.",
+          "fcttext_metric": "Partly cloudy in the morning followed by scattered thunderstorms in the afternoon. High 31C. Winds SSW at 10 to 15 km/h. Chance of rain 60%.",
+          "pop": "30"
+        },
+        {
+          "period": 7,
+          "icon": "nt_partlycloudy",
+          "icon_url": "http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
+          "title": "Sunday Night",
+          "fcttext": "A few clouds. Low 71F. Winds SSW at 5 to 10 mph.",
+          "fcttext_metric": "A few clouds. Low 22C. Winds SSW at 10 to 15 km/h.",
+          "pop": "20"
+        }
+      ]
+    },
+    "simpleforecast": {
+      "forecastday": [
+        {
+          "date": {
+            "epoch": "1497567600",
+            "pretty": "7:00 PM EDT on June 15, 2017",
+            "day": 15,
+            "month": 6,
+            "year": 2017,
+            "yday": 165,
+            "hour": 19,
+            "min": "00",
+            "sec": 0,
+            "isdst": "1",
+            "monthname": "June",
+            "monthname_short": "Jun",
+            "weekday_short": "Thu",
+            "weekday": "Thursday",
+            "ampm": "PM",
+            "tz_short": "EDT",
+            "tz_long": "America/New_York"
+          },
+          "period": 1,
+          "high": {
+            "fahrenheit": "92",
+            "celsius": "33"
+          },
+          "low": {
+            "fahrenheit": "70",
+            "celsius": "21"
+          },
+          "conditions": "Partly Cloudy",
+          "icon": "partlycloudy",
+          "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+          "skyicon": "",
+          "pop": 20,
+          "qpf_allday": {
+            "in": 0.06,
+            "mm": 2
+          },
+          "qpf_day": {
+            "in": 0,
+            "mm": 0
+          },
+          "qpf_night": {
+            "in": 0.06,
+            "mm": 2
+          },
+          "snow_allday": {
+            "in": 0,
+            "cm": 0
+          },
+          "snow_day": {
+            "in": 0,
+            "cm": 0
+          },
+          "snow_night": {
+            "in": 0,
+            "cm": 0
+          },
+          "maxwind": {
+            "mph": 10,
+            "kph": 16,
+            "dir": "SW",
+            "degrees": 216
+          },
+          "avewind": {
+            "mph": 6,
+            "kph": 10,
+            "dir": "SW",
+            "degrees": 216
+          },
+          "avehumidity": 47,
+          "maxhumidity": 0,
+          "minhumidity": 0
+        },
+        {
+          "date": {
+            "epoch": "1497654000",
+            "pretty": "7:00 PM EDT on June 16, 2017",
+            "day": 16,
+            "month": 6,
+            "year": 2017,
+            "yday": 166,
+            "hour": 19,
+            "min": "00",
+            "sec": 0,
+            "isdst": "1",
+            "monthname": "June",
+            "monthname_short": "Jun",
+            "weekday_short": "Fri",
+            "weekday": "Friday",
+            "ampm": "PM",
+            "tz_short": "EDT",
+            "tz_long": "America/New_York"
+          },
+          "period": 2,
+          "high": {
+            "fahrenheit": "90",
+            "celsius": "32"
+          },
+          "low": {
+            "fahrenheit": "70",
+            "celsius": "21"
+          },
+          "conditions": "Chance of a Thunderstorm",
+          "icon": "chancetstorms",
+          "icon_url": "http://icons.wxug.com/i/c/k/chancetstorms.gif",
+          "skyicon": "",
+          "pop": 60,
+          "qpf_allday": {
+            "in": 0.37,
+            "mm": 9
+          },
+          "qpf_day": {
+            "in": 0.2,
+            "mm": 5
+          },
+          "qpf_night": {
+            "in": 0.17,
+            "mm": 4
+          },
+          "snow_allday": {
+            "in": 0,
+            "cm": 0
+          },
+          "snow_day": {
+            "in": 0,
+            "cm": 0
+          },
+          "snow_night": {
+            "in": 0,
+            "cm": 0
+          },
+          "maxwind": {
+            "mph": 10,
+            "kph": 16,
+            "dir": "SW",
+            "degrees": 226
+          },
+          "avewind": {
+            "mph": 6,
+            "kph": 10,
+            "dir": "SW",
+            "degrees": 226
+          },
+          "avehumidity": 66,
+          "maxhumidity": 0,
+          "minhumidity": 0
+        },
+        {
+          "date": {
+            "epoch": "1497740400",
+            "pretty": "7:00 PM EDT on June 17, 2017",
+            "day": 17,
+            "month": 6,
+            "year": 2017,
+            "yday": 167,
+            "hour": 19,
+            "min": "00",
+            "sec": 0,
+            "isdst": "1",
+            "monthname": "June",
+            "monthname_short": "Jun",
+            "weekday_short": "Sat",
+            "weekday": "Saturday",
+            "ampm": "PM",
+            "tz_short": "EDT",
+            "tz_long": "America/New_York"
+          },
+          "period": 3,
+          "high": {
+            "fahrenheit": "87",
+            "celsius": "31"
+          },
+          "low": {
+            "fahrenheit": "70",
+            "celsius": "21"
+          },
+          "conditions": "Chance of a Thunderstorm",
+          "icon": "chancetstorms",
+          "icon_url": "http://icons.wxug.com/i/c/k/chancetstorms.gif",
+          "skyicon": "",
+          "pop": 60,
+          "qpf_allday": {
+            "in": 0.41,
+            "mm": 10
+          },
+          "qpf_day": {
+            "in": 0.34,
+            "mm": 9
+          },
+          "qpf_night": {
+            "in": 0.08,
+            "mm": 2
+          },
+          "snow_allday": {
+            "in": 0,
+            "cm": 0
+          },
+          "snow_day": {
+            "in": 0,
+            "cm": 0
+          },
+          "snow_night": {
+            "in": 0,
+            "cm": 0
+          },
+          "maxwind": {
+            "mph": 10,
+            "kph": 16,
+            "dir": "S",
+            "degrees": 177
+          },
+          "avewind": {
+            "mph": 7,
+            "kph": 11,
+            "dir": "S",
+            "degrees": 177
+          },
+          "avehumidity": 75,
+          "maxhumidity": 0,
+          "minhumidity": 0
+        },
+        {
+          "date": {
+            "epoch": "1497826800",
+            "pretty": "7:00 PM EDT on June 18, 2017",
+            "day": 18,
+            "month": 6,
+            "year": 2017,
+            "yday": 168,
+            "hour": 19,
+            "min": "00",
+            "sec": 0,
+            "isdst": "1",
+            "monthname": "June",
+            "monthname_short": "Jun",
+            "weekday_short": "Sun",
+            "weekday": "Sunday",
+            "ampm": "PM",
+            "tz_short": "EDT",
+            "tz_long": "America/New_York"
+          },
+          "period": 4,
+          "high": {
+            "fahrenheit": "88",
+            "celsius": "31"
+          },
+          "low": {
+            "fahrenheit": "71",
+            "celsius": "22"
+          },
+          "conditions": "Chance of a Thunderstorm",
+          "icon": "chancetstorms",
+          "icon_url": "http://icons.wxug.com/i/c/k/chancetstorms.gif",
+          "skyicon": "",
+          "pop": 30,
+          "qpf_allday": {
+            "in": 0.05,
+            "mm": 1
+          },
+          "qpf_day": {
+            "in": 0.05,
+            "mm": 1
+          },
+          "qpf_night": {
+            "in": 0,
+            "mm": 0
+          },
+          "snow_allday": {
+            "in": 0,
+            "cm": 0
+          },
+          "snow_day": {
+            "in": 0,
+            "cm": 0
+          },
+          "snow_night": {
+            "in": 0,
+            "cm": 0
+          },
+          "maxwind": {
+            "mph": 10,
+            "kph": 16,
+            "dir": "SSW",
+            "degrees": 207
+          },
+          "avewind": {
+            "mph": 9,
+            "kph": 14,
+            "dir": "SSW",
+            "degrees": 207
+          },
+          "avehumidity": 72,
+          "maxhumidity": 0,
+          "minhumidity": 0
+        }
+      ]
+    }
   }
-	}
-		,	"location": {
-		"type":"CITY",
-		"country":"US",
-		"country_iso3166":"US",
-		"country_name":"USA",
-		"state":"SC",
-		"city":"Fort Mill",
-		"tz_short":"EDT",
-		"tz_long":"America/New_York",
-		"lat":"35.04999924",
-		"lon":"-80.98999786",
-		"zip":"29708",
-		"magic":"1",
-		"wmo":"99999",
-		"l":"/q/zmw:29708.1.99999",
-		"requesturl":"US/SC/Fort_Mill.html",
-		"wuiurl":"https://www.wunderground.com/US/SC/Fort_Mill.html",
-		"nearby_weather_stations": {
-		"airport": {
-		"station": [
-		{ "city":"Rock Hill", "state":"SC", "country":"US", "icao":"KUZA", "lat":"34.99000168", "lon":"-81.05999756" }
-		,{ "city":"Charlotte", "state":"NC", "country":"US", "icao":"KCLT", "lat":"35.20999908", "lon":"-80.94000244" }
-		,{ "city":"Gastonia", "state":"NC", "country":"US", "icao":"KAKH", "lat":"35.20000076", "lon":"-81.15000153" }
-		,{ "city":"Monroe", "state":"NC", "country":"US", "icao":"KEQY", "lat":"35.02000046", "lon":"-80.62000275" }
-		]
-		}
-		,
-		"pws": {
-		"station": [
-		{
-		"neighborhood":"Southern Trace",
-		"city":"Charlotte",
-		"state":"NC",
-		"country":"US",
-		"id":"KNCCHARL309",
-		"lat":35.069550,
-		"lon":-81.014214,
-		"distance_km":3,
-		"distance_mi":1
-		},
-		{
-		"neighborhood":"Hamilton Green",
-		"city":"Charlotte",
-		"state":"NC",
-		"country":"US",
-		"id":"KNCCHARL287",
-		"lat":35.079784,
-		"lon":-80.985947,
-		"distance_km":3,
-		"distance_mi":1
-		},
-		{
-		"neighborhood":"Windjammer, Tega Cay",
-		"city":"Tega Cay",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCTEGAC4",
-		"lat":35.040989,
-		"lon":-81.035629,
-		"distance_km":4,
-		"distance_mi":2
-		},
-		{
-		"neighborhood":"Beacon Knoll",
-		"city":"Fort Mill",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCFORTM15",
-		"lat":35.083920,
-		"lon":-80.951607,
-		"distance_km":5,
-		"distance_mi":3
-		},
-		{
-		"neighborhood":"Walter Elisha Park Area",
-		"city":"Fort Mill",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCFORTM7",
-		"lat":35.006966,
-		"lon":-80.948715,
-		"distance_km":6,
-		"distance_mi":3
-		},
-		{
-		"neighborhood":"Chapel Gate",
-		"city":"Rock Hill",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCROCKH19",
-		"lat":35.003052,
-		"lon":-81.032227,
-		"distance_km":6,
-		"distance_mi":3
-		},
-		{
-		"neighborhood":"Owens Wx Station in Regal Manor",
-		"city":"Fort Mill",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCFORTM39",
-		"lat":35.054237,
-		"lon":-80.912468,
-		"distance_km":7,
-		"distance_mi":4
-		},
-		{
-		"neighborhood":"Riverpointe",
-		"city":"Charlotte",
-		"state":"NC",
-		"country":"US",
-		"id":"KNCCHARL81",
-		"lat":35.105743,
-		"lon":-81.033630,
-		"distance_km":7,
-		"distance_mi":4
-		},
-		{
-		"neighborhood":"Paces River",
-		"city":"Rock Hill",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCROCKH24",
-		"lat":34.983376,
-		"lon":-80.989059,
-		"distance_km":7,
-		"distance_mi":4
-		},
-		{
-		"neighborhood":"Charlotte",
-		"city":"Steele Creek",
-		"state":"NC",
-		"country":"US",
-		"id":"KNCSTEEL2",
-		"lat":35.118023,
-		"lon":-80.964088,
-		"distance_km":7,
-		"distance_mi":4
-		},
-		{
-		"neighborhood":"Fort Mill",
-		"city":"Fort Mill",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCFORTM27",
-		"lat":35.083580,
-		"lon":-80.908478,
-		"distance_km":8,
-		"distance_mi":4
-		},
-		{
-		"neighborhood":"Woody Point",
-		"city":"Charlotte",
-		"state":"NC",
-		"country":"US",
-		"id":"KNCCHARL269",
-		"lat":35.127399,
-		"lon":-81.024483,
-		"distance_km":9,
-		"distance_mi":5
-		},
-		{
-		"neighborhood":"Retreat at Sunset Ridge",
-		"city":"Clover",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCCLOVE10",
-		"lat":35.082005,
-		"lon":-81.084602,
-		"distance_km":9,
-		"distance_mi":5
-		},
-		{
-		"neighborhood":"Clover",
-		"city":"Clover",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCCLOVE8",
-		"lat":35.097923,
-		"lon":-81.079155,
-		"distance_km":9,
-		"distance_mi":5
-		},
-		{
-		"neighborhood":"Arbor Place",
-		"city":"Fort Mill",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCFORTM32",
-		"lat":35.041210,
-		"lon":-80.880760,
-		"distance_km":9,
-		"distance_mi":5
-		},
-		{
-		"neighborhood":"Cardinal Woods",
-		"city":"Pineville",
-		"state":"NC",
-		"country":"US",
-		"id":"KNCPINEV2",
-		"lat":35.058208,
-		"lon":-80.877785,
-		"distance_km":10,
-		"distance_mi":6
-		},
-		{
-		"neighborhood":"Waterside at the Catawba",
-		"city":"Fort Mill",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCFORTM29",
-		"lat":34.968933,
-		"lon":-80.935120,
-		"distance_km":10,
-		"distance_mi":6
-		},
-		{
-		"neighborhood":"Lenox Pointe Drive",
-		"city":"Charlotte",
-		"state":"NC",
-		"country":"US",
-		"id":"KNCCHARL109",
-		"lat":35.134747,
-		"lon":-80.935944,
-		"distance_km":10,
-		"distance_mi":6
-		},
-		{
-		"neighborhood":"State Route 1583",
-		"city":"Rock Hill",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCROCKH16",
-		"lat":35.021812,
-		"lon":-81.106850,
-		"distance_km":11,
-		"distance_mi":6
-		},
-		{
-		"neighborhood":"Tullamore",
-		"city":"Clover",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCCLOVE11",
-		"lat":35.095879,
-		"lon":-81.099991,
-		"distance_km":11,
-		"distance_mi":6
-		},
-		{
-		"neighborhood":"Coves on River Oaks",
-		"city":"Clover",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCCLOVE9",
-		"lat":35.130676,
-		"lon":-81.065262,
-		"distance_km":11,
-		"distance_mi":6
-		},
-		{
-		"neighborhood":"Fort Mill",
-		"city":"Colonial Village",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCCOLON2",
-		"lat":35.012844,
-		"lon":-80.873352,
-		"distance_km":11,
-		"distance_mi":6
-		},
-		{
-		"neighborhood":"Fort Mill",
-		"city":"Fort Mill",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCFORTM28",
-		"lat":34.983261,
-		"lon":-80.893089,
-		"distance_km":11,
-		"distance_mi":6
-		},
-		{
-		"neighborhood":"Ballantyne West",
-		"city":"Charlotte",
-		"state":"NC",
-		"country":"US",
-		"id":"KNCCHARL177",
-		"lat":35.044876,
-		"lon":-80.860123,
-		"distance_km":11,
-		"distance_mi":7
-		},
-		{
-		"neighborhood":"Reflection Pointe",
-		"city":"Belmont",
-		"state":"NC",
-		"country":"US",
-		"id":"KNCBELMO13",
-		"lat":35.153568,
-		"lon":-81.020943,
-		"distance_km":11,
-		"distance_mi":7
-		},
-		{
-		"neighborhood":"Lake Pointe Drive",
-		"city":"Belmont",
-		"state":"NC",
-		"country":"US",
-		"id":"KNCBELMO10",
-		"lat":35.153599,
-		"lon":-81.021217,
-		"distance_km":11,
-		"distance_mi":7
-		},
-		{
-		"neighborhood":"Bridgehampton",
-		"city":"Fort Mill",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCFORTM31",
-		"lat":35.024239,
-		"lon":-80.861641,
-		"distance_km":12,
-		"distance_mi":7
-		},
-		{
-		"neighborhood":"Walnut Creek",
-		"city":"Charlotte",
-		"state":"NC",
-		"country":"US",
-		"id":"KNCCHARL51",
-		"lat":35.068100,
-		"lon":-80.859436,
-		"distance_km":12,
-		"distance_mi":7
-		},
-		{
-		"neighborhood":"Old Springs Road",
-		"city":"Fort Mill",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCFORTM19",
-		"lat":34.976555,
-		"lon":-80.890755,
-		"distance_km":12,
-		"distance_mi":7
-		},
-		{
-		"neighborhood":"Massey Neighborhood Weather Station",
-		"city":"Fort Mill",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCFORTM35",
-		"lat":34.965702,
-		"lon":-80.900047,
-		"distance_km":12,
-		"distance_mi":7
-		},
-		{
-		"neighborhood":"Innisfree",
-		"city":"Charlotte",
-		"state":"NC",
-		"country":"US",
-		"id":"KNCCHARL83",
-		"lat":35.083694,
-		"lon":-80.856514,
-		"distance_km":12,
-		"distance_mi":7
-		},
-		{
-		"neighborhood":"Dixie - Berryhill",
-		"city":"Charlotte",
-		"state":"NC",
-		"country":"US",
-		"id":"KNCCHARL130",
-		"lat":35.163704,
-		"lon":-81.005478,
-		"distance_km":12,
-		"distance_mi":7
-		},
-		{
-		"neighborhood":"Fort Mill",
-		"city":"Grey Rock",
-		"state":"SC",
-		"country":"US",
-		"id":"KSCGREYR2",
-		"lat":35.043736,
-		"lon":-80.986481,
-		"distance_km":0,
-		"distance_mi":0
-		}
-		]
-		}
-		}
-	}
-		,
-	"forecast":{
-		"txt_forecast": {
-		"date":"1:45 PM EDT",
-		"forecastday": [
-		{
-		"period":0,
-		"icon":"partlycloudy",
-		"icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
-		"title":"Thursday",
-		"fcttext":"A mix of clouds and sun. A stray shower or thunderstorm is possible. High 92F. Winds SW at 5 to 10 mph.",
-		"fcttext_metric":"Partly cloudy. A stray shower or thunderstorm is possible. High 32C. Winds light and variable.",
-		"pop":"20"
-		}
-		,
-		{
-		"period":1,
-		"icon":"nt_chancetstorms",
-		"icon_url":"http://icons.wxug.com/i/c/k/nt_chancetstorms.gif",
-		"title":"Thursday Night",
-		"fcttext":"Partly to mostly cloudy skies with scattered thunderstorms during the evening. Low around 70F. Winds SW at 5 to 10 mph. Chance of rain 40%.",
-		"fcttext_metric":"Isolated thunderstorms early, then partly cloudy after midnight. Low 21C. Winds light and variable. Chance of rain 30%.",
-		"pop":"40"
-		}
-		,
-		{
-		"period":2,
-		"icon":"chancetstorms",
-		"icon_url":"http://icons.wxug.com/i/c/k/chancetstorms.gif",
-		"title":"Friday",
-		"fcttext":"Partial cloudiness early, with scattered showers and thunderstorms in the afternoon. High around 90F. Winds SW at 5 to 10 mph. Chance of rain 60%.",
-		"fcttext_metric":"Partial cloudiness early, with scattered showers and thunderstorms in the afternoon. High 32C. Winds light and variable. Chance of rain 60%.",
-		"pop":"60"
-		}
-		,
-		{
-		"period":3,
-		"icon":"nt_chancetstorms",
-		"icon_url":"http://icons.wxug.com/i/c/k/nt_chancetstorms.gif",
-		"title":"Friday Night",
-		"fcttext":"Variably cloudy with scattered thunderstorms. Low near 70F. Winds light and variable. Chance of rain 60%.",
-		"fcttext_metric":"Scattered thunderstorms. Low 21C. Winds light and variable. Chance of rain 60%.",
-		"pop":"60"
-		}
-		,
-		{
-		"period":4,
-		"icon":"chancetstorms",
-		"icon_url":"http://icons.wxug.com/i/c/k/chancetstorms.gif",
-		"title":"Saturday",
-		"fcttext":"Scattered thunderstorms. High 87F. Winds S at 5 to 10 mph. Chance of rain 60%.",
-		"fcttext_metric":"Scattered showers and thunderstorms. High near 30C. Winds S at 10 to 15 km/h. Chance of rain 60%.",
-		"pop":"60"
-		}
-		,
-		{
-		"period":5,
-		"icon":"nt_chancetstorms",
-		"icon_url":"http://icons.wxug.com/i/c/k/nt_chancetstorms.gif",
-		"title":"Saturday Night",
-		"fcttext":"Scattered thunderstorms in the evening. Partly cloudy skies overnight. Low around 70F. Winds S at 5 to 10 mph. Chance of rain 60%.",
-		"fcttext_metric":"Partly to mostly cloudy skies with scattered thunderstorms before midnight. Low 21C. Winds light and variable. Chance of rain 60%.",
-		"pop":"60"
-		}
-		,
-		{
-		"period":6,
-		"icon":"chancetstorms",
-		"icon_url":"http://icons.wxug.com/i/c/k/chancetstorms.gif",
-		"title":"Sunday",
-		"fcttext":"Scattered clouds with the possibility of an isolated thunderstorm developing during the afternoon. High 88F. Winds SSW at 5 to 10 mph. Chance of rain 30%.",
-		"fcttext_metric":"Partly cloudy in the morning followed by scattered thunderstorms in the afternoon. High 31C. Winds SSW at 10 to 15 km/h. Chance of rain 60%.",
-		"pop":"30"
-		}
-		,
-		{
-		"period":7,
-		"icon":"nt_partlycloudy",
-		"icon_url":"http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
-		"title":"Sunday Night",
-		"fcttext":"A few clouds. Low 71F. Winds SSW at 5 to 10 mph.",
-		"fcttext_metric":"A few clouds. Low 22C. Winds SSW at 10 to 15 km/h.",
-		"pop":"20"
-		}
-		]
-		},
-		"simpleforecast": {
-		"forecastday": [
-		{"date":{
-	"epoch":"1497567600",
-	"pretty":"7:00 PM EDT on June 15, 2017",
-	"day":15,
-	"month":6,
-	"year":2017,
-	"yday":165,
-	"hour":19,
-	"min":"00",
-	"sec":0,
-	"isdst":"1",
-	"monthname":"June",
-	"monthname_short":"Jun",
-	"weekday_short":"Thu",
-	"weekday":"Thursday",
-	"ampm":"PM",
-	"tz_short":"EDT",
-	"tz_long":"America/New_York"
-},
-		"period":1,
-		"high": {
-		"fahrenheit":"92",
-		"celsius":"33"
-		},
-		"low": {
-		"fahrenheit":"70",
-		"celsius":"21"
-		},
-		"conditions":"Partly Cloudy",
-		"icon":"partlycloudy",
-		"icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
-		"skyicon":"",
-		"pop":20,
-		"qpf_allday": {
-		"in": 0.06,
-		"mm": 2
-		},
-		"qpf_day": {
-		"in": 0.00,
-		"mm": 0
-		},
-		"qpf_night": {
-		"in": 0.06,
-		"mm": 2
-		},
-		"snow_allday": {
-		"in": 0.0,
-		"cm": 0.0
-		},
-		"snow_day": {
-		"in": 0.0,
-		"cm": 0.0
-		},
-		"snow_night": {
-		"in": 0.0,
-		"cm": 0.0
-		},
-		"maxwind": {
-		"mph": 10,
-		"kph": 16,
-		"dir": "SW",
-		"degrees": 216
-		},
-		"avewind": {
-		"mph": 6,
-		"kph": 10,
-		"dir": "SW",
-		"degrees": 216
-		},
-		"avehumidity": 47,
-		"maxhumidity": 0,
-		"minhumidity": 0
-		}
-		,
-		{"date":{
-	"epoch":"1497654000",
-	"pretty":"7:00 PM EDT on June 16, 2017",
-	"day":16,
-	"month":6,
-	"year":2017,
-	"yday":166,
-	"hour":19,
-	"min":"00",
-	"sec":0,
-	"isdst":"1",
-	"monthname":"June",
-	"monthname_short":"Jun",
-	"weekday_short":"Fri",
-	"weekday":"Friday",
-	"ampm":"PM",
-	"tz_short":"EDT",
-	"tz_long":"America/New_York"
-},
-		"period":2,
-		"high": {
-		"fahrenheit":"90",
-		"celsius":"32"
-		},
-		"low": {
-		"fahrenheit":"70",
-		"celsius":"21"
-		},
-		"conditions":"Chance of a Thunderstorm",
-		"icon":"chancetstorms",
-		"icon_url":"http://icons.wxug.com/i/c/k/chancetstorms.gif",
-		"skyicon":"",
-		"pop":60,
-		"qpf_allday": {
-		"in": 0.37,
-		"mm": 9
-		},
-		"qpf_day": {
-		"in": 0.20,
-		"mm": 5
-		},
-		"qpf_night": {
-		"in": 0.17,
-		"mm": 4
-		},
-		"snow_allday": {
-		"in": 0.0,
-		"cm": 0.0
-		},
-		"snow_day": {
-		"in": 0.0,
-		"cm": 0.0
-		},
-		"snow_night": {
-		"in": 0.0,
-		"cm": 0.0
-		},
-		"maxwind": {
-		"mph": 10,
-		"kph": 16,
-		"dir": "SW",
-		"degrees": 226
-		},
-		"avewind": {
-		"mph": 6,
-		"kph": 10,
-		"dir": "SW",
-		"degrees": 226
-		},
-		"avehumidity": 66,
-		"maxhumidity": 0,
-		"minhumidity": 0
-		}
-		,
-		{"date":{
-	"epoch":"1497740400",
-	"pretty":"7:00 PM EDT on June 17, 2017",
-	"day":17,
-	"month":6,
-	"year":2017,
-	"yday":167,
-	"hour":19,
-	"min":"00",
-	"sec":0,
-	"isdst":"1",
-	"monthname":"June",
-	"monthname_short":"Jun",
-	"weekday_short":"Sat",
-	"weekday":"Saturday",
-	"ampm":"PM",
-	"tz_short":"EDT",
-	"tz_long":"America/New_York"
-},
-		"period":3,
-		"high": {
-		"fahrenheit":"87",
-		"celsius":"31"
-		},
-		"low": {
-		"fahrenheit":"70",
-		"celsius":"21"
-		},
-		"conditions":"Chance of a Thunderstorm",
-		"icon":"chancetstorms",
-		"icon_url":"http://icons.wxug.com/i/c/k/chancetstorms.gif",
-		"skyicon":"",
-		"pop":60,
-		"qpf_allday": {
-		"in": 0.41,
-		"mm": 10
-		},
-		"qpf_day": {
-		"in": 0.34,
-		"mm": 9
-		},
-		"qpf_night": {
-		"in": 0.08,
-		"mm": 2
-		},
-		"snow_allday": {
-		"in": 0.0,
-		"cm": 0.0
-		},
-		"snow_day": {
-		"in": 0.0,
-		"cm": 0.0
-		},
-		"snow_night": {
-		"in": 0.0,
-		"cm": 0.0
-		},
-		"maxwind": {
-		"mph": 10,
-		"kph": 16,
-		"dir": "S",
-		"degrees": 177
-		},
-		"avewind": {
-		"mph": 7,
-		"kph": 11,
-		"dir": "S",
-		"degrees": 177
-		},
-		"avehumidity": 75,
-		"maxhumidity": 0,
-		"minhumidity": 0
-		}
-		,
-		{"date":{
-	"epoch":"1497826800",
-	"pretty":"7:00 PM EDT on June 18, 2017",
-	"day":18,
-	"month":6,
-	"year":2017,
-	"yday":168,
-	"hour":19,
-	"min":"00",
-	"sec":0,
-	"isdst":"1",
-	"monthname":"June",
-	"monthname_short":"Jun",
-	"weekday_short":"Sun",
-	"weekday":"Sunday",
-	"ampm":"PM",
-	"tz_short":"EDT",
-	"tz_long":"America/New_York"
-},
-		"period":4,
-		"high": {
-		"fahrenheit":"88",
-		"celsius":"31"
-		},
-		"low": {
-		"fahrenheit":"71",
-		"celsius":"22"
-		},
-		"conditions":"Chance of a Thunderstorm",
-		"icon":"chancetstorms",
-		"icon_url":"http://icons.wxug.com/i/c/k/chancetstorms.gif",
-		"skyicon":"",
-		"pop":30,
-		"qpf_allday": {
-		"in": 0.05,
-		"mm": 1
-		},
-		"qpf_day": {
-		"in": 0.05,
-		"mm": 1
-		},
-		"qpf_night": {
-		"in": 0.00,
-		"mm": 0
-		},
-		"snow_allday": {
-		"in": 0.0,
-		"cm": 0.0
-		},
-		"snow_day": {
-		"in": 0.0,
-		"cm": 0.0
-		},
-		"snow_night": {
-		"in": 0.0,
-		"cm": 0.0
-		},
-		"maxwind": {
-		"mph": 10,
-		"kph": 16,
-		"dir": "SSW",
-		"degrees": 207
-		},
-		"avewind": {
-		"mph": 9,
-		"kph": 14,
-		"dir": "SSW",
-		"degrees": 207
-		},
-		"avehumidity": 72,
-		"maxhumidity": 0,
-		"minhumidity": 0
-		}
-		]
-		}
-	}
 }

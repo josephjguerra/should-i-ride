@@ -3,7 +3,7 @@ var wundergroundAPIKey = WUNDERGROUNDAPIKEY;
 
 // dev mode
 var devMode = true; // set to false to pull from api. Make sure you have a key
-var zipCode = '29708';
+var zipCode = '03053';
 
 if (devMode) {
   // use local copies of json
@@ -16,7 +16,7 @@ if (devMode) {
   var wundergroundConditionsURL = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/conditions/q/' + zipCode + '.json';
   var wundergroundForecastURL   = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/forecast/q/' + zipCode + '.json';
   var wundergroundAstronomyURL  = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/astronomy/q/' + zipCode + '.json';
-  console.log("dev mode inactive");
+  console.log("dev mode inactive. You're LIVE");
 }
 
 ////////////////////////////////////////////////////////////
@@ -42,11 +42,12 @@ var getConditionsJSON = function(url) {
 
 getConditionsJSON(wundergroundConditionsURL).then(
   function(data) {
-    alert('JSON result: ' + data.location.city); // debug
+    console.log('JSON result: Location ' + data.location.city); // debug
     document.getElementById("conditions-city-location").textContent = data.location.city;
-    document.getElementById("day-current-temp").textContent = Math.round(data.current_observation.temp_f);
-    document.getElementById("wind-speed").textContent = Math.round(data.current_observation.wind_mph);
-    document.getElementById("wind-gust").textContent  = Math.round(data.current_observation.wind_gust_mph);
+    document.getElementById("day-current-temp").textContent         = Math.round(data.current_observation.temp_f);
+    document.getElementById("wind-speed").textContent               = Math.round(data.current_observation.wind_mph);
+    document.getElementById("wind-gust").textContent                = Math.round(data.current_observation.wind_gust_mph);
+    document.getElementById("today-observed-time").textContent      = data.current_observation.observation_time;
   },
   function(status) {
     //error detection....
@@ -78,8 +79,8 @@ var getForecastJSON = function(url) {
 
 getForecastJSON(wundergroundForecastURL).then(
   function(data) {
-    alert('JSON result: ' + data.forecast.simpleforecast.forecastday[0].high.fahrenheit); // debug
-    alert('JSON result: ' + data.forecast.simpleforecast.forecastday[0].low.fahrenheit); // debug
+    console.log('JSON result: High ' + data.forecast.simpleforecast.forecastday[0].high.fahrenheit); // debug
+    console.log('JSON result: Low '  + data.forecast.simpleforecast.forecastday[0].low.fahrenheit); // debug
     document.getElementById("day-high").textContent   = data.forecast.simpleforecast.forecastday[0].high.fahrenheit;
     document.getElementById("day-low").textContent    = data.forecast.simpleforecast.forecastday[0].low.fahrenheit;
   },
@@ -116,7 +117,6 @@ getAstronomyJSON(wundergroundAstronomyURL).then(
     // alert('JSON result: ' + data.sun_phase.sunrise.hour); // debug
     document.getElementById("sunrise").textContent = data.sun_phase.sunrise.hour + ":" +  data.sun_phase.sunrise.minute + " am";
     document.getElementById("sunset").textContent  = data.sun_phase.sunset.hour - 12 + ":" +  data.sun_phase.sunset.minute + " pm";
-
   },
   function(status) {
     //error detection....

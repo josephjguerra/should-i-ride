@@ -2,20 +2,20 @@
 var wundergroundAPIKey = WUNDERGROUNDAPIKEY;
 
 // dev mode
-var devMode = true; // set to false to pull from api. Make sure you have a key
-var zipCode = '99501';
+var devMode = true; // set to false to pull from api. Uncomment index.html scripts. Make sure you have a key.
+var zipCode = '29708';
 
 if (devMode) {
   // use local copies of json
-  var wundergroundConditionsURL = 'js/dev/conditions.json'
-  var wundergroundForecastURL   = 'js/dev/forecast.json'
-  var wundergroundAstronomyURL  = 'js/dev/astronomy.json'
+  var wundergroundConditionsURL      = 'js/dev/conditions.json'
+  var wundergroundForecast10dayURL   = 'js/dev/forecast10day.json'
+  var wundergroundAstronomyURL       = 'js/dev/astronomy.json'
   console.log("dev mode active");
 } else {
   // use wunderground weather api
-  var wundergroundConditionsURL = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/conditions/q/' + zipCode + '.json';
-  var wundergroundForecastURL   = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/forecast/q/' + zipCode + '.json';
-  var wundergroundAstronomyURL  = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/astronomy/q/' + zipCode + '.json';
+  var wundergroundConditionsURL      = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/conditions/q/'    + zipCode + '.json';
+  var wundergroundForecast10dayURL   = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/forecast10day/q/' + zipCode + '.json';
+  var wundergroundAstronomyURL       = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/astronomy/q/'     + zipCode + '.json';
   console.log("dev mode inactive. You're LIVE");
 }
 
@@ -50,7 +50,7 @@ var populateConditionsFields = function(data) {
   document.getElementById("today-observed-time").textContent      = data.current_observation.observation_time;
 }
 
-var populateForecastFields = function(data) {
+var populateForecast10DayFields = function(data) {
   console.log('JSON result: High ' + data.forecast.simpleforecast.forecastday[0].high.fahrenheit); // debug
   console.log('JSON result: Low '  + data.forecast.simpleforecast.forecastday[0].low.fahrenheit);  // debug
   document.getElementById("day-high").textContent   = data.forecast.simpleforecast.forecastday[0].high.fahrenheit;
@@ -69,9 +69,9 @@ getWundergroundJSON(wundergroundConditionsURL)
     getJSONError
   );
 
-getWundergroundJSON(wundergroundForecastURL)
+getWundergroundJSON(wundergroundForecast10dayURL)
   .then(
-    populateForecastFields,
+    populateForecast10DayFields,
     getJSONError
   );
 

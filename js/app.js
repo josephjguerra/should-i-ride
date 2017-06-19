@@ -16,6 +16,7 @@ var observedWindSpeed    = 5;
 var observedGust         = 10;
 var sunrise              = "6:11am";
 var sunset               = "8:11pm";
+var observedTime         = "Last Updated on June 18, 10:00"
 
 // morning afternoon evening cards
 var morningCondition     = "Sunny";
@@ -31,6 +32,9 @@ document.getElementById("sunrise").textContent           = sunrise;
 document.getElementById("sunset").textContent            = sunset;
 document.getElementById("wind-speed").textContent        = observedWindSpeed;
 document.getElementById("wind-gust").textContent         = observedGust;
+
+// observed time for refresh
+document.getElementById("today-observed-time").textContent = observedTime;
 
 //setting icon - TODO: add all available
 function setIconBasedOnCondition(condition, id) {

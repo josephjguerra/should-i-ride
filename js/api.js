@@ -3,7 +3,7 @@ var wundergroundAPIKey = WUNDERGROUNDAPIKEY;
 
 // dev mode
 var devMode = true; // set to false to pull from api. Uncomment index.html scripts. Make sure you have a key.
-var zipCode = '29708';
+var zipCode = '03053';
 
 if (devMode) {
   // use local copies of json
@@ -36,47 +36,31 @@ var getWundergroundJSON = function(url) {
   });
 };
 
-var getJSONError = function(status) {
-  console.log('Something went wrong.');
-  alert('Something went wrong.');
+async function getWeatherAndCompute() {
+  var conditionsData    = await getWundergroundJSON(wundergroundConditionsURL);
+  var forecast10dayData = await getWundergroundJSON(wundergroundForecast10dayURL);
+  var astronomyData     = await getWundergroundJSON(wundergroundAstronomyURL);
+  console.log(conditionsData);
+  console.log(forecast10dayData);
+  console.log(astronomyData);
+
+  // conditionsData
+  document.getElementById("conditions-city-location").textContent = conditionsData.location.city;
+  document.getElementById("day-current-temp").textContent         = Math.round(conditionsData.current_observation.temp_f);
+  document.getElementById("wind-speed").textContent               = Math.round(conditionsData.current_observation.wind_mph);
+  document.getElementById("wind-gust").textContent                = Math.round(conditionsData.current_observation.wind_gust_mph);
+  document.getElementById("today-observed-time").textContent      = conditionsData.current_observation.observation_time;
+
+  // forecast10dayData
+  console.log('JSON result: High ' + forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit); // debug
+  console.log('JSON result: Low '  + forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit);  // debug
+  document.getElementById("day-high").textContent   = forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit;
+  document.getElementById("day-low").textContent    = forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit;
+
+  // astronomyData
+  console.log('JSON result: ' + astronomyData.sun_phase.sunrise.hour); // debug
+  document.getElementById("sunrise").textContent = astronomyData.sun_phase.sunrise.hour + ":" +       astronomyData.sun_phase.sunrise.minute + " am";
+  document.getElementById("sunset").textContent  = astronomyData.sun_phase.sunset.hour  - 12 + ":" +  astronomyData.sun_phase.sunset.minute  + " pm";
 }
 
-var populateConditionsFields = function(data) {
-  console.log('JSON result: Location ' + data.location.city); // debug
-  document.getElementById("conditions-city-location").textContent = data.location.city;
-  document.getElementById("day-current-temp").textContent         = Math.round(data.current_observation.temp_f);
-  document.getElementById("wind-speed").textContent               = Math.round(data.current_observation.wind_mph);
-  document.getElementById("wind-gust").textContent                = Math.round(data.current_observation.wind_gust_mph);
-  document.getElementById("today-observed-time").textContent      = data.current_observation.observation_time;
-}
-
-var populateForecast10DayFields = function(data) {
-  console.log('JSON result: High ' + data.forecast.simpleforecast.forecastday[0].high.fahrenheit); // debug
-  console.log('JSON result: Low '  + data.forecast.simpleforecast.forecastday[0].low.fahrenheit);  // debug
-  document.getElementById("day-high").textContent   = data.forecast.simpleforecast.forecastday[0].high.fahrenheit;
-  document.getElementById("day-low").textContent    = data.forecast.simpleforecast.forecastday[0].low.fahrenheit;
-}
-
-var populateAstronomyFields = function(data) {
-  // alert('JSON result: ' + data.sun_phase.sunrise.hour); // debug
-  document.getElementById("sunrise").textContent = data.sun_phase.sunrise.hour + ":" +  data.sun_phase.sunrise.minute + " am";
-  document.getElementById("sunset").textContent  = data.sun_phase.sunset.hour - 12 + ":" +  data.sun_phase.sunset.minute + " pm";
-}
-
-getWundergroundJSON(wundergroundConditionsURL)
-  .then(
-    populateConditionsFields,
-    getJSONError
-  );
-
-getWundergroundJSON(wundergroundForecast10dayURL)
-  .then(
-    populateForecast10DayFields,
-    getJSONError
-  );
-
-getWundergroundJSON(wundergroundAstronomyURL)
-  .then(
-    populateAstronomyFields,
-    getJSONError
-  );
+getWeatherAndCompute();

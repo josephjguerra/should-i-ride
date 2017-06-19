@@ -19,11 +19,7 @@ if (devMode) {
   console.log("dev mode inactive. You're LIVE");
 }
 
-////////////////////////////////////////////////////////////
-////////////////////// Conditions
-////////////////////////////////////////////////////////////
-
-var getConditionsJSON = function(url) {
+var getWundergroundJSON = function(url) {
   return new Promise(function(resolve, reject) {
     var xhr = new XMLHttpRequest();
     xhr.open('get', url, true);
@@ -40,7 +36,11 @@ var getConditionsJSON = function(url) {
   });
 };
 
-getConditionsJSON(wundergroundConditionsURL).then(
+////////////////////////////////////////////////////////////
+////////////////////// Conditions
+////////////////////////////////////////////////////////////
+
+getWundergroundJSON(wundergroundConditionsURL).then(
   function(data) {
     console.log('JSON result: Location ' + data.location.city); // debug
     document.getElementById("conditions-city-location").textContent = data.location.city;
@@ -60,24 +60,7 @@ getConditionsJSON(wundergroundConditionsURL).then(
 ////////////////////// Forecast
 ////////////////////////////////////////////////////////////
 
-var getForecastJSON = function(url) {
-  return new Promise(function(resolve, reject) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('get', url, true);
-    xhr.responseType = 'json';
-    xhr.onload = function() {
-      var status = xhr.status;
-      if (status == 200) {
-        resolve(xhr.response);
-      } else {
-        reject(status);
-      }
-    };
-    xhr.send();
-  });
-};
-
-getForecastJSON(wundergroundForecastURL).then(
+getWundergroundJSON(wundergroundForecastURL).then(
   function(data) {
     console.log('JSON result: High ' + data.forecast.simpleforecast.forecastday[0].high.fahrenheit); // debug
     console.log('JSON result: Low '  + data.forecast.simpleforecast.forecastday[0].low.fahrenheit); // debug
@@ -95,24 +78,7 @@ getForecastJSON(wundergroundForecastURL).then(
 ////////////////////// Astronomy
 ////////////////////////////////////////////////////////////
 
-var getAstronomyJSON = function(url) {
-  return new Promise(function(resolve, reject) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('get', url, true);
-    xhr.responseType = 'json';
-    xhr.onload = function() {
-      var status = xhr.status;
-      if (status == 200) {
-        resolve(xhr.response);
-      } else {
-        reject(status);
-      }
-    };
-    xhr.send();
-  });
-};
-
-getAstronomyJSON(wundergroundAstronomyURL).then(
+getWundergroundJSON(wundergroundAstronomyURL).then(
   function(data) {
     // alert('JSON result: ' + data.sun_phase.sunrise.hour); // debug
     document.getElementById("sunrise").textContent = data.sun_phase.sunrise.hour + ":" +  data.sun_phase.sunrise.minute + " am";

@@ -3,7 +3,7 @@ var wundergroundAPIKey = WUNDERGROUNDAPIKEY;
 
 // dev mode
 var devMode = true; // set to false to pull from api. Make sure you have a key
-var zipCode = '03053';
+var zipCode = '99501';
 
 if (devMode) {
   // use local copies of json
@@ -36,57 +36,47 @@ var getWundergroundJSON = function(url) {
   });
 };
 
-////////////////////////////////////////////////////////////
-////////////////////// Conditions
-////////////////////////////////////////////////////////////
+var getJSONError = function(status) {
+  console.log('Something went wrong.');
+  alert('Something went wrong.');
+}
 
-getWundergroundJSON(wundergroundConditionsURL).then(
-  function(data) {
-    console.log('JSON result: Location ' + data.location.city); // debug
-    document.getElementById("conditions-city-location").textContent = data.location.city;
-    document.getElementById("day-current-temp").textContent         = Math.round(data.current_observation.temp_f);
-    document.getElementById("wind-speed").textContent               = Math.round(data.current_observation.wind_mph);
-    document.getElementById("wind-gust").textContent                = Math.round(data.current_observation.wind_gust_mph);
-    document.getElementById("today-observed-time").textContent      = data.current_observation.observation_time;
-  },
-  function(status) {
-    //error detection....
-    console.log('Something went wrong.');
-    alert('Something went wrong.');
-  }
-);
+var populateConditionsFields = function(data) {
+  console.log('JSON result: Location ' + data.location.city); // debug
+  document.getElementById("conditions-city-location").textContent = data.location.city;
+  document.getElementById("day-current-temp").textContent         = Math.round(data.current_observation.temp_f);
+  document.getElementById("wind-speed").textContent               = Math.round(data.current_observation.wind_mph);
+  document.getElementById("wind-gust").textContent                = Math.round(data.current_observation.wind_gust_mph);
+  document.getElementById("today-observed-time").textContent      = data.current_observation.observation_time;
+}
 
-////////////////////////////////////////////////////////////
-////////////////////// Forecast
-////////////////////////////////////////////////////////////
+var populateForecastFields = function(data) {
+  console.log('JSON result: High ' + data.forecast.simpleforecast.forecastday[0].high.fahrenheit); // debug
+  console.log('JSON result: Low '  + data.forecast.simpleforecast.forecastday[0].low.fahrenheit);  // debug
+  document.getElementById("day-high").textContent   = data.forecast.simpleforecast.forecastday[0].high.fahrenheit;
+  document.getElementById("day-low").textContent    = data.forecast.simpleforecast.forecastday[0].low.fahrenheit;
+}
 
-getWundergroundJSON(wundergroundForecastURL).then(
-  function(data) {
-    console.log('JSON result: High ' + data.forecast.simpleforecast.forecastday[0].high.fahrenheit); // debug
-    console.log('JSON result: Low '  + data.forecast.simpleforecast.forecastday[0].low.fahrenheit); // debug
-    document.getElementById("day-high").textContent   = data.forecast.simpleforecast.forecastday[0].high.fahrenheit;
-    document.getElementById("day-low").textContent    = data.forecast.simpleforecast.forecastday[0].low.fahrenheit;
-  },
-  function(status) {
-    //error detection....
-    console.log('Something went wrong.');
-    alert('Something went wrong.');
-  }
-);
+var populateAstronomyFields = function(data) {
+  // alert('JSON result: ' + data.sun_phase.sunrise.hour); // debug
+  document.getElementById("sunrise").textContent = data.sun_phase.sunrise.hour + ":" +  data.sun_phase.sunrise.minute + " am";
+  document.getElementById("sunset").textContent  = data.sun_phase.sunset.hour - 12 + ":" +  data.sun_phase.sunset.minute + " pm";
+}
 
-////////////////////////////////////////////////////////////
-////////////////////// Astronomy
-////////////////////////////////////////////////////////////
+getWundergroundJSON(wundergroundConditionsURL)
+  .then(
+    populateConditionsFields,
+    getJSONError
+  );
 
-getWundergroundJSON(wundergroundAstronomyURL).then(
-  function(data) {
-    // alert('JSON result: ' + data.sun_phase.sunrise.hour); // debug
-    document.getElementById("sunrise").textContent = data.sun_phase.sunrise.hour + ":" +  data.sun_phase.sunrise.minute + " am";
-    document.getElementById("sunset").textContent  = data.sun_phase.sunset.hour - 12 + ":" +  data.sun_phase.sunset.minute + " pm";
-  },
-  function(status) {
-    //error detection....
-    console.log('Something went wrong.');
-    alert('Something went wrong.');
-  }
-);
+getWundergroundJSON(wundergroundForecastURL)
+  .then(
+    populateForecastFields,
+    getJSONError
+  );
+
+getWundergroundJSON(wundergroundAstronomyURL)
+  .then(
+    populateAstronomyFields,
+    getJSONError
+  );

@@ -8,14 +8,14 @@ var willIRideAtNight     = false;
 
 // top card
 var currentCondition     = "Sunny";
-var observedTemp         = 80;
-var observedHighTemp     = 90;
-var observedLowTemp      = 70;
+var observedTemp         = 88;
+var observedHighTemp     = 99;
+var observedLowTemp      = 77;
 var currentChancePrecip  = 11;
-var observedWindSpeed    = 5;
-var observedGust         = 10;
-var sunrise              = "6:11am";
-var sunset               = "8:11pm";
+var observedWindSpeed    = 11;
+var observedGust         = 22;
+var sunrise              = "1:11am";
+var sunset               = "1:11pm";
 var observedTime         = "Last Updated on June 18, 10:00"
 
 // morning afternoon evening cards
@@ -66,16 +66,23 @@ function applyNoDecisionColor(id) {
 }
 
 // actual logic for ride or no tide
+
 function calculateRideOrNoRide() {
-  if (
-    myMaxTemp > observedTemp &&
-    myMaxWinds > observedWindSpeed &&
-    myMaxPrecip > currentChancePrecip
-  ) {
-    yesDecision();
-  } else {
-    noDecision();
-  }
+
+ return new Promise(resolve => {
+   if (
+     myMaxTemp   > observedTemp        &&
+     myMaxWinds  > observedWindSpeed   //&&
+     // myMaxPrecip > currentChancePrecip
+   ) {
+     yesDecision();
+     resolve();
+   } else {
+     noDecision();
+     resolve();
+   }
+ });
+
 }
 
-calculateRideOrNoRide();
+// calculateRideOrNoRide();

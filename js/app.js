@@ -5,12 +5,12 @@ var wundergroundAPIKey;
 // set true to full from local js/dev json files
 // set false to pull from api
 var devMode = true;
-var zipCode = '64804';
+var zipCode = '29708';
 
 // user preferences
-var myMaxTemp            = 95;
+var myMaxTemp            = 90;
 var myMinTemp            = 50;
-var myMaxPrecip          = 25;
+var myMaxPrecip          = 51;
 var myMaxWinds           = 15;
 var willIRideInRain      = true;
 var willIRideAtNight     = false;
@@ -55,6 +55,8 @@ function setIconBasedOnCondition(condition, id) {
     document.getElementById(id).src = "img/conditions/day/mostlycloudy.svg";
   } else if (condition == "Chance of Rain") {
     document.getElementById(id).src = "img/conditions/day/chancerain.svg";
+  } else if (condition == "Rain") {
+    document.getElementById(id).src = "img/conditions/day/rain.svg";
   }
 }
 
@@ -80,8 +82,8 @@ function calculateRideOrNoRide() {
  return new Promise(resolve => {
    if (
      myMaxTemp   > observedTemp        &&
-     myMaxWinds  > observedWindSpeed   //&&
-     // myMaxPrecip > currentChancePrecip
+     myMaxWinds  > observedWindSpeed   &&
+     myMaxPrecip > currentChancePrecip
    ) {
      yesDecision();
      resolve();
@@ -97,7 +99,7 @@ if (devMode) {
   var wundergroundConditionsURL      = 'js/dev/conditions.json'
   var wundergroundForecast10dayURL   = 'js/dev/forecast10day.json'
   var wundergroundAstronomyURL       = 'js/dev/astronomy.json'
-  console.log("dev mode active");
+  console.log("dev mode active - using local data");
 } else {
   // use wunderground weather api
   var wundergroundAPIKey = WUNDERGROUNDAPIKEY;
@@ -128,35 +130,41 @@ async function getWeatherAndCompute() {
   var conditionsData    = await getWundergroundJSON(wundergroundConditionsURL);
   var forecast10dayData = await getWundergroundJSON(wundergroundForecast10dayURL);
   var astronomyData     = await getWundergroundJSON(wundergroundAstronomyURL);
-  var joe               = await calculateRideOrNoRide();
   console.log(conditionsData);    // debug
   console.log(forecast10dayData); // debug
   console.log(astronomyData);     // debug
 
   // conditionsData
-  console.log("temp: " + Math.round(conditionsData.current_observation.temp_f));    //debug
-  console.log("wind: " + Math.round(conditionsData.current_observation.wind_mph));  //debug
+  console.log("conditions temp: " + Math.round(conditionsData.current_observation.temp_f));    //debug
+  console.log("conditions wind: " + Math.round(conditionsData.current_observation.wind_mph));  //debug
   document.getElementById("conditions-city-location").textContent = conditionsData.location.city;
   document.getElementById("day-current-temp").textContent         = Math.round(conditionsData.current_observation.temp_f);
   document.getElementById("wind-speed").textContent               = Math.round(conditionsData.current_observation.wind_mph);
   document.getElementById("wind-gust").textContent                = Math.round(conditionsData.current_observation.wind_gust_mph);
   document.getElementById("today-observed-time").textContent      = conditionsData.current_observation.observation_time;
+  setIconBasedOnCondition(conditionsData.current_observation.weather, "current-condition-icon");
+  console.log("Weather is " + conditionsData.current_observation.weather);
   observedTemp      = conditionsData.current_observation.temp_f
   observedWindSpeed = conditionsData.current_observation.wind_mph
-  console.log("c"+observedTemp);
-  console.log("c"+observedWindSpeed);
+  console.log("conditions temp as variable not rounded " + observedTemp);
+  console.log("conditions temp as variable not rounded " + observedWindSpeed);
 
   // forecast10dayData
   console.log('JSON result: High ' + forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit); // debug
   console.log('JSON result: Low '  + forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit);  // debug
-  document.getElementById("day-high").textContent   = forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit;
-  document.getElementById("day-low").textContent    = forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit;
+  document.getElementById("day-high").textContent            = forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit;
+  document.getElementById("day-low").textContent             = forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit;
+  document.getElementById("chance-of-precip").textContent    = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
+  currentChancePrecip = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
+  console.log("after Chance of precip is " + forecast10dayData.forecast.simpleforecast.forecastday[0].pop);
 
   // astronomyData
   console.log('JSON result: ' + astronomyData.sun_phase.sunrise.hour); // debug
   document.getElementById("sunrise").textContent = astronomyData.sun_phase.sunrise.hour + ":" +       astronomyData.sun_phase.sunrise.minute + " am";
   document.getElementById("sunset").textContent  = astronomyData.sun_phase.sunset.hour  - 12 + ":" +  astronomyData.sun_phase.sunset.minute  + " pm";
-  // calculateRideOrNoRide();
+
+  // calculate after JSON, assigning variables, and updating DOM
+  calculateRideOrNoRide();
 }
 
 getWeatherAndCompute();

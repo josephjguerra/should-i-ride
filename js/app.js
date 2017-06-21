@@ -4,7 +4,7 @@ var wundergroundAPIKey;
 // dev mode
 // set true to full from local js/dev json files
 // set false to pull from api
-var devMode = false;
+var devMode = true;
 var zipCode = '29708';
 
 // user preferences

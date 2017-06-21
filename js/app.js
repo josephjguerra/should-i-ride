@@ -98,6 +98,7 @@ if (devMode) {
   // use local copies of json
   var wundergroundConditionsURL      = 'js/dev/conditions.json'
   var wundergroundForecast10dayURL   = 'js/dev/forecast10day.json'
+  var wundergroundHourlyURL          = 'js/dev/hourly.json'
   var wundergroundAstronomyURL       = 'js/dev/astronomy.json'
   console.log("dev mode active - using local data");
 } else {
@@ -105,6 +106,7 @@ if (devMode) {
   var wundergroundAPIKey = WUNDERGROUNDAPIKEY;
   var wundergroundConditionsURL      = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/conditions/q/'    + zipCode + '.json';
   var wundergroundForecast10dayURL   = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/forecast10day/q/' + zipCode + '.json';
+  var wundergroundHourlyURL          = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/hourly/q/'        + zipCode + '.json';
   var wundergroundAstronomyURL       = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/astronomy/q/'     + zipCode + '.json';
   console.log("dev mode inactive. You're LIVE");
 }
@@ -129,6 +131,7 @@ var getWundergroundJSON = function(url) {
 async function getWeatherAndCompute() {
   var conditionsData    = await getWundergroundJSON(wundergroundConditionsURL);
   var forecast10dayData = await getWundergroundJSON(wundergroundForecast10dayURL);
+  var hourlyData        = await getWundergroundJSON(wundergroundHourlyURL);
   var astronomyData     = await getWundergroundJSON(wundergroundAstronomyURL);
   console.log(conditionsData);    // debug
   console.log(forecast10dayData); // debug
@@ -154,6 +157,9 @@ async function getWeatherAndCompute() {
   document.getElementById("day-low").textContent             = forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit;
   document.getElementById("chance-of-precip").textContent    = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
   currentChancePrecip = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
+
+  // hourly
+  console.log(hourlyData.hourly_forecast.length);
 
   // astronomyData
   console.log('sunrise hour: ' + astronomyData.sun_phase.sunrise.hour); // debug

@@ -4,7 +4,7 @@ var wundergroundAPIKey;
 // dev mode
 // set true to full from local js/dev json files
 // set false to pull from api
-var devMode = true;
+var devMode = false;
 var zipCode = '29708';
 
 // user preferences
@@ -79,19 +79,19 @@ function applyNoDecisionColor(id) {
 // actual logic for ride or no tide
 function calculateRideOrNoRide() {
 
- return new Promise(resolve => {
+ // return new Promise(resolve => {
    if (
      myMaxTemp   > observedTemp        &&
      myMaxWinds  > observedWindSpeed   &&
      myMaxPrecip > currentChancePrecip
    ) {
      yesDecision();
-     resolve();
+    //  resolve();
    } else {
      noDecision();
-     resolve();
+    //  resolve();
    }
- });
+ // });
 }
 
 if (devMode) {
@@ -143,23 +143,20 @@ async function getWeatherAndCompute() {
   document.getElementById("wind-gust").textContent                = Math.round(conditionsData.current_observation.wind_gust_mph);
   document.getElementById("today-observed-time").textContent      = conditionsData.current_observation.observation_time;
   setIconBasedOnCondition(conditionsData.current_observation.weather, "current-condition-icon");
-  console.log("Weather is " + conditionsData.current_observation.weather);
+  console.log("Weather is " + conditionsData.current_observation.weather); //debug
   observedTemp      = conditionsData.current_observation.temp_f
   observedWindSpeed = conditionsData.current_observation.wind_mph
-  console.log("conditions temp as variable not rounded " + observedTemp);
-  console.log("conditions temp as variable not rounded " + observedWindSpeed);
 
   // forecast10dayData
-  console.log('JSON result: High ' + forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit); // debug
-  console.log('JSON result: Low '  + forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit);  // debug
+  console.log('High ' + forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit); // debug
+  console.log('Low '  + forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit);  // debug
   document.getElementById("day-high").textContent            = forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit;
   document.getElementById("day-low").textContent             = forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit;
   document.getElementById("chance-of-precip").textContent    = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
   currentChancePrecip = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
-  console.log("after Chance of precip is " + forecast10dayData.forecast.simpleforecast.forecastday[0].pop);
 
   // astronomyData
-  console.log('JSON result: ' + astronomyData.sun_phase.sunrise.hour); // debug
+  console.log('sunrise hour: ' + astronomyData.sun_phase.sunrise.hour); // debug
   document.getElementById("sunrise").textContent = astronomyData.sun_phase.sunrise.hour + ":" +       astronomyData.sun_phase.sunrise.minute + " am";
   document.getElementById("sunset").textContent  = astronomyData.sun_phase.sunset.hour  - 12 + ":" +  astronomyData.sun_phase.sunset.minute  + " pm";
 

@@ -158,8 +158,43 @@ async function getWeatherAndCompute() {
   document.getElementById("chance-of-precip").textContent    = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
   currentChancePrecip = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
 
-  // hourly
-  console.log(hourlyData.hourly_forecast.length);
+  function generateTodayNineCards() {
+    // remove placeholder data
+    document.getElementById("today-nine").innerHTML = "";
+
+    var output = ""; // debug
+    var allTodayNine = "";
+    // if first one is even then do it this many times
+    // else if do it a different amount of times
+    for (i = 0; i < 18; i++) {
+      // only show every other entry
+      // TODO need to start on an even number
+      if ((hourlyData.hourly_forecast[i].FCTTIME.hour % 2) == 0) {
+
+      var hourlyForecastTime           = hourlyData.hourly_forecast[i].FCTTIME.hour + hourlyData.hourly_forecast[i].FCTTIME.ampm.toLowerCase();
+      var hourlyForecastConditionImage = hourlyData.hourly_forecast[i].icon_url;
+      var hourlyForecastTemp           = hourlyData.hourly_forecast[i].temp.english;
+      var hourlyForecastPrecip         = hourlyData.hourly_forecast[i].pop;
+
+      // build new cards
+      var todayNineCardsItem = "<div class='flex-item card'>";
+      //loop through the forecast hours
+      todayNineCardTime      = "<div class='flex-sub'>" + hourlyForecastTime + "</div>";
+      todayNineCardCondition = "<div class='flex-sub'><img src='" + hourlyForecastConditionImage + "' alt='Sunny' class='hourly-sunny'></div>";
+      todayNineCardTemp      = "<div class='flex-sub'>" + hourlyForecastTemp + "&#176;F</div>";
+      todayNineCardPrecip    = "<div class='flex-sub'><img src='img/precip.svg' width='10px'>" + hourlyForecastPrecip + "%</div>";
+      todayNineCardsItem += todayNineCardTime + todayNineCardCondition + todayNineCardTemp + todayNineCardPrecip + "</div>";
+      allTodayNine += todayNineCardsItem
+
+      //debug
+      output += "Hour:" + hourlyData.hourly_forecast[i].FCTTIME.hour + " ";
+      console.log("i equals: " + i);
+      }
+    }
+    document.getElementById("today-nine").innerHTML = allTodayNine;
+    console.log(output); // debug
+  }
+  generateTodayNineCards();
 
   // astronomyData
   console.log('sunrise hour: ' + astronomyData.sun_phase.sunrise.hour); // debug

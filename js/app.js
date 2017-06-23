@@ -4,7 +4,7 @@ var wundergroundAPIKey;
 // dev mode
 // set true to full from local js/dev json files
 // set false to pull from api
-var devMode = false;
+var devMode = true;
 var zipCode = '29708';
 
 // user preferences
@@ -18,6 +18,7 @@ var willIRideAtNight     = false;
 // top card current conditions placeholder variables
 var currentCondition     = "Sunny";
 var observedTemp         = 88;
+var feelsLikeTemp        = 90;
 var observedHighTemp     = 99;
 var observedLowTemp      = 77;
 var currentChancePrecip  = 11;
@@ -33,14 +34,15 @@ var afternoonCondition   = "Partly Cloudy";
 var eveningCondition     = "Chance of Rain";
 
 // populating top card with defaults
-document.getElementById("day-current-temp").textContent  = observedTemp;
-document.getElementById("day-high").textContent          = observedHighTemp;
-document.getElementById("day-low").textContent           = observedLowTemp;
-document.getElementById("chance-of-precip").textContent  = currentChancePrecip;
-document.getElementById("sunrise").textContent           = sunrise;
-document.getElementById("sunset").textContent            = sunset;
-document.getElementById("wind-speed").textContent        = observedWindSpeed;
-document.getElementById("wind-gust").textContent         = observedGust;
+document.getElementById("day-current-temp").textContent        = observedTemp;
+document.getElementById("day-current-feels-like").textContent  = feelsLikeTemp;
+document.getElementById("day-high").textContent                = observedHighTemp;
+document.getElementById("day-low").textContent                 = observedLowTemp;
+document.getElementById("chance-of-precip").textContent        = currentChancePrecip;
+document.getElementById("sunrise").textContent                 = sunrise;
+document.getElementById("sunset").textContent                  = sunset;
+document.getElementById("wind-speed").textContent              = observedWindSpeed;
+document.getElementById("wind-gust").textContent               = observedGust;
 
 // observed time for refresh
 document.getElementById("today-observed-time").textContent = observedTime;
@@ -148,6 +150,7 @@ async function getWeatherAndCompute() {
   console.log("conditions wind: " + Math.round(conditionsData.current_observation.wind_mph));  //debug
   document.getElementById("conditions-city-location").textContent = conditionsData.location.city;
   document.getElementById("day-current-temp").textContent         = Math.round(conditionsData.current_observation.temp_f);
+  document.getElementById("day-current-feels-like").textContent   = Math.round(conditionsData.current_observation.feelslike_f);
   document.getElementById("wind-speed").textContent               = Math.round(conditionsData.current_observation.wind_mph);
   document.getElementById("wind-gust").textContent                = Math.round(conditionsData.current_observation.wind_gust_mph);
   document.getElementById("today-observed-time").textContent      = conditionsData.current_observation.observation_time;
@@ -194,7 +197,7 @@ async function getWeatherAndCompute() {
       }
       todayNineCardTime      = "<div class='flex-sub'>" + hourlyForecastTime + hourlyData.hourly_forecast[i].FCTTIME.ampm.toLowerCase() + "</div>";
       todayNineCardCondition = "<div class='flex-sub'><img src='" + hourlyForecastConditionImage + "' alt='Sunny' class='hourly-sunny'></div>";
-      todayNineCardTemp      = "<div class='flex-sub'>" + hourlyForecastTemp + "&#176;F</div>";
+      todayNineCardTemp      = "<div class='flex-sub'>" + hourlyForecastTemp + "&#176;</div>";
       todayNineCardPrecip    = "<div class='flex-sub'><img src='img/precip.svg' width='10px'>" + hourlyForecastPrecip + "%</div>";
       todayNineCardsItem += todayNineCardTime + todayNineCardCondition + todayNineCardTemp + todayNineCardPrecip + "</div>";
       allTodayNine += todayNineCardsItem

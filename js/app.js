@@ -147,7 +147,8 @@ async function getWeatherAndCompute() {
   document.getElementById("wind-speed").textContent               = Math.round(conditionsData.current_observation.wind_mph);
   document.getElementById("wind-gust").textContent                = Math.round(conditionsData.current_observation.wind_gust_mph);
   document.getElementById("today-observed-time").textContent      = conditionsData.current_observation.observation_time;
-  setIconBasedOnCondition(conditionsData.current_observation.weather, "current-condition-icon");
+  setIconBasedOnCondition(conditionsData.current_observation.weather, "current-condition-icon"); // local image in SVG format
+  // document.getElementById("current-condition-icon").src           = conditionsData.current_observation.icon_url; // this is image from JSON but it's too small and looks bad
   console.log("Weather is " + conditionsData.current_observation.weather); //debug
   observedTemp      = conditionsData.current_observation.temp_f
   observedWindSpeed = conditionsData.current_observation.wind_mph

@@ -33,7 +33,11 @@ body {
   text-align: center;
   /*padding-top: 10px;*/
   /*margin-bottom: 20px;*/
-  font-size: 2em;
+  font-size: 3rem;
+}
+
+#decision-image {
+  padding-bottom: 10px;
 }
 
 #today-tab .flex-container {
@@ -113,8 +117,8 @@ form {
 }
 
 .day-current-temp {
-  font-size: 2rem;
-  padding: 1.4rem;
+  font-size: 3rem;
+  padding: 1rem;
 }
 
 .card {

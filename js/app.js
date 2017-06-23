@@ -5,10 +5,10 @@ var wundergroundAPIKey;
 // set true to full from local js/dev json files
 // set false to pull from api
 var devMode = true;
-var zipCode = '29708';
+var zipCode = '28280';
 
 // user preferences
-var myMaxTemp            = 10;
+var myMaxTemp            = 90;
 var myMinTemp            = 50;
 var myMaxPrecip          = 51;
 var myMaxWinds           = 15;
@@ -159,6 +159,43 @@ async function getWeatherAndCompute() {
   console.log("Weather is " + conditionsData.current_observation.weather); //debug
   observedTemp      = conditionsData.current_observation.temp_f
   observedWindSpeed = conditionsData.current_observation.wind_mph
+
+  // morning afternoon evening
+  // figure out current period as morning, afternoon everning, Night
+  // start at current period
+  if (parseInt(hourlyData.hourly_forecast[0].FCTTIME.hour) >= 18) {
+    // evening
+    console.log("evening");
+    document.getElementById("first-third-card").textContent    = "Evening";
+    document.getElementById("second-third-card").textContent   = "Night";
+    document.getElementById("third-third-card").textContent    = "Morning";
+  } else if (parseInt(hourlyData.hourly_forecast[0].FCTTIME.hour) >= 12) {
+    // afternoon
+    console.log("afternoon");
+    document.getElementById("first-third-card").textContent    = "Afternoon";
+    document.getElementById("second-third-card").textContent   = "Evening";
+    document.getElementById("third-third-card").textContent    = "Night";
+  } else if (parseInt(hourlyData.hourly_forecast[0].FCTTIME.hour) >= 6) {
+    // morning
+    console.log("morning");
+    document.getElementById("first-third-card").textContent    = "Morning";
+    document.getElementById("second-third-card").textContent   = "Afternoon";
+    document.getElementById("third-third-card").textContent    = "Evening";
+  } else {
+    //night
+    console.log("night");
+    document.getElementById("first-third-card").textContent    = "Night";
+    document.getElementById("second-third-card").textContent   = "Morning";
+    document.getElementById("third-third-card").textContent    = "Afternoon";
+  }
+  // show period as weather from middle nine-hour
+  // current periods are wrong and do not account for starting on even
+  // show period as weather from middle nine-hour
+  // update image
+  document.getElementById("first-condition-icon").src    = hourlyData.hourly_forecast[2].icon_url;
+  document.getElementById("second-condition-icon").src   = hourlyData.hourly_forecast[8].icon_url;
+  document.getElementById("third-condition-icon").src    = hourlyData.hourly_forecast[14].icon_url;
+  // color based on ride-no-ride
 
   // forecast10dayData for today nine cards
   console.log('High ' + forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit); // debug

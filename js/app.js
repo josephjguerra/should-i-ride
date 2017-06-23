@@ -15,7 +15,7 @@ var myMaxWinds           = 15;
 var willIRideInRain      = true;
 var willIRideAtNight     = false;
 
-// top card
+// top card current conditions placeholder variables
 var currentCondition     = "Sunny";
 var observedTemp         = 88;
 var observedHighTemp     = 99;
@@ -27,7 +27,7 @@ var sunrise              = "1:11am";
 var sunset               = "1:11pm";
 var observedTime         = "Last Updated on June 18, 10:00"
 
-// morning afternoon evening cards
+// morning afternoon evening cards placeholder variables
 var morningCondition     = "Sunny";
 var afternoonCondition   = "Partly Cloudy";
 var eveningCondition     = "Chance of Rain";
@@ -45,7 +45,7 @@ document.getElementById("wind-gust").textContent         = observedGust;
 // observed time for refresh
 document.getElementById("today-observed-time").textContent = observedTime;
 
-//setting icon - TODO: add all available
+//setting icon - TODO: add all available ---OR--- use images from json reponse
 function setIconBasedOnCondition(condition, id) {
   if (condition == "Sunny") {
     document.getElementById(id).src = "img/conditions/day/clear.svg";
@@ -78,8 +78,7 @@ function applyNoDecisionColor(id) {
 
 // actual logic for ride or no tide
 function calculateRideOrNoRide() {
-
- // return new Promise(resolve => {
+ // return new Promise(resolve => { // not sure if I need this to be a promise
    if (
      myMaxTemp   > observedTemp        &&
      myMaxWinds  > observedWindSpeed   &&
@@ -95,14 +94,14 @@ function calculateRideOrNoRide() {
 }
 
 if (devMode) {
-  // use local copies of json
+  // use local copies of json to limit api call limits and use familiar data
   var wundergroundConditionsURL      = 'js/dev/conditions.json'
   var wundergroundForecast10dayURL   = 'js/dev/forecast10day.json'
   var wundergroundHourlyURL          = 'js/dev/hourly.json'
   var wundergroundAstronomyURL       = 'js/dev/astronomy.json'
   console.log("dev mode active - using local data");
 } else {
-  // use wunderground weather api
+  // use wunderground weather api for LIVE data
   var wundergroundAPIKey = WUNDERGROUNDAPIKEY;
   var wundergroundConditionsURL      = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/conditions/q/'    + zipCode + '.json';
   var wundergroundForecast10dayURL   = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/forecast10day/q/' + zipCode + '.json';
@@ -128,6 +127,9 @@ var getWundergroundJSON = function(url) {
   });
 };
 
+// main function to get data and process
+// how can I refactor  this to make dry?
+// how can I pull out logic into individual functions?
 async function getWeatherAndCompute() {
   var conditionsData    = await getWundergroundJSON(wundergroundConditionsURL);
   var forecast10dayData = await getWundergroundJSON(wundergroundForecast10dayURL);
@@ -137,7 +139,7 @@ async function getWeatherAndCompute() {
   console.log(forecast10dayData); // debug
   console.log(astronomyData);     // debug
 
-  // conditionsData
+  // conditionsData for top card
   console.log("conditions temp: " + Math.round(conditionsData.current_observation.temp_f));    //debug
   console.log("conditions wind: " + Math.round(conditionsData.current_observation.wind_mph));  //debug
   document.getElementById("conditions-city-location").textContent = conditionsData.location.city;
@@ -150,7 +152,7 @@ async function getWeatherAndCompute() {
   observedTemp      = conditionsData.current_observation.temp_f
   observedWindSpeed = conditionsData.current_observation.wind_mph
 
-  // forecast10dayData
+  // forecast10dayData for today nine cards
   console.log('High ' + forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit); // debug
   console.log('Low '  + forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit);  // debug
   document.getElementById("day-high").textContent            = forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit;
@@ -158,6 +160,7 @@ async function getWeatherAndCompute() {
   document.getElementById("chance-of-precip").textContent    = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
   currentChancePrecip = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
 
+  // function to build the cards with JSON data
   function generateTodayNineCards() {
     // remove placeholder data
     document.getElementById("today-nine").innerHTML = "";
@@ -171,15 +174,20 @@ async function getWeatherAndCompute() {
       // TODO need to start on an even number
       if ((hourlyData.hourly_forecast[i].FCTTIME.hour % 2) == 0) {
 
-      var hourlyForecastTime           = hourlyData.hourly_forecast[i].FCTTIME.hour + hourlyData.hourly_forecast[i].FCTTIME.ampm.toLowerCase();
+      var hourlyForecastTime           = parseInt(hourlyData.hourly_forecast[i].FCTTIME.hour);
       var hourlyForecastConditionImage = hourlyData.hourly_forecast[i].icon_url;
       var hourlyForecastTemp           = hourlyData.hourly_forecast[i].temp.english;
       var hourlyForecastPrecip         = hourlyData.hourly_forecast[i].pop;
 
-      // build new cards
+      // build new cards // is there a way to update the cards without building them in JS?
       var todayNineCardsItem = "<div class='flex-item card'>";
-      //loop through the forecast hours
-      todayNineCardTime      = "<div class='flex-sub'>" + hourlyForecastTime + "</div>";
+      // convert to standard 12-hour time
+      if (hourlyForecastTime > 12) {
+        hourlyForecastTime = hourlyForecastTime - 12;
+      } else if (hourlyForecastTime == 0) {
+        hourlyForecastTime = 12;
+      }
+      todayNineCardTime      = "<div class='flex-sub'>" + hourlyForecastTime + hourlyData.hourly_forecast[i].FCTTIME.ampm.toLowerCase() + "</div>";
       todayNineCardCondition = "<div class='flex-sub'><img src='" + hourlyForecastConditionImage + "' alt='Sunny' class='hourly-sunny'></div>";
       todayNineCardTemp      = "<div class='flex-sub'>" + hourlyForecastTemp + "&#176;F</div>";
       todayNineCardPrecip    = "<div class='flex-sub'><img src='img/precip.svg' width='10px'>" + hourlyForecastPrecip + "%</div>";
@@ -205,4 +213,5 @@ async function getWeatherAndCompute() {
   calculateRideOrNoRide();
 }
 
+// call the main function to get JSON and build cards with data
 getWeatherAndCompute();

@@ -8,7 +8,7 @@ var devMode = true;
 var zipCode = '29708';
 
 // user preferences
-var myMaxTemp            = 90;
+var myMaxTemp            = 10;
 var myMinTemp            = 50;
 var myMaxPrecip          = 51;
 var myMaxWinds           = 15;

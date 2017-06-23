@@ -4,7 +4,7 @@ var wundergroundAPIKey;
 // dev mode
 // set true to full from local js/dev json files
 // set false to pull from api
-var devMode = true;
+var devMode = false;
 var zipCode = '29708';
 
 // user preferences
@@ -55,8 +55,12 @@ function setIconBasedOnCondition(condition, id) {
     document.getElementById(id).src = "img/conditions/day/mostlycloudy.svg";
   } else if (condition == "Chance of Rain") {
     document.getElementById(id).src = "img/conditions/day/chancerain.svg";
-  } else if (condition == "Rain") {
-    document.getElementById(id).src = "img/conditions/day/rain.svg";
+  } else if (condition == "Chance of a Thunderstorm") {
+    document.getElementById(id).src = "img/conditions/day/chancetstorms.svg";
+  } else if (condition == "Cloudy") {
+    document.getElementById(id).src = "img/conditions/day/cloudy.svg";
+  } else if (condition == "Snow") {
+    document.getElementById(id).src = "img/conditions/day/snow.svg";
   }
 }
 

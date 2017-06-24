@@ -284,7 +284,7 @@ async function getWeatherAndCompute() {
       hourlyTableForecastPrecip             = "<td class='mdl-data-table__cell--non-numeric'><img src='img/precip.svg' width='10px'>" + hourlyTableForecastPrecip + "%</td>";
       hourlyTableForecastWind               = "<td class='mdl-data-table__cell--non-numeric'><img src='img/wind.svg' alt='wind-speed' width='10px'>" + hourlyTableForecastWind + "mph</td>";
       hourlyTableRow += hourlyTableForecastTime + hourlyTableForecastTemp + hourlyTableForecastConditionImage + hourlyTableForecastPrecip + hourlyTableForecastWind;
-      hourlyTableOutput += hourlyTableRow
+      hourlyTableOutput += hourlyTableRow;
 
       //debug
       output += "Hour:" + hourlyData.hourly_forecast[i].FCTTIME.hour + " ";
@@ -295,6 +295,50 @@ async function getWeatherAndCompute() {
 
   }
   generateHourlyTableRows();
+
+  // 10 day
+
+  function generate10DayTableRows() {
+    document.getElementById("ten-day-table-body").innerHTML = "";
+
+    var tenDayConsoleOutput = "";
+    var tenDayTableOutput   = "";
+    var output = ""; // debug
+
+    for (var i = 0; i < 10; i++) {
+      var tenDayTableForecastTime           = forecast10dayData.forecast.simpleforecast.forecastday[i].date.weekday;
+      var tenDayTableForecastTemp           = forecast10dayData.forecast.simpleforecast.forecastday[i].high.fahrenheit;
+      var tenDayTableForecastConditionImage = forecast10dayData.forecast.simpleforecast.forecastday[i].icon_url;
+      var tenDayTableForecastPrecip         = forecast10dayData.forecast.simpleforecast.forecastday[i].pop;
+      var tenDayTableForecastWind           = forecast10dayData.forecast.simpleforecast.forecastday[i].avewind.mph;
+
+      var tenDayTableRow = "<tr>";
+      tenDayTableForecastTime               = "<td class='mdl-data-table__cell--non-numeric'>" + tenDayTableForecastTime + "</td>";
+      tenDayTableForecastTemp               = "<td class='mdl-data-table__cell--non-numeric'>" + tenDayTableForecastTemp + "&#176;</td>";
+      tenDayTableForecastConditionImage     = "<td class='mdl-data-table__cell--non-numeric'><img src='" + tenDayTableForecastConditionImage + "' alt='Sunny' class='hourly-sunny'></td>";
+      tenDayTableForecastPrecip             = "<td class='mdl-data-table__cell--non-numeric'><img src='img/precip.svg' width='10px'>" + tenDayTableForecastPrecip + "%</td>";
+      tenDayTableForecastWind               = "<td class='mdl-data-table__cell--non-numeric'><img src='img/wind.svg' alt='wind-speed' width='10px'>" + tenDayTableForecastWind + "mph</td>";
+      tenDayTableRow += tenDayTableForecastTime + tenDayTableForecastTemp + tenDayTableForecastConditionImage + tenDayTableForecastPrecip + tenDayTableForecastWind;
+      tenDayTableOutput += tenDayTableRow;
+
+      // <tr>
+      //   <td class="mdl-data-table__cell--non-numeric">9am</td>
+      //   <td class="mdl-data-table__cell--non-numeric">75 &#176;</td>
+      //   <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px">10%</td>
+      //   <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px">5mph</td>
+      //   <td class="mdl-data-table__cell--non-numeric"><img src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
+      // </tr>
+
+      //debug
+      output += "Day:" + forecast10dayData.forecast.simpleforecast.forecastday[i].date.weekday + " ";
+      console.log("i equals: " + i);
+    }
+    document.getElementById("ten-day-table-body").innerHTML = tenDayTableOutput;
+    console.log(tenDayConsoleOutput);
+
+  }
+  generate10DayTableRows();
+
 
   // calculate after JSON, assigning variables, and updating DOM
   calculateRideOrNoRide();

@@ -27,8 +27,8 @@
       </div>
       <!-- Tabs -->
       <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-        <a href="#today-tab" class="mdl-layout__tab is-active">Today</a>
-        <a href="#hourly-tab" class="mdl-layout__tab">Hourly</a>
+        <a href="#today-tab" class="mdl-layout__tab">Today</a>
+        <a href="#hourly-tab" class="mdl-layout__tab is-active">Hourly</a>
         <a href="#ten-day-tab" class="mdl-layout__tab">10 Day</a>
       </div>
     </header>
@@ -69,7 +69,7 @@
 
     </div>
     <main class="mdl-layout__content">
-      <section class="mdl-layout__tab-panel is-active" id="today-tab">
+      <section class="mdl-layout__tab-panel" id="today-tab">
         <div class="page-content">
           <div class="card" id="current-conditions-card">
             <div class="mdl-grid flex-container today-top">
@@ -209,7 +209,7 @@
           </div>
         </div>
       </section>
-      <section class="mdl-layout__tab-panel" id="hourly-tab">
+      <section class="mdl-layout__tab-panel is-active" id="hourly-tab">
         <div class="page-content">
           <table class="mdl-data-table mdl-js-data-table">
             <thead>
@@ -221,7 +221,7 @@
                 <th class="mdl-data-table__cell--non-numeric">Conditions</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="hourly-table-body">
               <tr>
                 <td class="mdl-data-table__cell--non-numeric">9am</td>
                 <td class="mdl-data-table__cell--non-numeric">75 &#176;</td>
@@ -424,7 +424,7 @@
   </div>
 <!-- when in live mode, uncomment secrets.js and use your own api key -->
 <!-- when in devMode, comment secrets and use the local json files in js/dev -->
-<!-- <script src="js/secrets.js"></script> -->
+<script src="js/secrets.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

@@ -5,13 +5,13 @@ var wundergroundAPIKey;
 // set true to full from local js/dev json files
 // set false to pull from api
 var devMode = true;
-var zipCode = '96701';
+var zipCode = '28208';
 
 // user preferences
 var myMaxTemp            = 90;
 var myMinTemp            = 50;
-var myMaxPrecip          = 51;
-var myMaxWinds           = 15;
+var myMaxPrecip          = 50;
+var myMaxWinds           = 20;
 var willIRideInRain      = true;
 var willIRideAtNight     = false;
 
@@ -75,11 +75,17 @@ function yesDecision() {
 function noDecision() {
   document.getElementById("decision").textContent = "No";
   document.getElementById("decision-image").src   = "img/emotions/sad.svg";
-  applyNoDecisionColor("current-conditions-card");
+  applyNoDecisionColor();
 }
 
-function applyNoDecisionColor(id) {
-  document.getElementById(id).classList.add("no-ride-table");
+function applyNoDecisionColor() {
+  var decisionItemList = document.querySelectorAll(".decision-item");
+  console.log(decisionItemList);
+  for (var i = 0; i < decisionItemList.length; i++) {
+    console.log(decisionItemList[i]);
+    decisionItemList[i].classList.add("no-ride");
+  }
+  // document.getElementById("current-conditions-card").classList.add("no-ride");
 }
 
 // actual logic for ride or no tide
@@ -237,7 +243,7 @@ async function getWeatherAndCompute() {
       todayNineCardTemp      = "<div class='flex-sub'>" + hourlyForecastTemp + "&#176;</div>";
       todayNineCardPrecip    = "<div class='flex-sub'><img src='img/precip.svg' width='10px'>" + hourlyForecastPrecip + "%</div>";
       todayNineCardsItem += todayNineCardTime + todayNineCardCondition + todayNineCardTemp + todayNineCardPrecip + "</div>";
-      allTodayNine += todayNineCardsItem
+      allTodayNine += todayNineCardsItem;
       }
     }
     document.getElementById("today-nine").innerHTML = allTodayNine;
@@ -270,7 +276,7 @@ async function getWeatherAndCompute() {
       }
 
       var hourlyTableRow = "<tr>";
-      hourlyTableForecastTime               = "<td class='mdl-data-table__cell--non-numeric'>" + hourlyTableForecastTime + "am</td>";
+      hourlyTableForecastTime               = "<td class='mdl-data-table__cell--non-numeric'>" + hourlyTableForecastTime + hourlyData.hourly_forecast[i].FCTTIME.ampm.toLowerCase() + "</td>";
       hourlyTableForecastTemp               = "<td class='mdl-data-table__cell--non-numeric'>" + hourlyTableForecastTemp + "&#176;</td>";
       hourlyTableForecastConditionImage     = "<td class='mdl-data-table__cell--non-numeric'><img src='" + hourlyTableForecastConditionImage + "' alt='Sunny' class='hourly-sunny'></td>";
       hourlyTableForecastPrecip             = "<td class='mdl-data-table__cell--non-numeric'><img src='img/precip.svg' width='10px'>" + hourlyTableForecastPrecip + "%</td>";
@@ -290,19 +296,26 @@ async function getWeatherAndCompute() {
     var tenDayTableOutput   = "";
 
     for (var i = 0; i < 10; i++) {
-      var tenDayTableForecastTime           = forecast10dayData.forecast.simpleforecast.forecastday[i].date.weekday;
+      var tenDayTableForecastDay            = forecast10dayData.forecast.simpleforecast.forecastday[i].date.weekday;
       var tenDayTableForecastTemp           = forecast10dayData.forecast.simpleforecast.forecastday[i].high.fahrenheit;
       var tenDayTableForecastConditionImage = forecast10dayData.forecast.simpleforecast.forecastday[i].icon_url;
       var tenDayTableForecastPrecip         = forecast10dayData.forecast.simpleforecast.forecastday[i].pop;
       var tenDayTableForecastWind           = forecast10dayData.forecast.simpleforecast.forecastday[i].avewind.mph;
 
+      if (i == 0) {
+        // today
+        tenDayTableForecastDay = "Today";
+      } else if (i == 1) {
+        // tomorrow
+        tenDayTableForecastDay = "Tomorrow";
+      }
       var tenDayTableRow = "<tr>";
-      tenDayTableForecastTime               = "<td class='mdl-data-table__cell--non-numeric'>" + tenDayTableForecastTime + "</td>";
+      tenDayTableForecastDay                = "<td class='mdl-data-table__cell--non-numeric'>" + tenDayTableForecastDay + "</td>";
       tenDayTableForecastTemp               = "<td class='mdl-data-table__cell--non-numeric'>" + tenDayTableForecastTemp + "&#176;</td>";
       tenDayTableForecastConditionImage     = "<td class='mdl-data-table__cell--non-numeric'><img src='" + tenDayTableForecastConditionImage + "' alt='Sunny' class='hourly-sunny'></td>";
       tenDayTableForecastPrecip             = "<td class='mdl-data-table__cell--non-numeric'><img src='img/precip.svg' width='10px'>" + tenDayTableForecastPrecip + "%</td>";
       tenDayTableForecastWind               = "<td class='mdl-data-table__cell--non-numeric'><img src='img/wind.svg' alt='wind-speed' width='10px'>" + tenDayTableForecastWind + "mph</td>";
-      tenDayTableRow += tenDayTableForecastTime + tenDayTableForecastTemp + tenDayTableForecastConditionImage + tenDayTableForecastPrecip + tenDayTableForecastWind;
+      tenDayTableRow += tenDayTableForecastDay + tenDayTableForecastTemp + tenDayTableForecastConditionImage + tenDayTableForecastPrecip + tenDayTableForecastWind;
       tenDayTableOutput += tenDayTableRow;
     }
     document.getElementById("ten-day-table-body").innerHTML = tenDayTableOutput;

@@ -4,7 +4,7 @@ var wundergroundAPIKey;
 // dev mode
 // set true to full from local js/dev json files
 // set false to pull from api
-var devMode = true;
+var devMode = false;
 var zipCode = '28282';
 
 // user preferences
@@ -75,7 +75,7 @@ function yesDecision() {
 function noDecision() {
   document.getElementById("decision").textContent = "No";
   document.getElementById("decision-image").src   = "img/emotions/sad.svg";
-  applyNoDecisionColor();
+  // applyNoDecisionColor();
 }
 
 function applyNoDecisionColor() {
@@ -258,7 +258,7 @@ async function getWeatherAndCompute() {
   // HOURLY table
   function updateHourlyTableRows() {
 
-    for (var i = 1; i < 14; i++) {
+    for (var i = 0; i < 13; i++) {
       var hourlyTableForecastTime           = parseInt(hourlyData.hourly_forecast[i].FCTTIME.hour);
       var hourlyTableAmOrPM                 = hourlyData.hourly_forecast[i].FCTTIME.ampm.toLowerCase();
       var hourlyTableForecastTemp           = hourlyData.hourly_forecast[i].temp.english;
@@ -288,7 +288,7 @@ async function getWeatherAndCompute() {
   updateHourlyTableRows();
 
   // 10 day table
-  function generate10DayTableRows() {
+  function update10DayTableRows() {
 
     for (var i = 0; i < 10; i++) {
       var tenDayTableForecastDay            = forecast10dayData.forecast.simpleforecast.forecastday[i].date.weekday;
@@ -316,10 +316,9 @@ async function getWeatherAndCompute() {
       document.getElementById(tenDayConditionsId).src     = tenDayTableForecastConditionImage;
       document.getElementById(tenDayPrecipId).textContent = tenDayTableForecastPrecip;
       document.getElementById(tenDayWindId).textContent   = tenDayTableForecastWind;
-
     }
   }
-  generate10DayTableRows();
+  update10DayTableRows();
 
   // calculate after JSON, assigning variables, and updating DOM
   calculateRideOrNoRide();

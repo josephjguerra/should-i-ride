@@ -152,8 +152,8 @@ async function getWeatherAndCompute() {
   console.log(astronomyData);     // debug
 
   // conditionsData for top card
-  console.log("conditions temp: " + Math.round(conditionsData.current_observation.temp_f));    //debug
-  console.log("conditions wind: " + Math.round(conditionsData.current_observation.wind_mph));  //debug
+  // console.log("conditions temp: " + Math.round(conditionsData.current_observation.temp_f));    //debug
+  // console.log("conditions wind: " + Math.round(conditionsData.current_observation.wind_mph));  //debug
   document.getElementById("conditions-city-location").textContent = conditionsData.location.city;
   document.getElementById("day-current-temp").textContent         = Math.round(conditionsData.current_observation.temp_f);
   document.getElementById("day-current-feels-like").textContent   = Math.round(conditionsData.current_observation.feelslike_f);
@@ -162,7 +162,7 @@ async function getWeatherAndCompute() {
   document.getElementById("today-observed-time").textContent      = conditionsData.current_observation.observation_time;
   setIconBasedOnCondition(conditionsData.current_observation.weather, "current-condition-icon"); // local image in SVG format
   // document.getElementById("current-condition-icon").src           = conditionsData.current_observation.icon_url; // this is image from JSON but it's too small and looks bad
-  console.log("Weather is " + conditionsData.current_observation.weather); //debug
+  // console.log("Weather is " + conditionsData.current_observation.weather); //debug
   observedTemp      = conditionsData.current_observation.temp_f
   observedWindSpeed = conditionsData.current_observation.wind_mph
 
@@ -204,8 +204,8 @@ async function getWeatherAndCompute() {
   // color based on ride-no-ride
 
   // forecast10dayData for today nine cards
-  console.log('High ' + forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit); // debug
-  console.log('Low '  + forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit);  // debug
+  // console.log('High ' + forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit); // debug
+  // console.log('Low '  + forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit);  // debug
   document.getElementById("day-high").textContent            = forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit;
   document.getElementById("day-low").textContent             = forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit;
   document.getElementById("chance-of-precip").textContent    = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
@@ -257,7 +257,6 @@ async function getWeatherAndCompute() {
 
   // HOURLY table
   function updateHourlyTableRows() {
-    // clear placeholder table
 
     for (var i = 1; i < 14; i++) {
       var hourlyTableForecastTime           = parseInt(hourlyData.hourly_forecast[i].FCTTIME.hour);
@@ -284,18 +283,12 @@ async function getWeatherAndCompute() {
       document.getElementById(hourlyConditionsId).src     = hourlyTableForecastConditionImage;
       document.getElementById(hourlyPrecipId).textContent = hourlyTableForecastPrecip;
       document.getElementById(hourlyWindId).textContent   = hourlyTableForecastWind;
-
-
     }
   }
   updateHourlyTableRows();
 
   // 10 day table
   function generate10DayTableRows() {
-    // clear placeholder table
-    document.getElementById("ten-day-table-body").innerHTML = "";
-
-    var tenDayTableOutput   = "";
 
     for (var i = 0; i < 10; i++) {
       var tenDayTableForecastDay            = forecast10dayData.forecast.simpleforecast.forecastday[i].date.weekday;
@@ -311,17 +304,20 @@ async function getWeatherAndCompute() {
         // tomorrow
         tenDayTableForecastDay = "Tomorrow";
       }
-      var tenDayTableRow = "<tr>";
-      tenDayTableForecastDay                = "<td class='mdl-data-table__cell--non-numeric'>" + tenDayTableForecastDay + "</td>";
-      tenDayTableForecastTemp               = "<td class='mdl-data-table__cell--non-numeric'>" + tenDayTableForecastTemp + "&#176;</td>";
-      tenDayTableForecastConditionImage     = "<td class='mdl-data-table__cell--non-numeric'><img src='" + tenDayTableForecastConditionImage + "' alt='Sunny' class='hourly-sunny'></td>";
-      tenDayTableForecastPrecip             = "<td class='mdl-data-table__cell--non-numeric'><img src='img/precip.svg' width='10px'>" + tenDayTableForecastPrecip + "%</td>";
-      tenDayTableForecastWind               = "<td class='mdl-data-table__cell--non-numeric'><img src='img/wind.svg' alt='wind-speed' width='10px'>" + tenDayTableForecastWind + "mph</td>";
-      tenDayTableRow += tenDayTableForecastDay + tenDayTableForecastTemp + tenDayTableForecastConditionImage + tenDayTableForecastPrecip + tenDayTableForecastWind;
-      tenDayTableOutput += tenDayTableRow;
-    }
-    document.getElementById("ten-day-table-body").innerHTML = tenDayTableOutput;
 
+      var tenDayTimeId       = "ten-day-table-time-"       + i;
+      var tenDayTempId       = "ten-day-table-temp-"       + i;
+      var tenDayConditionsId = "ten-day-table-conditions-" + i;
+      var tenDayPrecipId     = "ten-day-table-precip-"     + i;
+      var tenDayWindId       = "ten-day-table-wind-"       + i;
+
+      document.getElementById(tenDayTimeId).textContent   = tenDayTableForecastDay;
+      document.getElementById(tenDayTempId).textContent   = tenDayTableForecastTemp;
+      document.getElementById(tenDayConditionsId).src     = tenDayTableForecastConditionImage;
+      document.getElementById(tenDayPrecipId).textContent = tenDayTableForecastPrecip;
+      document.getElementById(tenDayWindId).textContent   = tenDayTableForecastWind;
+
+    }
   }
   generate10DayTableRows();
 

@@ -5,7 +5,7 @@ var wundergroundAPIKey;
 // set true to full from local js/dev json files
 // set false to pull from api
 var devMode = true;
-var zipCode = '28208';
+var zipCode = '28282';
 
 // user preferences
 var myMaxTemp            = 90;
@@ -256,14 +256,12 @@ async function getWeatherAndCompute() {
   document.getElementById("sunset").textContent  = astronomyData.sun_phase.sunset.hour  - 12 + ":" +  astronomyData.sun_phase.sunset.minute  + " pm";
 
   // HOURLY table
-  function generateHourlyTableRows() {
+  function updateHourlyTableRows() {
     // clear placeholder table
-    document.getElementById("hourly-table-body").innerHTML = "";
 
-    var hourlyTableOutput   = "";
-
-    for (var i = 0; i < 25; i++) {
+    for (var i = 1; i < 14; i++) {
       var hourlyTableForecastTime           = parseInt(hourlyData.hourly_forecast[i].FCTTIME.hour);
+      var hourlyTableAmOrPM                 = hourlyData.hourly_forecast[i].FCTTIME.ampm.toLowerCase();
       var hourlyTableForecastTemp           = hourlyData.hourly_forecast[i].temp.english;
       var hourlyTableForecastConditionImage = hourlyData.hourly_forecast[i].icon_url;
       var hourlyTableForecastPrecip         = hourlyData.hourly_forecast[i].pop;
@@ -275,18 +273,22 @@ async function getWeatherAndCompute() {
         hourlyTableForecastTime = 12;
       }
 
-      var hourlyTableRow = "<tr>";
-      hourlyTableForecastTime               = "<td class='mdl-data-table__cell--non-numeric'>" + hourlyTableForecastTime + hourlyData.hourly_forecast[i].FCTTIME.ampm.toLowerCase() + "</td>";
-      hourlyTableForecastTemp               = "<td class='mdl-data-table__cell--non-numeric'>" + hourlyTableForecastTemp + "&#176;</td>";
-      hourlyTableForecastConditionImage     = "<td class='mdl-data-table__cell--non-numeric'><img src='" + hourlyTableForecastConditionImage + "' alt='Sunny' class='hourly-sunny'></td>";
-      hourlyTableForecastPrecip             = "<td class='mdl-data-table__cell--non-numeric'><img src='img/precip.svg' width='10px'>" + hourlyTableForecastPrecip + "%</td>";
-      hourlyTableForecastWind               = "<td class='mdl-data-table__cell--non-numeric'><img src='img/wind.svg' alt='wind-speed' width='10px'>" + hourlyTableForecastWind + "mph</td>";
-      hourlyTableRow += hourlyTableForecastTime + hourlyTableForecastTemp + hourlyTableForecastConditionImage + hourlyTableForecastPrecip + hourlyTableForecastWind;
-      hourlyTableOutput += hourlyTableRow;
+      var hourlyTimeId       = "hourly-table-time-"       + i;
+      var hourlyTempId       = "hourly-table-temp-"       + i;
+      var hourlyConditionsId = "hourly-table-conditions-" + i;
+      var hourlyPrecipId     = "hourly-table-precip-"     + i;
+      var hourlyWindId       = "hourly-table-wind-"       + i;
+
+      document.getElementById(hourlyTimeId).textContent   = hourlyTableForecastTime + hourlyTableAmOrPM;
+      document.getElementById(hourlyTempId).textContent   = hourlyTableForecastTemp;
+      document.getElementById(hourlyConditionsId).src     = hourlyTableForecastConditionImage;
+      document.getElementById(hourlyPrecipId).textContent = hourlyTableForecastPrecip;
+      document.getElementById(hourlyWindId).textContent   = hourlyTableForecastWind;
+
+
     }
-    document.getElementById("hourly-table-body").innerHTML = hourlyTableOutput;
   }
-  generateHourlyTableRows();
+  updateHourlyTableRows();
 
   // 10 day table
   function generate10DayTableRows() {

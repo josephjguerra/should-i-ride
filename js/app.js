@@ -10,7 +10,7 @@ var zipCode = '28280';
 // user preferences
 var myMaxTemp            = 90;
 var myMinTemp            = 50;
-var myMaxPrecip          = 50;
+var myMaxPrecip          = 40;
 var myMaxWinds           = 20;
 var willIRideInRain      = true;
 var willIRideAtNight     = false;

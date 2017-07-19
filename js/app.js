@@ -4,11 +4,11 @@ var wundergroundAPIKey;
 // dev mode
 // set true to full from local js/dev json files
 // set false to pull from api
-var devMode = false;
-var zipCode = '28282';
+var devMode = true;
+var zipCode = '28280';
 
 // user preferences
-var myMaxTemp            = 90;
+var myMaxTemp            = 100;
 var myMinTemp            = 50;
 var myMaxPrecip          = 50;
 var myMaxWinds           = 20;
@@ -283,6 +283,19 @@ async function getWeatherAndCompute() {
       document.getElementById(hourlyConditionsId).src     = hourlyTableForecastConditionImage;
       document.getElementById(hourlyPrecipId).textContent = hourlyTableForecastPrecip;
       document.getElementById(hourlyWindId).textContent   = hourlyTableForecastWind;
+
+      // decision to ride or no ride
+      if (
+        myMaxTemp   > hourlyTableForecastTemp     &&
+        myMaxWinds  > hourlyTableForecastWind     &&
+        myMaxPrecip > hourlyTableForecastPrecip
+      ) {
+        // yes ride
+        console.log("Yes ride during " + hourlyTableForecastTime + hourlyTableAmOrPM + " hour");
+      } else {
+        // no dont ride and make red
+        document.getElementById(hourlyTimeId).parentElement.classList.add("no-ride");
+      }
     }
   }
   updateHourlyTableRows();

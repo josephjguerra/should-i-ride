@@ -8,7 +8,7 @@ var devMode = true;
 var zipCode = '28280';
 
 // user preferences
-var myMaxTemp            = 100;
+var myMaxTemp            = 90;
 var myMinTemp            = 50;
 var myMaxPrecip          = 50;
 var myMaxWinds           = 20;
@@ -296,6 +296,7 @@ async function getWeatherAndCompute() {
         // no dont ride and make red
         document.getElementById(hourlyTimeId).parentElement.classList.add("no-ride");
       }
+
     }
   }
   updateHourlyTableRows();
@@ -329,6 +330,19 @@ async function getWeatherAndCompute() {
       document.getElementById(tenDayConditionsId).src     = tenDayTableForecastConditionImage;
       document.getElementById(tenDayPrecipId).textContent = tenDayTableForecastPrecip;
       document.getElementById(tenDayWindId).textContent   = tenDayTableForecastWind;
+
+      // decision to ride or no ride
+      if (
+        myMaxTemp   > tenDayTableForecastTemp     &&
+        myMaxWinds  > tenDayTableForecastWind     &&
+        myMaxPrecip > tenDayTableForecastPrecip
+      ) {
+        // yes ride
+        console.log("Yes ride on " + tenDayTableForecastDay);
+      } else {
+        // no dont ride and make red
+        document.getElementById(tenDayTimeId).parentElement.parentElement.classList.add("no-ride");
+      }
     }
   }
   update10DayTableRows();

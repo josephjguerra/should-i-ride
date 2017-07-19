@@ -213,40 +213,41 @@ async function getWeatherAndCompute() {
 
   // function to build the cards with JSON data
   function generateTodayNineCards() {
-    // remove placeholder data
-    document.getElementById("today-nine").innerHTML = "";
-
-    var output = ""; // debug
-    var allTodayNine = "";
     // if first one is even then do it this many times
     // else if do it a different amount of times
-    for (i = 0; i < 18; i++) {
-      // only show every other entry
+    for (i = 0; i < 9; i++) {
+      // TODO only show every other entry
       // TODO need to start on an even number
-      if ((hourlyData.hourly_forecast[i].FCTTIME.hour % 2) == 0) {
+      if ( (hourlyData.hourly_forecast[i].FCTTIME.hour % 2) == 0 ) {
 
-      var hourlyForecastTime           = parseInt(hourlyData.hourly_forecast[i].FCTTIME.hour);
-      var hourlyForecastConditionImage = hourlyData.hourly_forecast[i].icon_url;
-      var hourlyForecastTemp           = hourlyData.hourly_forecast[i].temp.english;
-      var hourlyForecastPrecip         = hourlyData.hourly_forecast[i].pop;
+      var todayForecastTime           = parseInt(hourlyData.hourly_forecast[i].FCTTIME.hour);
+      var todayForecastAmOrPM         = hourlyData.hourly_forecast[i].FCTTIME.ampm.toLowerCase();
+      var todayForecastConditionImage = hourlyData.hourly_forecast[i].icon_url;
+      var todayForecastTemp           = hourlyData.hourly_forecast[i].temp.english;
+      var todayForecastPrecip         = hourlyData.hourly_forecast[i].pop;
+      var todayForecastWinds          = hourlyData.hourly_forecast[i].wspd.english;
 
-      // build new cards // is there a way to update the cards without building them in JS?
-      var todayNineCardsItem = "<div class='flex-item card'>";
       // convert to standard 12-hour time
-      if (hourlyForecastTime > 12) {
-        hourlyForecastTime = hourlyForecastTime - 12;
-      } else if (hourlyForecastTime == 0) {
-        hourlyForecastTime = 12;
+      if (todayForecastTime > 12) {
+        todayForecastTime = todayForecastTime - 12;
+      } else if (todayForecastTime == 0) {
+        todayForecastTime = 12;
       }
-      todayNineCardTime      = "<div class='flex-sub'>" + hourlyForecastTime + hourlyData.hourly_forecast[i].FCTTIME.ampm.toLowerCase() + "</div>";
-      todayNineCardCondition = "<div class='flex-sub'><img src='" + hourlyForecastConditionImage + "' alt='Sunny' class='hourly-sunny'></div>";
-      todayNineCardTemp      = "<div class='flex-sub'>" + hourlyForecastTemp + "&#176;</div>";
-      todayNineCardPrecip    = "<div class='flex-sub'><img src='img/precip.svg' width='10px'>" + hourlyForecastPrecip + "%</div>";
-      todayNineCardsItem += todayNineCardTime + todayNineCardCondition + todayNineCardTemp + todayNineCardPrecip + "</div>";
-      allTodayNine += todayNineCardsItem;
+
+      var todayTimeId       = "today-card-time-"       + i;
+      var todayTempId       = "today-card-temp-"       + i;
+      var todayConditionsId = "today-card-condition-"  + i;
+      var todayPrecipId     = "today-card-precip-"     + i;
+      var todayWindId       = "today-card-winds-"      + i;
+
+      document.getElementById(todayTimeId).textContent   = todayForecastTime; // + todayForecastAmOrPM;
+      document.getElementById(todayTempId).textContent   = todayForecastTemp;
+      document.getElementById(todayConditionsId).src     = todayForecastConditionImage;
+      document.getElementById(todayPrecipId).textContent = todayForecastPrecip;
+      document.getElementById(todayWindId).textContent   = todayForecastWinds;
+
       }
     }
-    document.getElementById("today-nine").innerHTML = allTodayNine;
   }
   generateTodayNineCards();
 

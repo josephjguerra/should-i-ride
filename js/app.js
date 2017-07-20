@@ -8,10 +8,10 @@ var devMode = true;
 var zipCode = '28280';
 
 // user preferences
-var myMaxTemp            = 90;
+var myMaxTemp            = 100;
 var myMinTemp            = 50;
-var myMaxPrecip          = 40;
-var myMaxWinds           = 20;
+var myMaxPrecip          = 75;
+var myMaxWinds           = 15;
 var willIRideInRain      = true;
 var willIRideAtNight     = false;
 
@@ -67,42 +67,32 @@ function setIconBasedOnCondition(condition, id) {
 }
 
 // decision algorithm - not currently working with json request data
-function yesDecision() {
+function yesDecisionOnCurrentConditionsCard() {
   document.getElementById("decision").textContent = "Yes";
   document.getElementById("decision-image").src   = "img/emotions/thumbup.svg";
 }
 
-function noDecision() {
+function noDecisionOnCurrentConditionsCard() {
   document.getElementById("decision").textContent = "No";
   document.getElementById("decision-image").src   = "img/emotions/sad.svg";
-  // applyNoDecisionColor();
+  applyNoDecisionColor();
 }
 
 function applyNoDecisionColor() {
-  var decisionItemList = document.querySelectorAll(".decision-item");
-  console.log(decisionItemList);
-  for (var i = 0; i < decisionItemList.length; i++) {
-    console.log(decisionItemList[i]);
-    decisionItemList[i].classList.add("no-ride");
-  }
-  // document.getElementById("current-conditions-card").classList.add("no-ride");
+  document.getElementById("current-conditions-card").classList.add("no-ride");
 }
 
 // actual logic for ride or no tide
 function calculateRideOrNoRide() {
- // return new Promise(resolve => { // not sure if I need this to be a promise
    if (
      myMaxTemp   > observedTemp        &&
      myMaxWinds  > observedWindSpeed   &&
      myMaxPrecip > currentChancePrecip
    ) {
-     yesDecision();
-    //  resolve();
+     yesDecisionOnCurrentConditionsCard();
    } else {
-     noDecision();
-    //  resolve();
+     noDecisionOnCurrentConditionsCard();
    }
- // });
 }
 
 if (devMode) {
@@ -212,7 +202,7 @@ async function getWeatherAndCompute() {
   currentChancePrecip = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
 
   // function to build the cards with JSON data
-  function generateTodayNineCards() {
+  function updateTodayNineCards() {
     // if first one is even then do it this many times
     // else if do it a different amount of times
     for (i = 0; i < 9; i++) {
@@ -246,10 +236,23 @@ async function getWeatherAndCompute() {
       document.getElementById(todayPrecipId).textContent = todayForecastPrecip;
       document.getElementById(todayWindId).textContent   = todayForecastWinds;
 
+      // decision to ride or no ride
+      if (
+        myMaxTemp   > todayForecastTemp     &&
+        myMaxWinds  > todayForecastWinds    &&
+        myMaxPrecip > todayForecastPrecip
+      ) {
+        // yes ride
+        console.log("Yes ride during this time: " + todayForecastTime + todayForecastAmOrPM);
+      } else {
+        // no dont ride and make red
+        document.getElementById(todayTimeId).parentElement.classList.add("no-ride");
+      }
+
       }
     }
   }
-  generateTodayNineCards();
+  updateTodayNineCards();
 
   // astronomyData
   console.log('sunrise hour: ' + astronomyData.sun_phase.sunrise.hour); // debug

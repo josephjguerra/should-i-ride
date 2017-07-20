@@ -207,9 +207,13 @@ async function getWeatherAndCompute() {
   // current periods are wrong and do not account for starting on even
   // show period as weather from middle nine-hour
   // update image
-  document.getElementById("first-condition-icon").src    = hourlyData.hourly_forecast[2].icon_url;
-  document.getElementById("second-condition-icon").src   = hourlyData.hourly_forecast[8].icon_url;
-  document.getElementById("third-condition-icon").src    = hourlyData.hourly_forecast[14].icon_url;
+  var firstCardCondition  = hourlyData.hourly_forecast[2].icon_url;
+  var secondCardCondition = hourlyData.hourly_forecast[8].icon_url;
+  var thirdCardCondition  = hourlyData.hourly_forecast[14].icon_url;
+
+  document.getElementById("first-condition-icon").src    = firstCardCondition;
+  document.getElementById("second-condition-icon").src   = secondCardCondition;
+  document.getElementById("third-condition-icon").src    = thirdCardCondition;
   // color based on ride-no-ride
 
   // function to build the cards with JSON data

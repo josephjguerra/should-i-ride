@@ -104,7 +104,7 @@ if (devMode) {
   console.log("dev mode active - using local data");
 } else {
   // use wunderground weather api for LIVE data
-  var wundergroundAPIKey = WUNDERGROUNDAPIKEY;
+  var wundergroundAPIKey             = WUNDERGROUNDAPIKEY;
   var wundergroundConditionsURL      = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/conditions/q/'    + zipCode + '.json';
   var wundergroundForecast10dayURL   = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/forecast10day/q/' + zipCode + '.json';
   var wundergroundHourlyURL          = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/hourly/q/'        + zipCode + '.json';
@@ -150,11 +150,26 @@ async function getWeatherAndCompute() {
   document.getElementById("wind-speed").textContent               = Math.round(conditionsData.current_observation.wind_mph);
   document.getElementById("wind-gust").textContent                = Math.round(conditionsData.current_observation.wind_gust_mph);
   document.getElementById("today-observed-time").textContent      = conditionsData.current_observation.observation_time;
+
   setIconBasedOnCondition(conditionsData.current_observation.weather, "current-condition-icon"); // local image in SVG format
   // document.getElementById("current-condition-icon").src           = conditionsData.current_observation.icon_url; // this is image from JSON but it's too small and looks bad
   // console.log("Weather is " + conditionsData.current_observation.weather); //debug
+
   observedTemp      = conditionsData.current_observation.temp_f
   observedWindSpeed = conditionsData.current_observation.wind_mph
+
+  // astronomyData
+  console.log('sunrise hour: ' + astronomyData.sun_phase.sunrise.hour); // debug
+  document.getElementById("sunrise").textContent = astronomyData.sun_phase.sunrise.hour + ":" +       astronomyData.sun_phase.sunrise.minute + " am";
+  document.getElementById("sunset").textContent  = astronomyData.sun_phase.sunset.hour  - 12 + ":" +  astronomyData.sun_phase.sunset.minute  + " pm";
+
+  // forecast10dayData for today nine cards
+  // console.log('High ' + forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit); // debug
+  // console.log('Low '  + forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit);  // debug
+  document.getElementById("day-high").textContent            = forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit;
+  document.getElementById("day-low").textContent             = forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit;
+  document.getElementById("chance-of-precip").textContent    = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
+  currentChancePrecip = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
 
   // morning afternoon evening
   // figure out current period as morning, afternoon everning, Night
@@ -165,18 +180,21 @@ async function getWeatherAndCompute() {
     document.getElementById("first-third-card").textContent    = "Evening";
     document.getElementById("second-third-card").textContent   = "Night";
     document.getElementById("third-third-card").textContent    = "Morning";
+
   } else if (parseInt(hourlyData.hourly_forecast[0].FCTTIME.hour) >= 12) {
     // afternoon
     console.log("afternoon");
     document.getElementById("first-third-card").textContent    = "Afternoon";
     document.getElementById("second-third-card").textContent   = "Evening";
     document.getElementById("third-third-card").textContent    = "Night";
+
   } else if (parseInt(hourlyData.hourly_forecast[0].FCTTIME.hour) >= 6) {
     // morning
     console.log("morning");
     document.getElementById("first-third-card").textContent    = "Morning";
     document.getElementById("second-third-card").textContent   = "Afternoon";
     document.getElementById("third-third-card").textContent    = "Evening";
+
   } else {
     //night
     console.log("night");
@@ -184,6 +202,7 @@ async function getWeatherAndCompute() {
     document.getElementById("second-third-card").textContent   = "Morning";
     document.getElementById("third-third-card").textContent    = "Afternoon";
   }
+
   // show period as weather from middle nine-hour
   // current periods are wrong and do not account for starting on even
   // show period as weather from middle nine-hour
@@ -192,14 +211,6 @@ async function getWeatherAndCompute() {
   document.getElementById("second-condition-icon").src   = hourlyData.hourly_forecast[8].icon_url;
   document.getElementById("third-condition-icon").src    = hourlyData.hourly_forecast[14].icon_url;
   // color based on ride-no-ride
-
-  // forecast10dayData for today nine cards
-  // console.log('High ' + forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit); // debug
-  // console.log('Low '  + forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit);  // debug
-  document.getElementById("day-high").textContent            = forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit;
-  document.getElementById("day-low").textContent             = forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit;
-  document.getElementById("chance-of-precip").textContent    = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
-  currentChancePrecip = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
 
   // function to build the cards with JSON data
   function updateTodayNineCards() {
@@ -253,11 +264,6 @@ async function getWeatherAndCompute() {
     }
   }
   updateTodayNineCards();
-
-  // astronomyData
-  console.log('sunrise hour: ' + astronomyData.sun_phase.sunrise.hour); // debug
-  document.getElementById("sunrise").textContent = astronomyData.sun_phase.sunrise.hour + ":" +       astronomyData.sun_phase.sunrise.minute + " am";
-  document.getElementById("sunset").textContent  = astronomyData.sun_phase.sunset.hour  - 12 + ":" +  astronomyData.sun_phase.sunset.minute  + " pm";
 
   // HOURLY table
   function updateHourlyTableRows() {

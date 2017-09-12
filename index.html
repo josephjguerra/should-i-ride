@@ -108,17 +108,26 @@
               <div class="flex-item card decision-item">
                 <div class="flex-sub"><span id="first-third-card">Morn</span></div>
                 <div class="flex-sub"><img id="first-condition-icon" src="img/conditions/day/clear.svg" alt="Sunny" class="three-sunny"></div>
+                <div class="flex-sub"><span id="first-third-temp">75</span>&#176;</div>
+                <div class="flex-sub"><img src="img/precip.svg" width="10px"><span id="first-third-precip">10</span>%</div>
+                <div class="flex-sub"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="first-third-winds">5</span>mph</div>
               </div>
               <div class="flex-item card decision-item">
                 <div class="flex-sub"><span id="second-third-card">Af</span></div>
                 <div class="flex-sub"><img id="second-condition-icon" src="img/conditions/day/clear.svg" alt="Sunny" class="three-sunny"></div>
+                <div class="flex-sub"><span id="second-third-temp">75</span>&#176;</div>
+                <div class="flex-sub"><img src="img/precip.svg" width="10px"><span id="second-third-precip">10</span>%</div>
+                <div class="flex-sub"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="second-third-winds">5</span>mph</div>
               </div>
               <div class="flex-item card decision-item">
                 <div class="flex-sub"><span id="third-third-card">Eve</span></div>
                 <div class="flex-sub"><img id="third-condition-icon" src="img/conditions/day/chancerain.svg" alt="Sunny" class="three-sunny"></div>
+                <div class="flex-sub"><span id="third-third-temp">75</span>&#176;</div>
+                <div class="flex-sub"><img src="img/precip.svg" width="10px"><span id="third-third-precip">10</span>%</div>
+                <div class="flex-sub"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="third-third-winds">5</span>mph</div>
               </div>
             </div>
-            <div class="mdl-grid flex-container today-nine" id="today-nine">
+            <!-- <div class="mdl-grid flex-container today-nine" id="today-nine">
               <div class="flex-item card decision-item">
                 <div class="flex-sub" id="today-card-time-0">6am</div>
                 <div class="flex-sub"><img id="today-card-condition-0" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></div>
@@ -182,15 +191,7 @@
                 <div class="flex-sub"><img id="today-card-precip-8" src="img/precip.svg" width="10px">10%</div>
                 <div class="flex-sub"><img id="today-card-winds-8" src="img/wind.svg" alt="wind-speed" width="10px"><span id="">5</span>mph</div>
               </div>
-            </div>
-          <div class="mdl-grid flex-container">
-            <div id="today-observed-time"></div>
-          </div>
-          <div class="mdl-grid flex-container">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-              <i class="material-icons">refresh</i> Refresh
-            </button>
-          </div>
+            </div> -->
         </div>
       </section>
       <section class="mdl-layout__tab-panel" id="hourly-tab">
@@ -299,14 +300,6 @@
               </tr>
             </tbody>
           </table>
-          <div class="mdl-grid flex-container">
-            <div>observed at 7:55am</div>
-          </div>
-          <div class="mdl-grid flex-container">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-              <i class="material-icons">refresh</i> Refresh
-            </button>
-          </div>
         </div>
       </section>
       <section class="mdl-layout__tab-panel" id="ten-day-tab">
@@ -394,16 +387,18 @@
               </tr>
             </tbody>
           </table>
-          <div class="mdl-grid flex-container">
-            <div>observed at 7:55am</div>
-          </div>
-          <div class="mdl-grid flex-container">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-              <i class="material-icons">refresh</i> Refresh
-            </button>
-          </div>
         </div>
       </section>
+      <div class="footer">
+        <div class="mdl-grid flex-container">
+          <div id="today-observed-time"></div>
+        </div>
+        <div class="mdl-grid flex-container">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+            <i class="material-icons">refresh</i> Refresh
+          </button>
+        </div>
+      </div>
     </main>
   </div>
 <!-- when in live mode, uncomment secrets.js and use your own api key -->

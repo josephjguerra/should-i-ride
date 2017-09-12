@@ -10,7 +10,7 @@ var zipCode = '28280';
 // user preferences
 var myMaxTemp            = 100;
 var myMinTemp            = 50;
-var myMaxPrecip          = 75;
+var myMaxPrecip          = 60;
 var myMaxWinds           = 15;
 var willIRideInRain      = true;
 var willIRideAtNight     = false;
@@ -207,13 +207,39 @@ async function getWeatherAndCompute() {
   // current periods are wrong and do not account for starting on even
   // show period as weather from middle nine-hour
   // update image
-  var firstCardCondition  = hourlyData.hourly_forecast[2].icon_url;
-  var secondCardCondition = hourlyData.hourly_forecast[8].icon_url;
-  var thirdCardCondition  = hourlyData.hourly_forecast[14].icon_url;
 
-  document.getElementById("first-condition-icon").src    = firstCardCondition;
-  document.getElementById("second-condition-icon").src   = secondCardCondition;
-  document.getElementById("third-condition-icon").src    = thirdCardCondition;
+  function calculateRideOrNoRideMorningAfternoonEvening(i, third) {
+    var cardThird = third + "-condition-icon";
+    if (
+      myMaxTemp   > hourlyData.hourly_forecast[i].temp.english    &&
+      myMaxWinds  > hourlyData.hourly_forecast[i].wspd.english    &&
+      myMaxPrecip > hourlyData.hourly_forecast[i].pop
+    ) {
+      // yes ride
+      console.log("Yes ride during this quarter: " + hourlyData.hourly_forecast[i].FCTTIME.hour);
+    } else {
+      // no dont ride and make red
+      document.getElementById(cardThird).parentElement.parentElement.classList.add("no-ride");
+    }
+  }
+
+  document.getElementById("first-condition-icon").src          = hourlyData.hourly_forecast[2].icon_url;
+  document.getElementById("first-third-temp").textContent      = hourlyData.hourly_forecast[2].temp.english;
+  document.getElementById("first-third-precip").textContent    = hourlyData.hourly_forecast[2].pop;
+  document.getElementById("first-third-winds").textContent     = hourlyData.hourly_forecast[2].wspd.english;
+  calculateRideOrNoRideMorningAfternoonEvening(2, "first");
+
+  document.getElementById("second-condition-icon").src         = hourlyData.hourly_forecast[8].icon_url;
+  document.getElementById("second-third-temp").textContent     = hourlyData.hourly_forecast[8].temp.english;
+  document.getElementById("second-third-precip").textContent   = hourlyData.hourly_forecast[8].pop;
+  document.getElementById("second-third-winds").textContent    = hourlyData.hourly_forecast[8].wspd.english;
+  calculateRideOrNoRideMorningAfternoonEvening(8, "second");
+
+  document.getElementById("third-condition-icon").src          = hourlyData.hourly_forecast[14].icon_url;
+  document.getElementById("third-third-temp").textContent      = hourlyData.hourly_forecast[14].temp.english;
+  document.getElementById("third-third-precip").textContent    = hourlyData.hourly_forecast[14].pop;
+  document.getElementById("third-third-winds").textContent     = hourlyData.hourly_forecast[14].wspd.english;
+  calculateRideOrNoRideMorningAfternoonEvening(14, "third");
   // color based on ride-no-ride
 
   // function to build the cards with JSON data
@@ -267,7 +293,7 @@ async function getWeatherAndCompute() {
       }
     }
   }
-  updateTodayNineCards();
+  // updateTodayNineCards();
 
   // HOURLY table
   function updateHourlyTableRows() {

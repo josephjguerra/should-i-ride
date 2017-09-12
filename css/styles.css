@@ -128,3 +128,9 @@ form {
   margin: 10px;
   /*background-color: purple;*/
 }
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

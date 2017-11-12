@@ -138,3 +138,41 @@ img
   margin-bottom 20px
   font-size 0.6em
   color $white - 60
+
+.pref-container, .pref
+  display none
+
+.pref-container
+  height 100%
+  width 100%
+  position absolute
+  background black
+  top 0
+  bottom 0
+  left 0
+  right 0
+  z-index 10
+  margin auto
+  opacity 0.3
+
+.pref
+  background-color $black
+  height 70%
+  width 70%
+  position absolute
+  top 0
+  bottom 0
+  left 0
+  right 0
+  z-index 100
+  margin auto
+
+.form
+  padding 36px
+  height 100%
+  // border 1px dashed white
+  & > *
+    margin 5px
+  input
+    margin-bottom 24px
+    width 80%

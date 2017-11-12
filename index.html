@@ -47,6 +47,18 @@
       <div><span id="observed-time"></span</div>
     </div>
   </div>
+  <div class="pref-container">
+</div>
+<div class="pref">
+  <div class="form">
+    <p>I'll ride if the temp is below <span id="max-temp-value"></span>&#176;F</p>
+    <input type="range" min="60" max="130" step="5" value="90" class="temp-slider" id="max-temp">
+    <p>I'll ride as long as it's above <span id="min-temp-value"></span>&#176;F</p>
+    <input type="range" min="0" max="80" step="5" value="50" class="temp-slider" id="min-temp">
+    <p>Not riding if more than a <span id="max-precip-value"></span>% change of rain?</p>
+    <input type="range" min="0" max="100" step="10" value="30" class="temp-slider" id="max-precip">
+  </div>
+</div>
 <!-- when in live mode, uncomment secrets.js and use your own api key -->
 <!-- when in devMode, comment secrets and use the local json files in js/dev -->
 <!-- <script src="js/secrets.js"></script> -->

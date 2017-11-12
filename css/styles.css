@@ -226,3 +226,43 @@ img {
   font-size: 0.6em;
   color: #909090;
 }
+.pref-container,
+.pref {
+  display: none;
+}
+.pref-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin: auto;
+  opacity: 0.3;
+}
+.pref {
+  background-color: #333;
+  height: 70%;
+  width: 70%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  margin: auto;
+}
+.form {
+  padding: 36px;
+  height: 100%;
+}
+.form > * {
+  margin: 5px;
+}
+.form input {
+  margin-bottom: 24px;
+  width: 80%;
+}

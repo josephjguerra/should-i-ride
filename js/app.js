@@ -9,11 +9,8 @@ var zipCode = '28280';
 
 // user preferences
 var myMaxTemp            = 100;
-var myMinTemp            = 50;
-var myMaxPrecip          = 60;
-var myMaxWinds           = 15;
-var willIRideInRain      = true;
-var willIRideAtNight     = false;
+var myMinTemp            = 40;
+var myMaxPrecip          = 100;
 
 // placeholder variables
 var currentCondition     = "Sunny";
@@ -52,12 +49,13 @@ function setIconBasedOnCondition(condition, id) {
 function calculateRideOrNoRide() {
    if (
      myMaxTemp   > observedTemp        &&
-     myMaxWinds  > observedWindSpeed   &&
      myMaxPrecip > currentChancePrecip
    ) {
-     yesDecision();
+    //  yesDecision();
+    console.log('yes ride');
    } else {
-     noDecision();
+    //  noDecision();
+    console.log('nope... sulk inside');
    }
 }
 
@@ -109,6 +107,28 @@ async function getWeatherAndCompute() {
   document.getElementById("condition").textContent = conditions;
   setIconBasedOnCondition(conditions, "condition-icon");
 
-  // calculateRideOrNoRide();
+  calculateRideOrNoRide();
 }
 getWeatherAndCompute();
+
+// shows slider values TODO refactor this
+var maxTempSlider = document.getElementById("max-temp");
+var maxTempOutput = document.getElementById("max-temp-value");
+maxTempOutput.innerHTML = maxTempSlider.value;
+maxTempSlider.oninput = function() {
+  maxTempOutput.innerHTML = this.value;
+}
+
+var minTempSlider = document.getElementById("min-temp");
+var minTempOutput = document.getElementById("min-temp-value");
+minTempOutput.innerHTML = minTempSlider.value;
+minTempSlider.oninput = function() {
+  minTempOutput.innerHTML = this.value;
+}
+
+var maxPrecipSlider = document.getElementById("max-precip");
+var maxPrecipOutput = document.getElementById("max-precip-value");
+maxPrecipOutput.innerHTML = maxPrecipSlider.value;
+maxPrecipSlider.oninput = function() {
+  maxPrecipOutput.innerHTML = this.value;
+}

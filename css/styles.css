@@ -1,136 +1,57 @@
-html,
-body {
+* {
+  box-sizing: border-box;
+}
+
+html {
   -webkit-font-smoothing: antialiased;
+  font-family: sans-serif;
+  color: #ccc;
+  background-color: #333;
+  font-family: 'Roboto' sans-serif;
+  /*background: linear-gradient(rgba(4,32,26,0.91), rgba(8,64,53,0.91)), url("https://source.unsplash.com/weekly?dirtbike");*/
+  background: linear-gradient(rgba(4,32,26,0.91), rgba(8,64,53,0.91)), url("../img/dirtbike.jpg"); /*local dev*/
+  background-position: center;
+  background-size: cover;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+  overflow: hidden;
 }
-
-.day {
-  height: 160px;
-  line-height: 160px;
-  text-align: center;
-}
-
-.mdl-layout__content {
-  background-color: #B2DFDB;
-}
-
-.sunny {
-  height: 100px;
-  width: 100px;
-}
-
-.three-sunny {
-  height: 60px;
-  width: 60px;
-}
-
-.hourly-sunny {
-  height: 30px;
-  width: 30px;
-}
-
-.go-no-go {
-  width: 100%;
-  text-align: center;
-  /*padding-top: 10px;*/
-  /*margin-bottom: 20px;*/
-  font-size: 3rem;
-}
-
-#decision-image {
-  padding-bottom: 10px;
-}
-
-#today-tab .flex-container {
+.container {
+  width: 500px;
+  margin: 0 auto;
+  height: 100vh;
   display: flex;
-  justify-content: space-around;
-  /*border: 1px dashed black;*/
-  flex-wrap: nowrap;
-  align-items: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-#today-tab .flex-item {
-  flex: 0 1 auto;
   flex-direction: column;
-  text-align: center;
-  /*border: 1px dashed blue;*/
-  width: 100%;
-  border-radius: 4px;
-  margin: 2px;
-  /*box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.18);*/
+  justify-content: space-between;
 }
-
-.today-nine .flex-sub {
-  font-size: 12px;
-}
-
-.today-top .flex-item {
-
-}
-
-.today-three .flex-item {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.today-nine .flex-item {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-#hourly-tab .flex-container,
-#three-day-tab .flex-container,
-#ten-day-tab .flex-container {
+nav {
   display: flex;
-  justify-content: space-around;
-  /*border: 1px dashed black;*/
-  flex-wrap: nowrap;
-  align-items: flex-end;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  justify-content: space-between;
 }
-
-
-table {
-  width: 100%;
-}
-
-tr {
-  background-color: #B2DFDB;
-}
-
-.no-ride {
-  background-color: #FFCDD2;
-}
-
-#three-day-tab tbody tr {
-  height: 100px;
-}
-
-form {
+nav div {
   padding: 10px;
 }
-
-.pref-toggle {
-  margin-bottom: 20px;
-}
-
-.day-current-temp {
-  font-size: 3rem;
-  padding: 1rem;
-}
-
-.card {
-  /*border: 1px solid black;*/
-  border-radius: 4px;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.18);
-  margin: 10px;
-  /*background-color: purple;*/
-}
-
-.footer {
+.decision {
+  height: 100px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  font-size: 4em;
+}
+.weather {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+.daylight {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 10px;
+}
+.weather div:nth-child(2) {
+  padding: 50px;
+  width: 300;
 }

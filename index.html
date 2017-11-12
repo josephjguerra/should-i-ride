@@ -8,22 +8,48 @@
 </head>
 <body>
   <div class="container">
-    <nav>
-      <div class="location"><i class="fa fa-map-pin fa-2x" aria-hidden="true"></i> charlotte</div>
-      <div class="settings"><i class="fa fa-sliders fa-2x" aria-hidden="true"></i></div>
-    </nav>
-    <h1 class="decision">yes ride</h1>
-      <div class="weather">
-        <div class="precip">10%<i class="fa fa-tint" aria-hidden="true"></i></div>
-        <div><i class="fa fa-sun-o fa-5x" aria-hidden="true"></i></div>
-        <div class="temp">65&#176;</div>
+    <div class="nav">
+      <div class="location"><img src="img/location.svg" alt="location icon"><span id="city">charlotte</span></div>
+      <div class="settings"><img src="img/settings.svg" alt="location icon"></div>
+    </div>
+    <div class="weather">
+      <div class="weather-details">
+          <h1 class="decision">Yes, ride!</h1>
       </div>
-    <div class="daylight">4hours light left</div>
+      <div class="weather-details">
+        <div class="weather-part">
+          <div class="temp">75&#176;</div>
+          <div class="high-low-temp">65&#176; | 85&#176;</div>
+        </div>
+        <div class="weather-part">
+          <div>
+            <img class="condition-icon" src="https://icons.wxug.com/i/c/v4/36.svg" alt="">
+          </div>
+          <div class="condition">Sunny</div>
+        </div>
+        <div class="weather-part">
+          <div class="precip">10<span class="superscript">%</span></div>
+          <div class="precip-label">precip</div>
+        </div>
+      </div>
+      <div class="weather-details">
+        <div class="weather-part">
+          <div class="daylight">4h 30m</div>
+          <div class="daylight-left">light left</div>
+        </div>
+        <div class="weather-part">
+          <div class="wind-speed">11-12</div>
+          <div class="wind-condition">light winds</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div>updated: nov 12</div>
+    </div>
   </div>
 <!-- when in live mode, uncomment secrets.js and use your own api key -->
 <!-- when in devMode, comment secrets and use the local json files in js/dev -->
-<script src='https://use.fontawesome.com/d1e85892ab.js'></script>
-<script src="js/secrets.js"></script>
+<!-- <script src="js/secrets.js"></script> -->
 <script src="js/app.js"></script>
 </body>
 </html>

@@ -1,57 +1,232 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  height: 100vh;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 * {
   box-sizing: border-box;
 }
-
 html {
-  -webkit-font-smoothing: antialiased;
-  font-family: sans-serif;
   color: #ccc;
   background-color: #333;
-  font-family: 'Roboto' sans-serif;
-  /*background: linear-gradient(rgba(4,32,26,0.91), rgba(8,64,53,0.91)), url("https://source.unsplash.com/weekly?dirtbike");*/
-  background: linear-gradient(rgba(4,32,26,0.91), rgba(8,64,53,0.91)), url("../img/dirtbike.jpg"); /*local dev*/
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(rgba(4,32,26,0.91), rgba(8,64,53,0.91)), url("../img/dirtbike.jpg");
   background-position: center;
   background-size: cover;
   text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
 .container {
-  width: 500px;
   margin: 0 auto;
-  height: 100vh;
+  border: 1px dashed #808080;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
 }
-nav {
+.nav {
   display: flex;
   justify-content: space-between;
 }
-nav div {
-  padding: 10px;
+.nav div {
+  margin: 20px;
 }
-.decision {
-  height: 100px;
+.nav .location {
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 4em;
 }
 .weather {
-  flex-grow: 1;
+  border: 2px dotted #008000;
+  height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  font-size: 2em;
-}
-.daylight {
-  height: 100px;
-  display: flex;
   justify-content: center;
-  align-items: flex-end;
-  padding-bottom: 10px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
-.weather div:nth-child(2) {
-  padding: 50px;
-  width: 300;
+.weather > * {
+  border: 1px dotted #808080;
+}
+.decision {
+  font-size: 4em;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 64px;
+}
+.weather-details {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 32px;
+}
+.weather-part {
+  border: 1px dashed #808080;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 0;
+}
+.condition-icon {
+  margin: 0 20px;
+}
+.temp,
+.precip {
+  font-size: 3em;
+}
+.high-low-temp,
+.condition,
+.precip-label {
+  color: #909090;
+}
+.superscript {
+  vertical-align: super;
+  font-size: 0.5em;
+}
+.daylight,
+.wind-speed {
+  font-size: 1.4em;
+  margin-bottom: 4px;
+}
+.daylight-left,
+.wind-condition {
+  color: #909090;
+}
+img {
+  width: 100px;
+  filter: saturate(0%) brightness(9999%);
+  opacity: 0.7;
+}
+.location img,
+.settings img {
+  display: inline-block;
+  width: 24px;
+}
+.footer {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #909090;
 }

@@ -13,16 +13,9 @@ var myMinTemp            = 40;
 var myMaxPrecip          = 100;
 
 // placeholder variables
-var currentCondition     = "Sunny";
-var observedTemp         = 77;
-var observedHighTemp     = 88;
-var observedLowTemp      = 66;
-var currentChancePrecip  = 11;
-var observedWindSpeed    = 22;
-var observedGust         = 33;
-var sunrise              = "1:11am";
-var sunset               = "1:11pm";
-var observedTime         = "Last Updated on June 18, 10:00"
+var currentCondition;     // = "Sunny";
+var observedTemp;         // = 77;
+var currentChancePrecip;  // = 11;
 
 //setting icon - TODO: add all available ---OR--- use images from json reponse
 function setIconBasedOnCondition(condition, id) {
@@ -42,6 +35,8 @@ function setIconBasedOnCondition(condition, id) {
     document.getElementById(id).src = "img/conditions/day/cloudy.svg";
   } else if (condition == "Snow") {
     document.getElementById(id).src = "img/conditions/day/snow.svg";
+  } else {
+    document.getElementById(id).src = "img/unicorn.svg";
   }
 }
 
@@ -49,6 +44,7 @@ function setIconBasedOnCondition(condition, id) {
 function calculateRideOrNoRide() {
    if (
      myMaxTemp   > observedTemp        &&
+     myMinTemp   < observedTemp        &&
      myMaxPrecip > currentChancePrecip
    ) {
     //  yesDecision();
@@ -94,7 +90,7 @@ async function getWeatherAndCompute() {
   var conditionsData    = await getWundergroundJSON(wundergroundConditionsURL);
   var forecast10dayData = await getWundergroundJSON(wundergroundForecast10dayURL);
 
-  console.log(conditionsData);    // debug
+  console.log(conditionsData);       // debug
   console.log(forecast10dayData);    // debug
 
   document.getElementById("temp").textContent          = Math.round(conditionsData.current_observation.temp_f);
@@ -102,6 +98,14 @@ async function getWeatherAndCompute() {
   document.getElementById("high-temp").textContent     = forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit;
   document.getElementById("low-temp").textContent      = forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit;
   document.getElementById("observed-time").textContent = conditionsData.current_observation.observation_time;
+
+  observedTemp        = Math.round(conditionsData.current_observation.temp_f);
+  currentChancePrecip = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
+
+  console.log("my temp is between " + myMinTemp + " and " + myMaxTemp);
+  console.log(observedTemp + " observed temp");
+  console.log("I wont ride in more then " + myMaxPrecip + " precip");
+  console.log(currentChancePrecip + " precip");
 
   var conditions = forecast10dayData.forecast.simpleforecast.forecastday[0].conditions
   document.getElementById("condition").textContent = conditions;

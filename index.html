@@ -9,26 +9,26 @@
 <body id="app">
   <div class="container">
     <div class="nav">
-      <div class="location"><img src="img/location.svg" alt="location icon"><span id="city">charlotte</span></div>
+      <div class="location"><img src="img/location.svg" alt="location icon"><span id="location">charlotte</span><span id="zip"></span></div>
       <div class="settings"><img src="img/settings.svg" alt="location icon"></div>
     </div>
     <div class="weather">
       <div class="weather-details">
-          <h1 class="decision" id="decision">Yes, ride!</h1>
+          <h1 class="decision" id="decision">Should I ride?</h1>
       </div>
       <div class="weather-details">
         <div class="weather-part">
-          <div class="temp"><span id="temp">75</span>&#176;</div>
-          <div class="high-low-temp"><span id="low-temp">65</span>&#176; | <span id="high-temp">85</span>&#176;</div>
+          <div class="temp"><span id="temp">--</span>&#176;</div>
+          <div class="high-low-temp"><span id="low-temp">--</span>&#176; | <span id="high-temp">--</span>&#176;</div>
         </div>
         <div class="weather-part">
           <div>
-            <img class="condition-icon" id="condition-icon" src="https://icons.wxug.com/i/c/v4/36.svg" alt="">
+            <img class="condition-icon" id="condition-icon" src="img/conditions/day/sunny.svg" alt="">
           </div>
-          <div class="condition"><span id="condition">Sunny</span></div>
+          <div class="condition"><span id="condition">--</span></div>
         </div>
         <div class="weather-part">
-          <div class="precip"><span id="pop">10</span><span class="superscript">%</span></div>
+          <div class="precip"><span id="pop">--</span><span class="superscript">%</span></div>
           <div class="precip-label">precip</div>
         </div>
       </div>
@@ -61,7 +61,7 @@
 </div>
 <!-- when in live mode, uncomment secrets.js and use your own api key -->
 <!-- when in devMode, comment secrets and use the local json files in js/dev -->
-<!-- <script src="js/secrets.js"></script> -->
+<script src="js/secrets.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

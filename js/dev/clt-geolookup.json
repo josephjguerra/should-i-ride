@@ -1,0 +1,432 @@
+{
+  "response":{
+    "version":"0.1",
+    "termsofService":"http://www.wunderground.com/weather/api/d/terms.html",
+    "features":{
+      "geolookup":1
+    }
+  },
+  "location":{
+    "type":"CITY",
+    "country":"US",
+    "country_iso3166":"US",
+    "country_name":"USA",
+    "state":"SC",
+    "city":"Carowood",
+    "tz_short":"EST",
+    "tz_long":"America/New_York",
+    "lat":"35.060000",
+    "lon":"-80.970000",
+    "zip":"29708",
+    "magic":"5",
+    "wmo":"99999",
+    "l":"/q/zmw:29708.5.99999",
+    "requesturl":"US/SC/Carowood.html",
+    "wuiurl":"https://www.wunderground.com/US/SC/Carowood.html",
+    "nearby_weather_stations":{
+      "airport":{
+        "station":[
+          {
+            "city":"Rock Hill",
+            "state":"SC",
+            "country":"US",
+            "icao":"KUZA",
+            "lat":"34.99000168",
+            "lon":"-81.05999756"
+          },
+          {
+            "city":"Charlotte",
+            "state":"NC",
+            "country":"US",
+            "icao":"KCLT",
+            "lat":"35.20999908",
+            "lon":"-80.94000244"
+          },
+          {
+            "city":"Gastonia",
+            "state":"NC",
+            "country":"US",
+            "icao":"KAKH",
+            "lat":"35.20000076",
+            "lon":"-81.15000153"
+          },
+          {
+            "city":"Monroe",
+            "state":"NC",
+            "country":"US",
+            "icao":"KEQY",
+            "lat":"35.02000046",
+            "lon":"-80.62000275"
+          }
+        ]
+      },
+      "pws":{
+        "station":[
+          {
+            "neighborhood":"Masters Estates",
+            "city":"Fort Mill",
+            "state":"SC",
+            "country":"US",
+            "id":"KSCFORTM40",
+            "lat":35.080513,
+            "lon":-80.963684,
+            "distance_km":2,
+            "distance_mi":1
+          },
+          {
+            "neighborhood":"Fort Mill",
+            "city":"Grey Rock",
+            "state":"SC",
+            "country":"US",
+            "id":"KSCGREYR3",
+            "lat":35.042969,
+            "lon":-80.987015,
+            "distance_km":2,
+            "distance_mi":1
+          },
+          {
+            "neighborhood":"Hamilton Green",
+            "city":"Charlotte",
+            "state":"NC",
+            "country":"US",
+            "id":"KNCCHARL287",
+            "lat":35.079784,
+            "lon":-80.985947,
+            "distance_km":2,
+            "distance_mi":1
+          },
+          {
+            "neighborhood":"Baxter Village",
+            "city":"Fort Mill",
+            "state":"SC",
+            "country":"US",
+            "id":"KSCFORTM49",
+            "lat":35.034344,
+            "lon":-80.980560,
+            "distance_km":3,
+            "distance_mi":1
+          },
+          {
+            "neighborhood":"Beacon Knoll",
+            "city":"Fort Mill",
+            "state":"SC",
+            "country":"US",
+            "id":"KSCFORTM15",
+            "lat":35.083920,
+            "lon":-80.951607,
+            "distance_km":3,
+            "distance_mi":1
+          },
+          {
+            "neighborhood":"Bartlett Tree Research Laboratories",
+            "city":"Charlotte",
+            "state":"NC",
+            "country":"US",
+            "id":"KNCCHARL69",
+            "lat":35.079105,
+            "lon":-80.997314,
+            "distance_km":3,
+            "distance_mi":1
+          },
+          {
+            "neighborhood":"Southern Trace",
+            "city":"Charlotte",
+            "state":"NC",
+            "country":"US",
+            "id":"KNCCHARL309",
+            "lat":35.069550,
+            "lon":-81.014214,
+            "distance_km":4,
+            "distance_mi":2
+          },
+          {
+            "neighborhood":"Owens Wx Station in Regal Manor",
+            "city":"Fort Mill",
+            "state":"SC",
+            "country":"US",
+            "id":"KSCFORTM39",
+            "lat":35.054237,
+            "lon":-80.912468,
+            "distance_km":5,
+            "distance_mi":3
+          },
+          {
+            "neighborhood":"Walter Elisha Park Area",
+            "city":"Fort Mill",
+            "state":"SC",
+            "country":"US",
+            "id":"KSCFORTM7",
+            "lat":35.006966,
+            "lon":-80.948715,
+            "distance_km":6,
+            "distance_mi":3
+          },
+          {
+            "neighborhood":"Windjammer, Tega Cay",
+            "city":"Tega Cay",
+            "state":"SC",
+            "country":"US",
+            "id":"KSCTEGAC4",
+            "lat":35.040989,
+            "lon":-81.035629,
+            "distance_km":6,
+            "distance_mi":3
+          },
+          {
+            "neighborhood":"McDowell Nature Preserve",
+            "city":"Charlotte",
+            "state":"NC",
+            "country":"US",
+            "id":"KNCCHARL295",
+            "lat":35.100071,
+            "lon":-81.020256,
+            "distance_km":6,
+            "distance_mi":3
+          },
+          {
+            "neighborhood":"Charlotte",
+            "city":"Steele Creek",
+            "state":"NC",
+            "country":"US",
+            "id":"KNCSTEEL2",
+            "lat":35.118023,
+            "lon":-80.964088,
+            "distance_km":6,
+            "distance_mi":3
+          },
+          {
+            "neighborhood":"Riverpointe",
+            "city":"Charlotte",
+            "state":"NC",
+            "country":"US",
+            "id":"KNCCHARL81",
+            "lat":35.105743,
+            "lon":-81.033630,
+            "distance_km":7,
+            "distance_mi":4
+          },
+          {
+            "neighborhood":"McGregor Downs",
+            "city":"Fort Mill",
+            "state":"SC",
+            "country":"US",
+            "id":"KSCFORTM44",
+            "lat":35.044930,
+            "lon":-80.882187,
+            "distance_km":8,
+            "distance_mi":4
+          },
+          {
+            "neighborhood":"Arbor Place",
+            "city":"Fort Mill",
+            "state":"SC",
+            "country":"US",
+            "id":"KSCFORTM32",
+            "lat":35.041210,
+            "lon":-80.880760,
+            "distance_km":8,
+            "distance_mi":5
+          },
+          {
+            "neighborhood":"Cardinal Woods",
+            "city":"Pineville",
+            "state":"NC",
+            "country":"US",
+            "id":"KNCPINEV2",
+            "lat":35.058208,
+            "lon":-80.877785,
+            "distance_km":8,
+            "distance_mi":5
+          },
+          {
+            "neighborhood":"Chapel Gate",
+            "city":"Rock Hill",
+            "state":"SC",
+            "country":"US",
+            "id":"KSCROCKH19",
+            "lat":35.003052,
+            "lon":-81.032227,
+            "distance_km":8,
+            "distance_mi":5
+          },
+          {
+            "neighborhood":"Lenox Pointe Drive",
+            "city":"Charlotte",
+            "state":"NC",
+            "country":"US",
+            "id":"KNCCHARL109",
+            "lat":35.134747,
+            "lon":-80.935944,
+            "distance_km":8,
+            "distance_mi":5
+          },
+          {
+            "neighborhood":"Winghurst",
+            "city":"Pineville",
+            "state":"NC",
+            "country":"US",
+            "id":"KNCPINEV3",
+            "lat":35.044212,
+            "lon":-80.868584,
+            "distance_km":9,
+            "distance_mi":5
+          },
+          {
+            "neighborhood":"Silver Run",
+            "city":"Fort Mill",
+            "state":"SC",
+            "country":"US",
+            "id":"KSCFORTM14",
+            "lat":35.022594,
+            "lon":-80.871758,
+            "distance_km":9,
+            "distance_mi":5
+          },
+          {
+            "neighborhood":"Walnut Creek",
+            "city":"Charlotte",
+            "state":"NC",
+            "country":"US",
+            "id":"KNCCHARL51",
+            "lat":35.068100,
+            "lon":-80.859436,
+            "distance_km":10,
+            "distance_mi":6
+          },
+          {
+            "neighborhood":"Ballantyne West",
+            "city":"Charlotte",
+            "state":"NC",
+            "country":"US",
+            "id":"KNCCHARL177",
+            "lat":35.044876,
+            "lon":-80.860123,
+            "distance_km":10,
+            "distance_mi":6
+          },
+          {
+            "neighborhood":"Fort Mill",
+            "city":"Colonial Village",
+            "state":"SC",
+            "country":"US",
+            "id":"KSCCOLON2",
+            "lat":35.012844,
+            "lon":-80.873352,
+            "distance_km":10,
+            "distance_mi":6
+          },
+          {
+            "neighborhood":"Waterside at the Catawba",
+            "city":"Fort Mill",
+            "state":"SC",
+            "country":"US",
+            "id":"KSCFORTM29",
+            "lat":34.968933,
+            "lon":-80.935120,
+            "distance_km":10,
+            "distance_mi":6
+          },
+          {
+            "neighborhood":"Bridgehampton",
+            "city":"Fort Mill",
+            "state":"SC",
+            "country":"US",
+            "id":"KSCFORTM31",
+            "lat":35.024239,
+            "lon":-80.861641,
+            "distance_km":10,
+            "distance_mi":6
+          },
+          {
+            "neighborhood":"Innisfree",
+            "city":"Charlotte",
+            "state":"NC",
+            "country":"US",
+            "id":"KNCCHARL83",
+            "lat":35.083694,
+            "lon":-80.856514,
+            "distance_km":10,
+            "distance_mi":6
+          },
+          {
+            "neighborhood":"Retreat at Sunset Ridge",
+            "city":"Clover",
+            "state":"SC",
+            "country":"US",
+            "id":"KSCCLOVE10",
+            "lat":35.082005,
+            "lon":-81.084602,
+            "distance_km":10,
+            "distance_mi":6
+          },
+          {
+            "neighborhood":"Innisfree",
+            "city":"Charlotte",
+            "state":"NC",
+            "country":"US",
+            "id":"KNCCHARL273",
+            "lat":35.085274,
+            "lon":-80.853867,
+            "distance_km":10,
+            "distance_mi":6
+          },
+          {
+            "neighborhood":"Fort Mill",
+            "city":"Fort Mill",
+            "state":"SC",
+            "country":"US",
+            "id":"KSCFORTM28",
+            "lat":34.983261,
+            "lon":-80.893089,
+            "distance_km":11,
+            "distance_mi":6
+          },
+          {
+            "neighborhood":"Reflection Pointe",
+            "city":"Belmont",
+            "state":"NC",
+            "country":"US",
+            "id":"KNCBELMO13",
+            "lat":35.153568,
+            "lon":-81.020943,
+            "distance_km":11,
+            "distance_mi":6
+          },
+          {
+            "neighborhood":"Lake Pointe Drive",
+            "city":"Belmont",
+            "state":"NC",
+            "country":"US",
+            "id":"KNCBELMO10",
+            "lat":35.153599,
+            "lon":-81.021217,
+            "distance_km":11,
+            "distance_mi":6
+          },
+          {
+            "neighborhood":"Coves on River Oaks",
+            "city":"Clover",
+            "state":"SC",
+            "country":"US",
+            "id":"KSCCLOVE9",
+            "lat":35.130676,
+            "lon":-81.065262,
+            "distance_km":11,
+            "distance_mi":7
+          },
+          {
+            "neighborhood":"Tullamore",
+            "city":"Clover",
+            "state":"SC",
+            "country":"US",
+            "id":"KSCCLOVE11",
+            "lat":35.095879,
+            "lon":-81.099991,
+            "distance_km":12,
+            "distance_mi":7
+          }
+        ]
+      }
+    }
+  }
+}

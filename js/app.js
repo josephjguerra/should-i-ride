@@ -4,20 +4,20 @@ var wundergroundAPIKey = WUNDERGROUNDAPIKEY;
 // dev mode
 // set true to full from local js/dev json files
 // set false to pull from api
-var devMode = true;
+var devMode = false;
 var zipCode = '28280';
 
 // user preferences
 var myMaxTemp            = 100;
 var myMinTemp            = 40;
-var myMaxPrecip          = 100;
+var myMaxPrecip          = 30;
 
 // placeholder variables
 var currentCondition;     // = "Sunny";
 var observedTemp;         // = 77;
 var currentChancePrecip;  // = 11;
 
-document.getElementById("location").textContent = "Charlottttte";
+document.getElementById("location").textContent = "getting location...";
 
 //setting icon - TODO: add all available ---OR--- use images from json reponse
 function setIconBasedOnCondition(condition, id) {
@@ -80,22 +80,24 @@ if (devMode) {
   console.log("DEV MODE active, using local data."); // debug
 } else {
   // use wunderground weather api for LIVE data
-  var wundergroundGeolookupLatLon    = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/q/' + position.coords.latitude + ',' + position.coords.longitude + '.json';
-  var wundergroundConditionsURL      = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/conditions/q/'    + zipCode + '.json';
-  var wundergroundForecast10dayURL   = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/forecast10day/q/' + zipCode + '.json';
+  // var wundergroundGeolookupLatLon    = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/q/' + position.coords.latitude + ',' + position.coords.longitude + '.json';
+  // var wundergroundConditionsURL      = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/conditions/q/'    + zipCode + '.json';
+  // var wundergroundForecast10dayURL   = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/forecast10day/q/' + zipCode + '.json';
   console.log("You're LIVE using wunderground data with your key.");
 }
 
-var waitForBrowserLatLon = function(){
+var waitForLocationURL = function(){
   return new Promise(function(resolve, reject) {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         function(position){
-          resolve("@" + position.coords.latitude + "," + position.coords.longitude);
-          document.getElementById("location").innerHTML = position.coords.latitude + " " + position.coords.longitude;
+          // get the broswer location
+          console.log("Browser lat lon: " + position.coords.latitude + ", " + position.coords.longitude); // debug
+          // build the wunderground URL
           var wundergroundConditionsURLLatLon = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/q/' + position.coords.latitude + ',' + position.coords.longitude + '.json';
-          console.log('just building the url');
-          console.log(wundergroundConditionsURLLatLon);
+          console.log('just building the url'); // debug
+          console.log("URL: " + wundergroundConditionsURLLatLon); // debug
+          resolve(wundergroundConditionsURLLatLon);
         }
       );
     } else {
@@ -105,7 +107,7 @@ var waitForBrowserLatLon = function(){
   });
 };
 
-waitForBrowserLatLon().then(function(loc) { console.log(loc); }).catch(function(err) { console.log("No location"); }); //debug
+// waitForLocationURL().then(function(loc) { console.log("Location:" + loc); }).catch(function(err) { console.log("No location"); }); //debug
 
 var getWundergroundJSON = function(url) {
   return new Promise(function(resolve, reject) {
@@ -126,22 +128,26 @@ var getWundergroundJSON = function(url) {
 
 // main function to get data and process
 async function getWeatherAndCompute() {
-  var browserLocation   = await waitForBrowserLatLon();
-  var geolookupLatLon   = await getWundergroundJSON(wundergroundGeolookupLatLon);
-  var conditionsData    = await getWundergroundJSON(wundergroundConditionsURL);
-  var forecast10dayData = await getWundergroundJSON(wundergroundForecast10dayURL);
+  var locationURL           = await waitForLocationURL();
+  var geolookupLatLngJson   = await getWundergroundJSON(locationURL);
 
-  console.log(conditionsData);       // debug
+  var conditionsURL         = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/conditions/q/'    + geolookupLatLngJson.location.zip + '.json'
+  var conditionsDataJson    = await getWundergroundJSON(conditionsURL);
+
+  var forecastURL           = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/forecast10day/q/' + zipCode + '.json';
+  var forecast10dayData     = await getWundergroundJSON(forecastURL);
+
+  console.log(conditionsDataJson);       // debug
   console.log(forecast10dayData);    // debug
 
-  document.getElementById("zip").textContent           = geolookupLatLon.location.zip;
-  document.getElementById("temp").textContent          = Math.round(conditionsData.current_observation.temp_f);
+  document.getElementById("location").textContent      = geolookupLatLngJson.location.city + ", " +geolookupLatLngJson.location.state;
+  document.getElementById("temp").textContent          = Math.round(conditionsDataJson.current_observation.temp_f);
   document.getElementById("pop").textContent           = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
   document.getElementById("high-temp").textContent     = forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit;
   document.getElementById("low-temp").textContent      = forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit;
-  document.getElementById("observed-time").textContent = conditionsData.current_observation.observation_time;
+  document.getElementById("observed-time").textContent = conditionsDataJson.current_observation.observation_time;
 
-  observedTemp        = Math.round(conditionsData.current_observation.temp_f);
+  observedTemp        = Math.round(conditionsDataJson.current_observation.temp_f);
   currentChancePrecip = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
 
   console.log("my temp is between " + myMinTemp + " and " + myMaxTemp);

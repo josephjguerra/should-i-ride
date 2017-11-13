@@ -1,10 +1,6 @@
 // api key from js/secrets.js
 var wundergroundAPIKey = WUNDERGROUNDAPIKEY;
 
-// dev mode
-// set true to full from local js/dev json files
-// set false to pull from api
-var devMode = false;
 var zipCode = '28280';
 
 // user preferences
@@ -21,7 +17,7 @@ document.getElementById("location").textContent = "getting location...";
 
 //setting icon - TODO: add all available ---OR--- use images from json reponse
 function setIconBasedOnCondition(condition, id) {
-  if (condition == "Sunny") {
+  if (condition == "Sunny" || condition == "Clear") {
     document.getElementById(id).src = "img/conditions/day/clear.svg";
   } else if (condition == "Partly Cloudy") {
     document.getElementById(id).src = "img/conditions/day/partlycloudy.svg";
@@ -72,92 +68,81 @@ function useRandomImage() {
   document.getElementById("app").style.backgroundSize = "cover";
 }
 
-if (devMode) {
-  // use local copies of json to limit api call limits and use familiar data
-  var wundergroundGeolookupLatLon    = 'js/dev/clt-geolookup.json'
-  var wundergroundConditionsURL      = 'js/dev/clt-conditions.json'
-  var wundergroundForecast10dayURL   = 'js/dev/clt-forecast10day.json'
-  console.log("DEV MODE active, using local data."); // debug
-} else {
-  // use wunderground weather api for LIVE data
-  // var wundergroundGeolookupLatLon    = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/q/' + position.coords.latitude + ',' + position.coords.longitude + '.json';
-  // var wundergroundConditionsURL      = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/conditions/q/'    + zipCode + '.json';
-  // var wundergroundForecast10dayURL   = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/forecast10day/q/' + zipCode + '.json';
-  console.log("You're LIVE using wunderground data with your key.");
-}
-
 var waitForLocationURL = function(){
-  return new Promise(function(resolve, reject) {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        function(position){
-          // get the broswer location
-          console.log("Browser lat lon: " + position.coords.latitude + ", " + position.coords.longitude); // debug
-          // build the wunderground URL
-          var wundergroundConditionsURLLatLon = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/q/' + position.coords.latitude + ',' + position.coords.longitude + '.json';
-          console.log('just building the url'); // debug
-          console.log("URL: " + wundergroundConditionsURLLatLon); // debug
-          resolve(wundergroundConditionsURLLatLon);
-        }
-      );
-    } else {
-      reject("Unknown");
-      document.getElementById("location").innerHTML = "Here be dragons!!"
-    }
+  return new Promise(
+    function(resolve, reject) {
+      // get the broswer location
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          function(position){
+            console.log("browser lat lon: " + position.coords.latitude + ", " + position.coords.longitude); // debug
+            // build the wunderground URL
+            var wundergroundConditionsURLLatLon = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/q/' + position.coords.latitude + ',' + position.coords.longitude + '.json';
+            console.log("building the url: " + wundergroundConditionsURLLatLon); // debug
+            resolve(wundergroundConditionsURLLatLon);
+          }
+        );
+      } else {
+        reject("Unknown");
+        document.getElementById("location").innerHTML = "Here be dragons!!"
+      }
   });
 };
 
 // waitForLocationURL().then(function(loc) { console.log("Location:" + loc); }).catch(function(err) { console.log("No location"); }); //debug
 
 var getWundergroundJSON = function(url) {
-  return new Promise(function(resolve, reject) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('get', url, true);
-    xhr.responseType = 'json';
-    xhr.onload = function() {
-      var status = xhr.status;
-      if (status == 200) {
-        resolve(xhr.response);
-      } else {
-        reject(status);
-      }
-    };
-    xhr.send();
-  });
+  return new Promise(
+    function(resolve, reject) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('get', url, true);
+      xhr.responseType = 'json';
+      xhr.onload = function() {
+        var status = xhr.status;
+        if (status == 200) {
+          resolve(xhr.response);
+        } else {
+          reject(status);
+        }
+      };
+      xhr.send();
+    });
 };
 
 // main function to get data and process
 async function getWeatherAndCompute() {
   var locationURL           = await waitForLocationURL();
   var geolookupLatLngJson   = await getWundergroundJSON(locationURL);
-
-  var conditionsURL         = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/conditions/q/'    + geolookupLatLngJson.location.zip + '.json'
+  var conditionsURL         = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/conditions/q/' + geolookupLatLngJson.location.zip + '.json'
   var conditionsDataJson    = await getWundergroundJSON(conditionsURL);
-
   var forecastURL           = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/forecast10day/q/' + zipCode + '.json';
   var forecast10dayData     = await getWundergroundJSON(forecastURL);
 
-  console.log(conditionsDataJson);       // debug
+  console.log(conditionsDataJson);   // debug
   console.log(forecast10dayData);    // debug
 
+  // update variables with returned data
+  currentCondition    = forecast10dayData.forecast.simpleforecast.forecastday[0].conditions;
+  observedTemp        = Math.round(conditionsDataJson.current_observation.temp_f);
+  currentChancePrecip = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
+
+  // update DOM with returned data
   document.getElementById("location").textContent      = geolookupLatLngJson.location.city + ", " +geolookupLatLngJson.location.state;
-  document.getElementById("temp").textContent          = Math.round(conditionsDataJson.current_observation.temp_f);
-  document.getElementById("pop").textContent           = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
+  document.getElementById("temp").textContent          = observedTemp;
+  document.getElementById("condition").textContent     = currentCondition;
+  document.getElementById("pop").textContent           = currentChancePrecip;
   document.getElementById("high-temp").textContent     = forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit;
   document.getElementById("low-temp").textContent      = forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit;
   document.getElementById("observed-time").textContent = conditionsDataJson.current_observation.observation_time;
 
-  observedTemp        = Math.round(conditionsDataJson.current_observation.temp_f);
-  currentChancePrecip = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
-
+  // debug
   console.log("my temp is between " + myMinTemp + " and " + myMaxTemp);
   console.log(observedTemp + " observed temp");
   console.log("I wont ride in more then " + myMaxPrecip + " precip");
   console.log(currentChancePrecip + " precip");
+  console.log(currentCondition);
 
-  var conditions = forecast10dayData.forecast.simpleforecast.forecastday[0].conditions
-  document.getElementById("condition").textContent = conditions;
-  setIconBasedOnCondition(conditions, "condition-icon");
+  setIconBasedOnCondition(currentCondition, "condition-icon");
 
   calculateRideOrNoRide();
 }

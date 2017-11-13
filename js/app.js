@@ -47,12 +47,27 @@ function calculateRideOrNoRide() {
      myMinTemp   < observedTemp        &&
      myMaxPrecip > currentChancePrecip
    ) {
-    //  yesDecision();
-    console.log('yes ride');
+     yesDecision();
    } else {
-    //  noDecision();
-    console.log('nope... sulk inside');
+     noDecision();
    }
+}
+
+function yesDecision() {
+  console.log('yes ride!!!');
+  document.getElementById("decision").textContent = "Yes, ride!";
+}
+
+function noDecision() {
+  console.log('nope... sulk inside :( ');
+  document.getElementById("decision").textContent = "nope... sulk inside";
+  document.getElementById("app").classList.add("noride");
+}
+
+function useRandomImage() {
+  document.getElementById("app").style.background = "linear-gradient(rgba(4,32,26,0.91), rgba(8,64,53,0.91)), url('https://source.unsplash.com/weekly?motorcycle')";
+  document.getElementById("app").style.backgroundPosition = "center";
+  document.getElementById("app").style.backgroundSize = "cover";
 }
 
 if (devMode) {

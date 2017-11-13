@@ -4,406 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Should I ride?</title>
-  <!-- Material Design Lite -->
-  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-green.min.css" />
   <link rel="stylesheet" href="css/styles.css">
-  <!-- Material Design icon font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
-<body>
-  <!-- Simple header with fixed tabs. -->
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
-    <header class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
-        <!-- Title -->
-        <span class="mdl-layout-title">Should I ride?</span>
-        <div class="mdl-layout-spacer"></div>
-        <div id="conditions-city-location"></div>
-        <div class="mdl-button mdl-js-button mdl-button--icon">
-          <i class="material-icons">gps_fixed</i>
-        </div>
-      </div>
-      <!-- Tabs -->
-      <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-        <a href="#today-tab" class="mdl-layout__tab is-active">Today</a>
-        <a href="#hourly-tab" class="mdl-layout__tab">Hourly</a>
-        <a href="#ten-day-tab" class="mdl-layout__tab">10 Day</a>
-      </div>
-    </header>
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">Preferences</span>
-      <div>
-        <form action="#">
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" value="50" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
-            <label class="mdl-textfield__label" for="sample4">Min Temp...</label>
-            <span class="mdl-textfield__error">Input is not a number!</span>
-          </div>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" value="95" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
-            <label class="mdl-textfield__label" for="sample4">Max Temp...</label>
-            <span class="mdl-textfield__error">Input is not a number!</span>
-          </div>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" value="25" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
-            <label class="mdl-textfield__label" for="sample4">Highest Precip %...</label>
-            <span class="mdl-textfield__error">Input is not a number!</span>
-          </div>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" value="15" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
-            <label class="mdl-textfield__label" for="sample4">Max winds...</label>
-            <span class="mdl-textfield__error">Input is not a number!</span>
-          </div>
-          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect pref-toggle" for="switch-1">
-            <input type="checkbox" id="switch-1" class="mdl-switch__input">
-            <span class="mdl-switch__label">Ride in the rain?</span>
-          </label>
-          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect pref-toggle" for="switch-2">
-            <input type="checkbox" id="switch-2" class="mdl-switch__input" checked>
-            <span class="mdl-switch__label">Ride at night?</span>
-          </label>
-        </form>
-      </div>
-
+<body id="app">
+  <div class="container">
+    <div class="nav">
+      <div class="location"><img src="img/location.svg" alt="location icon"><span id="city">charlotte</span></div>
+      <div class="settings"><img src="img/settings.svg" alt="location icon"></div>
     </div>
-    <main class="mdl-layout__content">
-      <section class="mdl-layout__tab-panel is-active" id="today-tab">
-        <div class="page-content">
-          <div class="card decision-item" id="current-conditions-card">
-            <div class="mdl-grid flex-container today-top">
-              <div class="go-no-go"><span id="decision"></span> <img id="decision-image" src="img/emotions/thumbup.svg" alt="thumbup" width="40px"></div>
-            </div>
-            <div class="mdl-grid flex-container today-top">
-              <div class="flex-item">
-                <!-- <div class="flex-sub">June 17, 7:55am</div> -->
-                <div class="flex-sub day-current-temp"><span id="day-current-temp"></span>&#176;</div>
-                <div class="flex-sub">feels <span id="day-current-feels-like"></span>&#176;</div>
-              </div>
-              <div class="flex-item">
-                <div class="flex-sub"><img id="current-condition-icon" src="img/conditions/day/clear.svg" width="100px" alt="Sunny" class="hourly"></div>
-              </div>
-              <div class="flex-item">
-                <div class="flex-sub"><img src="img/wind.svg" alt="wind-speed" width="14px"> <span id="wind-speed"></span> mph</div>
-                <div class="flex-sub"><img src="img/gust.svg" alt="wind-gust" width="14px"> <span id="wind-gust"></span> gust</div>
-              </div>
-            </div>
-            <div class="mdl-grid flex-container today-top">
-              <div class="flex-item">
-                <div class="flex-sub"><img src="img/high.svg" alt="high-temp" width="20px"> <span id="day-high"></span>&#176;</div>
-                <div class="flex-sub"><img src="img/low.svg" alt="low-temp" width="20px"> <span id="day-low"></span>&#176;</div>
-              </div>
-              <div class="flex-item">
-                <div class="flex-sub"><img src="img/precip.svg" alt="precip" width="15px"> <span id="chance-of-precip"></span>%</div>
-                <div class="flex-sub">chance precip</div>
-              </div>
-              <div class="flex-item">
-                <div class="flex-sub"><img src="img/astrology/sunrise.svg" alt="sunrise" width="22px"> <span id="sunrise"></span></div>
-                <div class="flex-sub"><img src="img/astrology/sunset.svg" alt="sunset" width="22px"> <span id="sunset"></span></div>
-              </div>
-            </div>
+    <div class="weather">
+      <div class="weather-details">
+          <h1 class="decision" id="decision">Yes, ride!</h1>
+      </div>
+      <div class="weather-details">
+        <div class="weather-part">
+          <div class="temp"><span id="temp">75</span>&#176;</div>
+          <div class="high-low-temp"><span id="low-temp">65</span>&#176; | <span id="high-temp">85</span>&#176;</div>
+        </div>
+        <div class="weather-part">
+          <div>
+            <img class="condition-icon" id="condition-icon" src="https://icons.wxug.com/i/c/v4/36.svg" alt="">
           </div>
-            <div class="mdl-grid flex-container today-three">
-              <div class="flex-item card decision-item">
-                <div class="flex-sub"><span id="first-third-card">Morn</span></div>
-                <div class="flex-sub"><img id="first-condition-icon" src="img/conditions/day/clear.svg" alt="Sunny" class="three-sunny"></div>
-                <div class="flex-sub"><span id="first-third-temp">75</span>&#176;</div>
-                <div class="flex-sub"><img src="img/precip.svg" width="10px"><span id="first-third-precip">10</span>%</div>
-                <div class="flex-sub"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="first-third-winds">5</span>mph</div>
-              </div>
-              <div class="flex-item card decision-item">
-                <div class="flex-sub"><span id="second-third-card">Af</span></div>
-                <div class="flex-sub"><img id="second-condition-icon" src="img/conditions/day/clear.svg" alt="Sunny" class="three-sunny"></div>
-                <div class="flex-sub"><span id="second-third-temp">75</span>&#176;</div>
-                <div class="flex-sub"><img src="img/precip.svg" width="10px"><span id="second-third-precip">10</span>%</div>
-                <div class="flex-sub"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="second-third-winds">5</span>mph</div>
-              </div>
-              <div class="flex-item card decision-item">
-                <div class="flex-sub"><span id="third-third-card">Eve</span></div>
-                <div class="flex-sub"><img id="third-condition-icon" src="img/conditions/day/chancerain.svg" alt="Sunny" class="three-sunny"></div>
-                <div class="flex-sub"><span id="third-third-temp">75</span>&#176;</div>
-                <div class="flex-sub"><img src="img/precip.svg" width="10px"><span id="third-third-precip">10</span>%</div>
-                <div class="flex-sub"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="third-third-winds">5</span>mph</div>
-              </div>
-            </div>
-            <!-- <div class="mdl-grid flex-container today-nine" id="today-nine">
-              <div class="flex-item card decision-item">
-                <div class="flex-sub" id="today-card-time-0">6am</div>
-                <div class="flex-sub"><img id="today-card-condition-0" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></div>
-                <div class="flex-sub" id="today-card-temp-0">75&#176;</div>
-                <div class="flex-sub"><img id="today-card-precip-0" src="img/precip.svg" width="10px">10%</div>
-                <div class="flex-sub"><img id="today-card-winds-0" src="img/wind.svg" alt="wind-speed" width="10px"><span id="">5</span>mph</div>
-              </div>
-              <div class="flex-item card decision-item">
-                <div class="flex-sub" id="today-card-time-1">8am</div>
-                <div class="flex-sub"><img id="today-card-condition-1" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></div>
-                <div class="flex-sub" id="today-card-temp-1">75&#176;</div>
-                <div class="flex-sub"><img id="today-card-precip-1" src="img/precip.svg" width="10px">10%</div>
-                <div class="flex-sub"><img id="today-card-winds-1" src="img/wind.svg" alt="wind-speed" width="10px"><span id="">5</span>mph</div>
-              </div>
-              <div class="flex-item card decision-item">
-                <div class="flex-sub" id="today-card-time-2">10am</div>
-                <div class="flex-sub"><img id="today-card-condition-2" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></div>
-                <div class="flex-sub" id="today-card-temp-2">75&#176;</div>
-                <div class="flex-sub"><img id="today-card-precip-2" src="img/precip.svg" width="10px">10%</div>
-                <div class="flex-sub"><img id="today-card-winds-2" src="img/wind.svg" alt="wind-speed" width="10px"><span id="">5</span>mph</div>
-              </div>
-              <div class="flex-item card decision-item">
-                <div class="flex-sub" id="today-card-time-3">12pm</div>
-                <div class="flex-sub"><img id="today-card-condition-3" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></div>
-                <div class="flex-sub" id="today-card-temp-3">75&#176;</div>
-                <div class="flex-sub"><img id="today-card-precip-3" src="img/precip.svg" width="10px">10%</div>
-                <div class="flex-sub"><img id="today-card-winds-3" src="img/wind.svg" alt="wind-speed" width="10px"><span id="">5</span>mph</div>
-              </div>
-              <div class="flex-item card decision-item">
-                <div class="flex-sub" id="today-card-time-4">2pm</div>
-                <div class="flex-sub"><img id="today-card-condition-4" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></div>
-                <div class="flex-sub" id="today-card-temp-4">75&#176;</div>
-                <div class="flex-sub"><img id="today-card-precip-4" src="img/precip.svg" width="10px">10%</div>
-                <div class="flex-sub"><img id="today-card-winds-4" src="img/wind.svg" alt="wind-speed" width="10px"><span id="">5</span>mph</div>
-              </div>
-              <div class="flex-item card decision-item">
-                <div class="flex-sub" id="today-card-time-5">4pm</div>
-                <div class="flex-sub"><img id="today-card-condition-5" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></div>
-                <div class="flex-sub" id="today-card-temp-5">75&#176;</div>
-                <div class="flex-sub"><img id="today-card-precip-5" src="img/precip.svg" width="10px">10%</div>
-                <div class="flex-sub"><img id="today-card-winds-5" src="img/wind.svg" alt="wind-speed" width="10px"><span id="">5</span>mph</div>
-              </div>
-              <div class="flex-item card decision-item">
-                <div class="flex-sub" id="today-card-time-6">6pm</div>
-                <div class="flex-sub"><img id="today-card-condition-6" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></div>
-                <div class="flex-sub" id="today-card-temp-6">75&#176;</div>
-                <div class="flex-sub"><img id="today-card-precip-6" src="img/precip.svg" width="10px">10%</div>
-                <div class="flex-sub"><img id="today-card-winds-6" src="img/wind.svg" alt="wind-speed" width="10px"><span id="">5</span>mph</div>
-              </div>
-              <div class="flex-item card decision-item">
-                <div class="flex-sub" id="today-card-time-7">8pm</div>
-                <div class="flex-sub"><img id="today-card-condition-7" src="img/conditions/day/chancerain.svg" alt="Sunny" class="hourly-sunny"></div>
-                <div class="flex-sub" id="today-card-temp-7">75&#176;</div>
-                <div class="flex-sub"><img id="today-card-precip-7" src="img/precip.svg" width="10px">10%</div>
-                <div class="flex-sub"><img id="today-card-winds-7" src="img/wind.svg" alt="wind-speed" width="10px"><span id="">5</span>mph</div>
-              </div>
-              <div class="flex-item card decision-item">
-                <div class="flex-sub" id="today-card-time-8">10pm</div>
-                <div class="flex-sub"><img id="today-card-condition-8" src="img/conditions/day/chancerain.svg" alt="Sunny" class="hourly-sunny"></div>
-                <div class="flex-sub" id="today-card-temp-8">75&#176;</div>
-                <div class="flex-sub"><img id="today-card-precip-8" src="img/precip.svg" width="10px">10%</div>
-                <div class="flex-sub"><img id="today-card-winds-8" src="img/wind.svg" alt="wind-speed" width="10px"><span id="">5</span>mph</div>
-              </div>
-            </div> -->
+          <div class="condition"><span id="condition">Sunny</span></div>
         </div>
-      </section>
-      <section class="mdl-layout__tab-panel" id="hourly-tab">
-        <div class="page-content">
-          <table class="mdl-data-table mdl-js-data-table">
-            <thead>
-              <tr>
-                <th class="mdl-data-table__cell--non-numeric">Time</th>
-                <th class="mdl-data-table__cell--non-numeric">Temp</th>
-                <th class="mdl-data-table__cell--non-numeric">Conditions</th>
-                <th class="mdl-data-table__cell--non-numeric">Precip</th>
-                <th class="mdl-data-table__cell--non-numeric">Wind</th>
-              </tr>
-            </thead>
-            <tbody id="hourly-table-body">
-              <tr class="decision-item">
-                <td class="mdl-data-table__cell--non-numeric" id="hourly-table-time-0">9am</td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="hourly-table-temp-0">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="hourly-table-conditions-0" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="hourly-table-precip-0">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="hourly-table-wind-0">5</span>mph</td>
-              </tr>
-              <tr class="decision-item">
-                <td class="mdl-data-table__cell--non-numeric" id="hourly-table-time-1">10am</td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="hourly-table-temp-1">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="hourly-table-conditions-1" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="hourly-table-precip-1">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="hourly-table-wind-1">5</span>mph</td>
-              </tr>
-              <tr class="decision-item">
-                <td class="mdl-data-table__cell--non-numeric" id="hourly-table-time-2">11am</td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="hourly-table-temp-2">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="hourly-table-conditions-2" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="hourly-table-precip-2">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="hourly-table-wind-2">5</span>mph</td>
-              </tr>
-              <tr class="decision-item">
-                <td class="mdl-data-table__cell--non-numeric" id="hourly-table-time-3">12am</td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="hourly-table-temp-3">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="hourly-table-conditions-3" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="hourly-table-precip-3">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="hourly-table-wind-3">5</span>mph</td>
-              </tr>
-              <tr class="decision-item">
-                <td class="mdl-data-table__cell--non-numeric" id="hourly-table-time-4">1pm</td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="hourly-table-temp-4">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="hourly-table-conditions-4" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="hourly-table-precip-4">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="hourly-table-wind-4">5</span>mph</td>
-              </tr>
-              <tr class="decision-item">
-                <td class="mdl-data-table__cell--non-numeric" id="hourly-table-time-5">2pm</td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="hourly-table-temp-5">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="hourly-table-conditions-5" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="hourly-table-precip-5">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="hourly-table-wind-5">5</span>mph</td>
-              </tr>
-              <tr class="decision-item">
-                <td class="mdl-data-table__cell--non-numeric" id="hourly-table-time-6">9am</td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="hourly-table-temp-6">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="hourly-table-conditions-6" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="hourly-table-precip-6">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="hourly-table-wind-6">5</span>mph</td>
-              </tr>
-              <tr class="decision-item">
-                <td class="mdl-data-table__cell--non-numeric" id="hourly-table-time-7">3pm</td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="hourly-table-temp-7">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="hourly-table-conditions-7" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="hourly-table-precip-7">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="hourly-table-wind-7">5</span>mph</td>
-              </tr>
-              <tr class="decision-item">
-                <td class="mdl-data-table__cell--non-numeric" id="hourly-table-time-8">4pm</td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="hourly-table-temp-8">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="hourly-table-conditions-8" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="hourly-table-precip-8">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="hourly-table-wind-8">5</span>mph</td>
-              </tr>
-              <tr class="decision-item">
-                <td class="mdl-data-table__cell--non-numeric" id="hourly-table-time-9">5pm</td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="hourly-table-temp-9">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="hourly-table-conditions-9" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="hourly-table-precip-9">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="hourly-table-wind-9">5</span>mph</td>
-              </tr>
-              <tr class="decision-item">
-                <td class="mdl-data-table__cell--non-numeric" id="hourly-table-time-10">6pm</td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="hourly-table-temp-10">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="hourly-table-conditions-10" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="hourly-table-precip-10">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="hourly-table-wind-10">5</span>mph</td>
-              </tr>
-              <tr class="decision-item">
-                <td class="mdl-data-table__cell--non-numeric" id="hourly-table-time-11">7pm</td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="hourly-table-temp-11">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="hourly-table-conditions-11" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="hourly-table-precip-11">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="hourly-table-wind-11">5</span>mph</td>
-              </tr>
-              <tr class="decision-item">
-                <td class="mdl-data-table__cell--non-numeric" id="hourly-table-time-12">8pm</td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="hourly-table-temp-12">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="hourly-table-conditions-12" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="hourly-table-precip-12">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="hourly-table-wind-12">5</span>mph</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-      <section class="mdl-layout__tab-panel" id="ten-day-tab">
-        <div class="page-content">
-          <table class="mdl-data-table mdl-js-data-table">
-            <thead>
-              <tr>
-                <th class="mdl-data-table__cell--non-numeric">Day</th>
-                <th class="mdl-data-table__cell--non-numeric">Temp</th>
-                <th class="mdl-data-table__cell--non-numeric">Conditions</th>
-                <th class="mdl-data-table__cell--non-numeric">Precip</th>
-                <th class="mdl-data-table__cell--non-numeric">Wind</th>
-              </tr>
-            </thead>
-            <tbody id="ten-day-table-body">
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-time-0">Today</span></td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-temp-0">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="ten-day-table-conditions-0" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="ten-day-table-precip-0">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="ten-day-table-wind-0">5</span>mph</td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-time-1">Tomorrow</span></td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-temp-1">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="ten-day-table-conditions-1" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="ten-day-table-precip-1">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="ten-day-table-wind-1">5</span>mph</td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-time-2">Wednesday</span></td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-temp-2">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="ten-day-table-conditions-2" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="ten-day-table-precip-2">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="ten-day-table-wind-2">5</span>mph</td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-time-3">Thursday</span></td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-temp-3">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="ten-day-table-conditions-3" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="ten-day-table-precip-3">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="ten-day-table-wind-3">5</span>mph</td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-time-4">Friday</span></td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-temp-4">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="ten-day-table-conditions-4" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="ten-day-table-precip-4">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="ten-day-table-wind-4">5</span>mph</td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-time-5">Saturday</span></td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-temp-5">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="ten-day-table-conditions-5" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="ten-day-table-precip-5">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="ten-day-table-wind-5">5</span>mph</td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-time-6">Sunday</span></td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-temp-6">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="ten-day-table-conditions-6" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="ten-day-table-precip-6">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="ten-day-table-wind-6">5</span>mph</td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-time-7">Monday</span></td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-temp-7">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="ten-day-table-conditions-7" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="ten-day-table-precip-7">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="ten-day-table-wind-7">5</span>mph</td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-time-8">Tuesday</span></td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-temp-8">75</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="ten-day-table-conditions-8" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="ten-day-table-precip-8">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="ten-day-table-wind-8">5</span>mph</td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-time-9">Wednesday</span></td>
-                <td class="mdl-data-table__cell--non-numeric"><span id="ten-day-table-temp-9">99</span>&#176;</td>
-                <td class="mdl-data-table__cell--non-numeric"><img id="ten-day-table-conditions-9" src="img/conditions/day/clear.svg" alt="Sunny" class="hourly-sunny"></td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/precip.svg" width="10px"><span id="ten-day-table-precip-9">10</span>%</td>
-                <td class="mdl-data-table__cell--non-numeric"><img src="img/wind.svg" alt="wind-speed" width="10px"><span id="ten-day-table-wind-9">5</span>mph</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-      <div class="footer">
-        <div class="mdl-grid flex-container">
-          <div id="today-observed-time"></div>
-        </div>
-        <div class="mdl-grid flex-container">
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-            <i class="material-icons">refresh</i> Refresh
-          </button>
+        <div class="weather-part">
+          <div class="precip"><span id="pop">10</span><span class="superscript">%</span></div>
+          <div class="precip-label">precip</div>
         </div>
       </div>
-    </main>
+      <!-- <div class="weather-details">
+        <div class="weather-part">
+          <div class="daylight">4h 30m</div>
+          <div class="daylight-left">light left</div>
+        </div>
+        <div class="weather-part">
+          <div class="wind-condition"><span id="wind-description"></span>light winds</div>
+          <div class="wind-speed"><span id="wind-speed">11</span>-<span id="wind-gust">12</span> mph</div>
+        </div>
+      </div> -->
+    </div>
+    <div class="footer">
+      <div><span id="observed-time"></span</div>
+    </div>
   </div>
+  <div class="pref-container">
+</div>
+<div class="pref">
+  <div class="form">
+    <p>I'll ride if the temp is below <span id="max-temp-value"></span>&#176;F</p>
+    <input type="range" min="60" max="130" step="5" value="90" class="temp-slider" id="max-temp">
+    <p>I'll ride as long as it's above <span id="min-temp-value"></span>&#176;F</p>
+    <input type="range" min="0" max="80" step="5" value="50" class="temp-slider" id="min-temp">
+    <p>Not riding if more than a <span id="max-precip-value"></span>% change of rain?</p>
+    <input type="range" min="0" max="100" step="10" value="30" class="temp-slider" id="max-precip">
+  </div>
+</div>
 <!-- when in live mode, uncomment secrets.js and use your own api key -->
 <!-- when in devMode, comment secrets and use the local json files in js/dev -->
-<script src="js/secrets.js"></script>
+<!-- <script src="js/secrets.js"></script> -->
 <script src="js/app.js"></script>
 </body>
 </html>

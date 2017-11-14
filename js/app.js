@@ -1,12 +1,12 @@
-// api key from js/secrets.js
-var wundergroundAPIKey = WUNDERGROUNDAPIKEY;
+// eh poo eye phrase
+var magicNumChi = MAGICNUMCHI;
 
 var zipCode = '28280';
 
 // user preferences
-var myMaxTemp            = 100;
-var myMinTemp            = 40;
-var myMaxPrecip          = 30;
+var myMaxTemp    = 100;
+var myMinTemp    = 40;
+var myMaxPrecip  = 30;
 
 // placeholder variables that get populated by weather fay
 var currentCondition;     // = "Sunny";
@@ -80,8 +80,7 @@ var waitForLocationURL = function(){
           function(position){
             console.log("browser lat lon: " + position.coords.latitude + ", " + position.coords.longitude); // debug
             // build the wunderground URL
-            var wundergroundConditionsURLLatLon = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/q/' + position.coords.latitude + ',' + position.coords.longitude + '.json';
-            console.log("building the url: " + wundergroundConditionsURLLatLon); // debug
+            var wundergroundConditionsURLLatLon = 'http://api.wunderground.com/api/' + magicNumChi + '/geolookup/q/' + position.coords.latitude + ',' + position.coords.longitude + '.json';
             resolve(wundergroundConditionsURLLatLon);
           }
         );
@@ -116,9 +115,9 @@ var getWundergroundJSON = function(url) {
 async function getWeatherAndCompute() {
   var locationURL           = await waitForLocationURL();
   var geolookupLatLngJson   = await getWundergroundJSON(locationURL);
-  var conditionsURL         = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/conditions/q/' + geolookupLatLngJson.location.zip + '.json'
+  var conditionsURL         = 'http://api.wunderground.com/api/' + magicNumChi + '/geolookup/conditions/q/' + geolookupLatLngJson.location.zip + '.json'
   var conditionsDataJson    = await getWundergroundJSON(conditionsURL);
-  var forecastURL           = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/forecast10day/q/' + zipCode + '.json';
+  var forecastURL           = 'http://api.wunderground.com/api/' + magicNumChi + '/geolookup/forecast10day/q/' + zipCode + '.json';
   var forecast10dayData     = await getWundergroundJSON(forecastURL);
 
   console.log(conditionsDataJson);   // debug

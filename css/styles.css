@@ -129,13 +129,18 @@ body {
   color: #ccc;
   background-color: #333;
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(rgba(4,32,26,0.91), rgba(8,64,53,0.91)), url("../img/dirtbike.jpg");
+  background: linear-gradient(rgba(44,62,80,0.91), rgba(17,24,32,0.91));
   background-position: center;
   background-size: cover;
   text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
+}
+.yesride {
+  background: linear-gradient(rgba(4,32,26,0.91), rgba(8,64,53,0.91)), url("../img/dirtbike.jpg");
+  background-position: center;
+  background-size: cover;
 }
 .noride {
   font-family: fantasy;
@@ -286,6 +291,7 @@ img {
   font-size: 1.4em;
   background-color: #ccc;
   border: none;
+  border-radius: 4px;
   color: #333;
   padding: 5px 10px;
   text-decoration: none;

@@ -55,11 +55,13 @@ function yesDecision() {
   console.log('yes ride!!!');
   document.getElementById("decision").textContent = "Yes, ride!";
   document.getElementById("app").classList.remove("noride");
+  document.getElementById("app").classList.add("yesride");
 }
 
 function noDecision() {
   console.log('nope... sulk inside :( ');
-  document.getElementById("decision").textContent = "nope... sulk inside";
+  document.getElementById("decision").textContent = "nope, sulk inside";
+  document.getElementById("app").classList.remove("yesride");
   document.getElementById("app").classList.add("noride");
 }
 

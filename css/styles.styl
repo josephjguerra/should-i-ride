@@ -37,13 +37,18 @@ body
   color $white
   background-color $black
   font-family 'Roboto', sans-serif
-  background linear-gradient(rgba(4,32,26,0.91), rgba(8,64,53,0.91)), url("../img/dirtbike.jpg")
+  background linear-gradient(rgba(44, 62, 80, 0.91), rgba(17,24,32,0.91))
   background-position center
   background-size cover
   text-shadow 3px 3px 6px rgba(0,0,0,0.4)
   overflow hidden
   -webkit-font-smoothing antialiased
   font-smoothing antialiased
+
+.yesride
+  background linear-gradient(rgba(4,32,26,0.91), rgba(8,64,53,0.91)), url("../img/dirtbike.jpg")
+  background-position center
+  background-size cover
 
 .noride
   font-family fantasy
@@ -63,10 +68,13 @@ body
   display flex
   justify-content space-between
   div
-    margin 20px
+    margin 10px
   .location
     display flex
     align-items: center;
+  .settings
+    padding 10px
+    cursor pointer
 
 .weather
   // border 2px dotted green
@@ -145,14 +153,11 @@ img
   font-size 0.6em
   color $white - 60
 
-.pref-container, .pref
-  display none
-
 .pref-container
   height 100%
   width 100%
   position absolute
-  background black
+  background $black
   top 0
   bottom 0
   left 0
@@ -163,8 +168,8 @@ img
 
 .pref
   background-color $black
-  height 70%
-  width 70%
+  height 40%
+  width 60%
   position absolute
   top 0
   bottom 0
@@ -172,6 +177,11 @@ img
   right 0
   z-index 100
   margin auto
+  border-radius 4px
+  box-shadow 0 20px 25px rgba(0,0,0,0.3), 0 15px 15px rgba(0,0,0,0.2)
+  display flex
+  align-content center
+  justify-content center
 
 .form
   padding 36px
@@ -182,3 +192,25 @@ img
   input
     margin-bottom 24px
     width 80%
+  h1
+    font-size 3em
+    margin-bottom 40px
+    text-align center
+  #calculate-with-prefs-button
+    font-size 1.4em
+    background-color $white
+    border none
+    border-radius 4px
+    color $black
+    padding 5px 10px
+    text-decoration none
+    display inline block
+    cursor pointer
+
+.prefs-hidden
+  display none
+
+@media screen and (max-width: 540px)
+  .form
+    h1
+      font-size 2em

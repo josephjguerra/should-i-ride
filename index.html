@@ -9,26 +9,26 @@
 <body id="app">
   <div class="container">
     <div class="nav">
-      <div class="location"><img src="img/location.svg" alt="location icon"><span id="city">charlotte</span></div>
-      <div class="settings"><img src="img/settings.svg" alt="location icon"></div>
+      <div class="location"><img src="img/location.svg" alt="location icon"><span id="location">charlotte</span><span id="zip"></span></div>
+      <div class="settings" id="settings" onclick="togglePreferences()"><img src="img/settings.svg" alt="location icon"></div>
     </div>
     <div class="weather">
       <div class="weather-details">
-          <h1 class="decision" id="decision">Yes, ride!</h1>
+          <h1 class="decision" id="decision">Should I ride?</h1>
       </div>
       <div class="weather-details">
         <div class="weather-part">
-          <div class="temp"><span id="temp">75</span>&#176;</div>
-          <div class="high-low-temp"><span id="low-temp">65</span>&#176; | <span id="high-temp">85</span>&#176;</div>
+          <div class="temp"><span id="temp">--</span>&#176;</div>
+          <div class="high-low-temp"><span id="low-temp">--</span>&#176; | <span id="high-temp">--</span>&#176;</div>
         </div>
         <div class="weather-part">
           <div>
-            <img class="condition-icon" id="condition-icon" src="https://icons.wxug.com/i/c/v4/36.svg" alt="">
+            <img class="condition-icon" id="condition-icon" src="" alt="">
           </div>
-          <div class="condition"><span id="condition">Sunny</span></div>
+          <div class="condition"><span id="condition">--</span></div>
         </div>
         <div class="weather-part">
-          <div class="precip"><span id="pop">10</span><span class="superscript">%</span></div>
+          <div class="precip"><span id="pop">--</span><span class="superscript">%</span></div>
           <div class="precip-label">precip</div>
         </div>
       </div>
@@ -47,21 +47,20 @@
       <div><span id="observed-time"></span</div>
     </div>
   </div>
-  <div class="pref-container">
-</div>
-<div class="pref">
-  <div class="form">
-    <p>I'll ride if the temp is below <span id="max-temp-value"></span>&#176;F</p>
-    <input type="range" min="60" max="130" step="5" value="90" class="temp-slider" id="max-temp">
-    <p>I'll ride as long as it's above <span id="min-temp-value"></span>&#176;F</p>
-    <input type="range" min="0" max="80" step="5" value="50" class="temp-slider" id="min-temp">
-    <p>Not riding if more than a <span id="max-precip-value"></span>% change of rain?</p>
-    <input type="range" min="0" max="100" step="10" value="30" class="temp-slider" id="max-precip">
+  <div id="pref-container" class="pref-container prefs-hidden"></div>
+  <div id="pref" class="pref prefs-hidden">
+    <div class="form">
+      <h1>What will you ride in?</h1>
+      <p>I'll ride if the temp is below <span id="max-temp-value"></span>&#176;F</p>
+      <input type="range" min="60" max="130" step="5" value="90" class="temp-slider" id="max-temp">
+      <p>I'll ride as long as it's above <span id="min-temp-value"></span>&#176;F</p>
+      <input type="range" min="0" max="80" step="5" value="50" class="temp-slider" id="min-temp">
+      <p>Not riding if more than a <span id="max-precip-value"></span>% change of rain?</p>
+      <input type="range" min="10" max="100" step="10" value="30" class="temp-slider" id="max-precip">
+      <button onclick="togglePreferences();recalculateWithNewPrefs();" id="calculate-with-prefs-button">Calculate!</button>
+    </div>
   </div>
-</div>
-<!-- when in live mode, uncomment secrets.js and use your own api key -->
-<!-- when in devMode, comment secrets and use the local json files in js/dev -->
-<!-- <script src="js/secrets.js"></script> -->
+<script src="js/numchi.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

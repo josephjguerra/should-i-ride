@@ -1,25 +1,23 @@
-// api key from js/secrets.js
-var wundergroundAPIKey;
+// eh poo eye phrase
+var magicNumChi = MAGICNUMCHI;
 
-// dev mode
-// set true to full from local js/dev json files
-// set false to pull from api
-var devMode = true;
 var zipCode = '28280';
 
 // user preferences
-var myMaxTemp            = 100;
-var myMinTemp            = 40;
-var myMaxPrecip          = 100;
+var myMaxTemp    = 100;
+var myMinTemp    = 40;
+var myMaxPrecip  = 30;
 
-// placeholder variables
+// placeholder variables that get populated by weather fay
 var currentCondition;     // = "Sunny";
 var observedTemp;         // = 77;
 var currentChancePrecip;  // = 11;
 
+document.getElementById("location").textContent = "getting location...";
+
 //setting icon - TODO: add all available ---OR--- use images from json reponse
 function setIconBasedOnCondition(condition, id) {
-  if (condition == "Sunny") {
+  if (condition == "Sunny" || condition == "Clear") {
     document.getElementById(id).src = "img/conditions/day/clear.svg";
   } else if (condition == "Partly Cloudy") {
     document.getElementById(id).src = "img/conditions/day/partlycloudy.svg";
@@ -56,11 +54,14 @@ function calculateRideOrNoRide() {
 function yesDecision() {
   console.log('yes ride!!!');
   document.getElementById("decision").textContent = "Yes, ride!";
+  document.getElementById("app").classList.remove("noride");
+  document.getElementById("app").classList.add("yesride");
 }
 
 function noDecision() {
   console.log('nope... sulk inside :( ');
-  document.getElementById("decision").textContent = "nope... sulk inside";
+  document.getElementById("decision").textContent = "nope, sulk inside";
+  document.getElementById("app").classList.remove("yesride");
   document.getElementById("app").classList.add("noride");
 }
 
@@ -70,65 +71,106 @@ function useRandomImage() {
   document.getElementById("app").style.backgroundSize = "cover";
 }
 
-if (devMode) {
-  // use local copies of json to limit api call limits and use familiar data
-  var wundergroundConditionsURL      = 'js/dev/clt-conditions.json'
-  var wundergroundForecast10dayURL   = 'js/dev/clt-forecast10day.json'
-  console.log("DEV MODE active, using local data."); // debug
-} else {
-  // use wunderground weather api for LIVE data
-  var wundergroundAPIKey             = WUNDERGROUNDAPIKEY;
-  var wundergroundConditionsURL      = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/conditions/q/'    + zipCode + '.json';
-  var wundergroundForecast10dayURL   = 'http://api.wunderground.com/api/' + wundergroundAPIKey + '/geolookup/forecast10day/q/' + zipCode + '.json';
-  console.log("You're LIVE using wunderground data with your key.");
-}
+var waitForLocationURL = function(){
+  return new Promise(
+    function(resolve, reject) {
+      // get the broswer location
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          function(position){
+            console.log("browser lat lon: " + position.coords.latitude + ", " + position.coords.longitude); // debug
+            // build the wunderground URL
+            var wundergroundConditionsURLLatLon = 'http://api.wunderground.com/api/' + magicNumChi + '/geolookup/q/' + position.coords.latitude + ',' + position.coords.longitude + '.json';
+            resolve(wundergroundConditionsURLLatLon);
+          }
+        );
+      } else {
+        reject("Unknown");
+        document.getElementById("location").innerHTML = "Here be dragons!!"
+      }
+  });
+};
+
+// waitForLocationURL().then(function(loc) { console.log("Location:" + loc); }).catch(function(err) { console.log("No location"); }); //debug
 
 var getWundergroundJSON = function(url) {
-  return new Promise(function(resolve, reject) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('get', url, true);
-    xhr.responseType = 'json';
-    xhr.onload = function() {
-      var status = xhr.status;
-      if (status == 200) {
-        resolve(xhr.response);
-      } else {
-        reject(status);
-      }
-    };
-    xhr.send();
-  });
+  return new Promise(
+    function(resolve, reject) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('get', url, true);
+      xhr.responseType = 'json';
+      xhr.onload = function() {
+        var status = xhr.status;
+        if (status == 200) {
+          resolve(xhr.response);
+        } else {
+          reject(status);
+        }
+      };
+      xhr.send();
+    });
 };
 
 // main function to get data and process
 async function getWeatherAndCompute() {
-  var conditionsData    = await getWundergroundJSON(wundergroundConditionsURL);
-  var forecast10dayData = await getWundergroundJSON(wundergroundForecast10dayURL);
+  var locationURL           = await waitForLocationURL();
+  var geolookupLatLngJson   = await getWundergroundJSON(locationURL);
+  var conditionsURL         = 'http://api.wunderground.com/api/' + magicNumChi + '/geolookup/conditions/q/' + geolookupLatLngJson.location.zip + '.json'
+  var conditionsDataJson    = await getWundergroundJSON(conditionsURL);
+  var forecastURL           = 'http://api.wunderground.com/api/' + magicNumChi + '/geolookup/forecast10day/q/' + zipCode + '.json';
+  var forecast10dayData     = await getWundergroundJSON(forecastURL);
 
-  console.log(conditionsData);       // debug
+  console.log(conditionsDataJson);   // debug
   console.log(forecast10dayData);    // debug
 
-  document.getElementById("temp").textContent          = Math.round(conditionsData.current_observation.temp_f);
-  document.getElementById("pop").textContent           = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
-  document.getElementById("high-temp").textContent     = forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit;
-  document.getElementById("low-temp").textContent      = forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit;
-  document.getElementById("observed-time").textContent = conditionsData.current_observation.observation_time;
-
-  observedTemp        = Math.round(conditionsData.current_observation.temp_f);
+  // update variables with returned data
+  currentCondition    = forecast10dayData.forecast.simpleforecast.forecastday[0].conditions;
+  observedTemp        = Math.round(conditionsDataJson.current_observation.temp_f);
   currentChancePrecip = forecast10dayData.forecast.simpleforecast.forecastday[0].pop;
 
+  // update DOM with returned data
+  document.getElementById("location").textContent      = geolookupLatLngJson.location.city + ", " +geolookupLatLngJson.location.state;
+  document.getElementById("temp").textContent          = observedTemp;
+  document.getElementById("condition").textContent     = currentCondition;
+  document.getElementById("pop").textContent           = currentChancePrecip;
+  document.getElementById("high-temp").textContent     = forecast10dayData.forecast.simpleforecast.forecastday[0].high.fahrenheit;
+  document.getElementById("low-temp").textContent      = forecast10dayData.forecast.simpleforecast.forecastday[0].low.fahrenheit;
+  document.getElementById("observed-time").textContent = conditionsDataJson.current_observation.observation_time;
+
+  // debug
   console.log("my temp is between " + myMinTemp + " and " + myMaxTemp);
   console.log(observedTemp + " observed temp");
   console.log("I wont ride in more then " + myMaxPrecip + " precip");
   console.log(currentChancePrecip + " precip");
+  console.log(currentCondition);
 
-  var conditions = forecast10dayData.forecast.simpleforecast.forecastday[0].conditions
-  document.getElementById("condition").textContent = conditions;
-  setIconBasedOnCondition(conditions, "condition-icon");
+  setIconBasedOnCondition(currentCondition, "condition-icon");
 
   calculateRideOrNoRide();
 }
 getWeatherAndCompute();
+
+// preferences
+function togglePreferences() {
+  document.getElementById("pref-container").classList.toggle("prefs-hidden");
+  document.getElementById("pref").classList.toggle("prefs-hidden");
+}
+
+// fill prefs with initial values
+document.getElementById("max-temp").value   = myMaxTemp;
+document.getElementById("min-temp").value   = myMinTemp;
+document.getElementById("max-precip").value = myMaxPrecip;
+
+// assigne new pref value to variables
+function recalculateWithNewPrefs() {
+  myMaxTemp   = document.getElementById("max-temp").value;
+  myMinTemp   = document.getElementById("min-temp").value;
+  myMaxPrecip = document.getElementById("max-precip").value;
+  console.log(myMaxTemp);
+  console.log(myMinTemp);
+  console.log(myMaxPrecip);
+  calculateRideOrNoRide();
+}
 
 // shows slider values TODO refactor this
 var maxTempSlider = document.getElementById("max-temp");

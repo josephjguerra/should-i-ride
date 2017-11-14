@@ -8,7 +8,7 @@ var myMaxTemp            = 100;
 var myMinTemp            = 40;
 var myMaxPrecip          = 30;
 
-// placeholder variables
+// placeholder variables that get populated by weather fay
 var currentCondition;     // = "Sunny";
 var observedTemp;         // = 77;
 var currentChancePrecip;  // = 11;
@@ -54,6 +54,7 @@ function calculateRideOrNoRide() {
 function yesDecision() {
   console.log('yes ride!!!');
   document.getElementById("decision").textContent = "Yes, ride!";
+  document.getElementById("app").classList.remove("noride");
 }
 
 function noDecision() {
@@ -147,6 +148,28 @@ async function getWeatherAndCompute() {
   calculateRideOrNoRide();
 }
 getWeatherAndCompute();
+
+// preferences
+function togglePreferences() {
+  document.getElementById("pref-container").classList.toggle("prefs-hidden");
+  document.getElementById("pref").classList.toggle("prefs-hidden");
+}
+
+// fill prefs with initial values
+document.getElementById("max-temp").value   = myMaxTemp;
+document.getElementById("min-temp").value   = myMinTemp;
+document.getElementById("max-precip").value = myMaxPrecip;
+
+// assigne new pref value to variables
+function recalculateWithNewPrefs() {
+  myMaxTemp   = document.getElementById("max-temp").value;
+  myMinTemp   = document.getElementById("min-temp").value;
+  myMaxPrecip = document.getElementById("max-precip").value;
+  console.log(myMaxTemp);
+  console.log(myMinTemp);
+  console.log(myMaxPrecip);
+  calculateRideOrNoRide();
+}
 
 // shows slider values TODO refactor this
 var maxTempSlider = document.getElementById("max-temp");

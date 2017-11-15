@@ -54,6 +54,7 @@ function calculateRideOrNoRide() {
 function yesDecision() {
   console.log('yes ride!!!');
   document.getElementById("decision").textContent = "Yes, ride!";
+  document.getElementById("weather-metrics").style.visibility = "visible";
   document.getElementById("app").classList.remove("noride");
   document.getElementById("app").classList.add("yesride");
 }
@@ -61,6 +62,7 @@ function yesDecision() {
 function noDecision() {
   console.log('nope... sulk inside :( ');
   document.getElementById("decision").textContent = "nope, sulk inside";
+  document.getElementById("weather-metrics").style.visibility = "visible";
   document.getElementById("app").classList.remove("yesride");
   document.getElementById("app").classList.add("noride");
 }

@@ -195,6 +195,9 @@ body {
   width: 100%;
   padding-bottom: 32px;
 }
+#weather-metrics {
+  visibility: hidden;
+}
 .weather-part {
   display: flex;
   flex-direction: column;

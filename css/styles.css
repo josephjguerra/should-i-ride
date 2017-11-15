@@ -186,6 +186,8 @@ body {
   margin: 0 auto;
   text-align: center;
   padding-bottom: 64px;
+  position: relative;
+  animation: fallin 5s ease-out;
 }
 .weather-details {
   display: flex;
@@ -304,5 +306,15 @@ img {
 @media screen and (max-width: 540px) {
   .form h1 {
     font-size: 2em;
+  }
+}
+@-webkit-keyframes fallin {
+  0% {
+    top: 100px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
   }
 }

@@ -50,14 +50,14 @@
   <div id="pref-container" class="pref-container prefs-hidden"></div>
   <div id="pref" class="pref prefs-hidden">
     <div class="form">
-      <h1>What will you ride in?</h1>
-      <p>I'll ride if the temp is below <span id="max-temp-value"></span>&#176;F</p>
-      <input type="range" min="60" max="130" step="5" value="90" class="temp-slider" id="max-temp">
-      <p>I'll ride as long as it's above <span id="min-temp-value"></span>&#176;F</p>
+      <h1>I'll ride if...</h1>
+      <p>it's above <span id="min-temp-value"></span>&#176;F</p>
       <input type="range" min="0" max="80" step="5" value="50" class="temp-slider" id="min-temp">
-      <p>Not riding if more than a <span id="max-precip-value"></span>% change of rain?</p>
+      <p>it's below <span id="max-temp-value"></span>&#176;F</p>
+      <input type="range" min="60" max="130" step="5" value="100" class="temp-slider" id="max-temp">
+      <p>there's less than a <span id="max-precip-value"></span>% change of rain</p>
       <input type="range" min="10" max="100" step="10" value="30" class="temp-slider" id="max-precip">
-      <button onclick="togglePreferences();recalculateWithNewPrefs();" id="calculate-with-prefs-button">Calculate!</button>
+      <button onclick="togglePreferences();recalculateWithNewPrefs();" id="calculate-with-prefs-button">Should I ride?</button>
     </div>
   </div>
 <script src="js/numchi.js"></script>

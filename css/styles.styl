@@ -181,8 +181,10 @@ img
 
 .pref
   background-color $black
+  min-height 400px
   height 40%
   width 60%
+  max-width 540px
   position absolute
   top 0
   bottom 0
@@ -204,21 +206,25 @@ img
     margin 5px
   input
     margin-bottom 24px
-    width 80%
+    width 90%
   h1
     font-size 3em
     margin-bottom 40px
     text-align center
+
   #calculate-with-prefs-button
-    font-size 1.4em
+    font-size 1.2em
     background-color $white
     border none
     border-radius 4px
     color $black
     padding 5px 10px
     text-decoration none
-    display inline block
+    display block
     cursor pointer
+    box-shadow 0 4px 4px rgba(0,0,0,0.3), 0 3px 3px rgba(0,0,0,0.2)
+    margin auto
+    text-align center
 
 .prefs-hidden
   display none
@@ -227,6 +233,10 @@ img
   .form
     h1
       font-size 2em
+    p
+      font-size 0.8em
+    #calculate-with-prefs-button
+      font-size 1em
 
 @-webkit-keyframes fallin
   0%

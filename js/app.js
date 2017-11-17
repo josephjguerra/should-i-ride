@@ -9,9 +9,9 @@ var myMinTemp    = 40;
 var myMaxPrecip  = 30;
 
 // placeholder variables that get populated by weather fay
-var currentCondition;     // = "Sunny";
-var observedTemp;         // = 77;
-var currentChancePrecip;  // = 11;
+var currentCondition      = "Sunny";
+var observedTemp          = 77;
+var currentChancePrecip   = 11;
 
 document.getElementById("location").textContent = "getting location...";
 
@@ -156,7 +156,8 @@ async function getWeatherAndCompute() {
 
   calculateRideOrNoRide();
 }
-getWeatherAndCompute();
+// getWeatherAndCompute();
+calculateRideOrNoRide();
 
 // preferences
 function togglePreferences() {

@@ -269,8 +269,10 @@ img {
 }
 .pref {
   background-color: #333;
+  min-height: 400px;
   height: 40%;
   width: 60%;
+  max-width: 540px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -293,7 +295,7 @@ img {
 }
 .form input {
   margin-bottom: 24px;
-  width: 80%;
+  width: 90%;
 }
 .form h1 {
   font-size: 3em;
@@ -301,15 +303,18 @@ img {
   text-align: center;
 }
 .form #calculate-with-prefs-button {
-  font-size: 1.4em;
+  font-size: 1.2em;
   background-color: #ccc;
   border: none;
   border-radius: 4px;
   color: #333;
   padding: 5px 10px;
   text-decoration: none;
-  display: inline block;
+  display: block;
   cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.3), 0 3px 3px rgba(0,0,0,0.2);
+  margin: auto;
+  text-align: center;
 }
 .prefs-hidden {
   display: none;
@@ -317,6 +322,12 @@ img {
 @media screen and (max-width: 540px) {
   .form h1 {
     font-size: 2em;
+  }
+  .form p {
+    font-size: 0.8em;
+  }
+  .form #calculate-with-prefs-button {
+    font-size: 1em;
   }
 }
 @-webkit-keyframes fallin {

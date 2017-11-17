@@ -56,7 +56,10 @@ function yesDecision() {
   document.getElementById("decision").textContent = "Yes, ride!";
   document.getElementById("weather-metrics").style.visibility = "visible";
   document.getElementById("app").classList.remove("noride");
+  document.getElementById("decision").classList.remove("fallin");
+  document.getElementById("decision").classList.remove("shake");
   document.getElementById("app").classList.add("yesride");
+  document.getElementById("decision").classList.add("tada");
 }
 
 function noDecision() {
@@ -64,7 +67,10 @@ function noDecision() {
   document.getElementById("decision").textContent = "nope, sulk inside";
   document.getElementById("weather-metrics").style.visibility = "visible";
   document.getElementById("app").classList.remove("yesride");
+  document.getElementById("decision").classList.remove("fallin");
+  document.getElementById("decision").classList.remove("tada");
   document.getElementById("app").classList.add("noride");
+  document.getElementById("decision").classList.add("shake");
 }
 
 function useRandomImage() {

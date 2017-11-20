@@ -88,7 +88,7 @@ var waitForLocationURL = function(){
           function(position){
             console.log("browser lat lon: " + position.coords.latitude + ", " + position.coords.longitude); // debug
             // build the wunderground URL
-            var wundergroundConditionsURLLatLon = 'http://api.wunderground.com/api/' + magicNumChi + '/geolookup/q/' + position.coords.latitude + ',' + position.coords.longitude + '.json';
+            var wundergroundConditionsURLLatLon = 'https://api.wunderground.com/api/' + magicNumChi + '/geolookup/q/' + position.coords.latitude + ',' + position.coords.longitude + '.json';
             resolve(wundergroundConditionsURLLatLon);
           }
         );
@@ -123,9 +123,9 @@ var getWundergroundJSON = function(url) {
 async function getWeatherAndCompute() {
   var locationURL           = await waitForLocationURL();
   var geolookupLatLngJson   = await getWundergroundJSON(locationURL);
-  var conditionsURL         = 'http://api.wunderground.com/api/' + magicNumChi + '/geolookup/conditions/q/' + geolookupLatLngJson.location.zip + '.json'
+  var conditionsURL         = 'https://api.wunderground.com/api/' + magicNumChi + '/geolookup/conditions/q/' + geolookupLatLngJson.location.zip + '.json'
   var conditionsDataJson    = await getWundergroundJSON(conditionsURL);
-  var forecastURL           = 'http://api.wunderground.com/api/' + magicNumChi + '/geolookup/forecast10day/q/' + zipCode + '.json';
+  var forecastURL           = 'https://api.wunderground.com/api/' + magicNumChi + '/geolookup/forecast10day/q/' + zipCode + '.json';
   var forecast10dayData     = await getWundergroundJSON(forecastURL);
 
   console.log(conditionsDataJson);   // debug

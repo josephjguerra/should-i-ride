@@ -95,12 +95,25 @@ body
   margin 0 auto
   text-align center
   padding-bottom 64px
+  position relative
+
+.fallin
+  animation fallin 5s ease-out
+
+.tada
+  animation tada 1s ease-out
+
+.shake
+  animation shake 1s ease-out
 
 .weather-details
   display flex
   align-items center
   width 100%
   padding-bottom 32px
+
+#weather-metrics
+  visibility hidden
 
 .weather-part
   // border 1px dashed #808080
@@ -168,8 +181,10 @@ img
 
 .pref
   background-color $black
+  min-height 400px
   height 40%
   width 60%
+  max-width 540px
   position absolute
   top 0
   bottom 0
@@ -191,21 +206,25 @@ img
     margin 5px
   input
     margin-bottom 24px
-    width 80%
+    width 90%
   h1
     font-size 3em
     margin-bottom 40px
     text-align center
+
   #calculate-with-prefs-button
-    font-size 1.4em
+    font-size 1.2em
     background-color $white
     border none
     border-radius 4px
     color $black
     padding 5px 10px
     text-decoration none
-    display inline block
+    display block
     cursor pointer
+    box-shadow 0 4px 4px rgba(0,0,0,0.3), 0 3px 3px rgba(0,0,0,0.2)
+    margin auto
+    text-align center
 
 .prefs-hidden
   display none
@@ -214,3 +233,35 @@ img
   .form
     h1
       font-size 2em
+    p
+      font-size 0.8em
+    #calculate-with-prefs-button
+      font-size 1em
+
+@-webkit-keyframes fallin
+  0%
+    top 100px
+    opacity 0
+  100%
+    top 0px
+    opacity 1
+
+@-webkit-keyframes tada
+  from
+    transform scale3d(1, 1, 1)
+  10%, 20%
+    transform scale3d(.95, .95, .95) rotate3d(0, 0, 1, -2deg)
+  30%, 50%, 70%, 90%
+    transform scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, 2deg)
+  40%, 60%, 80%
+    transform scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, -2deg)
+  to
+    transform scale3d(1, 1, 1)
+
+@-webkit-keyframes shake
+  from, to
+    transform translate3d(0, 0, 0)
+  15%, 45%, 75%
+    transform translate3d(-6px, 0, 0)
+  30%, 60%, 90%
+    transform translate3d(6px, 0, 0)
